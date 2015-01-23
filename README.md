@@ -1,2 +1,2 @@
-# biodiversity-esplorer
+# biodiversity-explorer
 An interactive web portal to explore the conservation status, threats, and management of Western Australia's biodiversity assets
