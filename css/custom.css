@@ -11,6 +11,19 @@
   height: 400px;
 }
 
+.transparent {
+  background: rgba(0, 0, 0, 0.8);
+  filter:alpha(opacity=60);
+  opacity:.6;
+}
+
+.carousel-caption {
+  //color: #000;
+  //-webkit-text-stroke-width: 2px;
+  //-webkit-text-stroke-color: #fff;
+   
+}
+
 .carousel .item {
   height: 400px;
 }
