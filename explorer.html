@@ -75,7 +75,7 @@
 
 
     <!-- Carousel ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="20000">
       <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -84,24 +84,24 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="About">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" 
-              Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+              <h1>Biodiverstiy Audit II</h1>
+              <p>1-2 sentences about scope, purpose and target audience.</p>
+              <p><a class="btn btn-lg btn-primary" href="http://internal-data.dpaw.wa.gov.au/dataset/biodiversity" 
+              role="button">Read more</a></p>
             </div>
           </div>
         </div>
         <div class="item">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAGZmZgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAGZmZgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Data">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. 
-              Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+              <h1>See the data</h1>
+              <p>Explain that the underlying data are archived, discoverable and accessible in our data catalog.</p>
+              <p><a class="btn btn-lg btn-primary" href="http://internal-data.dpaw.wa.gov.au/group/biodiversity-audit" 
+              role="button">See the data</a></p>
             </div>
           </div>
         </div>
@@ -109,10 +109,9 @@
           <img src="data:image/gif;base64,R0lGODlhAQABAIAAAFVVVQAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. 
-              Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+              <h1>Feel the management</h1>
+              <p>One more slide.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Link</a></p>
             </div>
           </div>
         </div>
@@ -138,7 +137,6 @@
 
       <!-- Three columns of text -->
       <div class="row">
-        
         <div class="col-lg-4">
           <img class="img-circle" src="http://internal-data.dpaw.wa.gov.au/uploads/group/20140226-084849.891197ahb.jpg" 
           alt="Biogeography image" style="width: 140px; height: 140px;">
@@ -150,7 +148,8 @@
           <img class="img-circle" src="http://d2tq98mqfjyz2l.cloudfront.net/image_cache/1367151180739698.png" 
           alt="shit's on fire yo" style="width: 140px; height: 140px;">
           <h2>Assets, Threats and Management</h2>
-          <p>View threats and management implications for any asset at any region in an interactive, searchable summary of threatened taxa assessments.</p>
+          <p>View threats and management implications for any asset at any region in an interactive, 
+          searchable summary of threatened taxa assessments.</p>
           <p><a class="btn btn-default" href="#threats" role="button">Dive into the data &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
@@ -240,32 +239,41 @@
       Click the button to open the same data in a new tab for greater browsing comfort.</p>
 
 
-      <div class="row" id="threats-buttons">
-      <!-- TODO make round images -->
-        <div class="col-md-3">
-      <a class="btn btn-large btn-danger" target="_" src="http://aws-ckan-001:3333/project?project=2197168485958&ui=%7B%22facets%22%3A%5B%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Scale%22%2C%22columnName%22%3A%22Scale%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22DPaW%20region%22%2C%22columnName%22%3A%22DPaW%20region%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Schedule%22%2C%22columnName%22%3A%22Schedule%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Scientific%20name%22%2C%22columnName%22%3A%22Scientific%20name%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Common%20name%22%2C%22columnName%22%3A%22Common%20name%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%5D%7D">Threatened Fauna</a>
-              </div>
-              <div class="col-md-3">
-      <a class="btn btn-large btn-danger" target="_" src="">Threatened Flora</a>
-              </div>
-              <div class="col-md-3">
-      <a class="btn btn-large btn-danger" target="_" src="">Threatened Communities</a>
-              </div>
-              <div class="col-md-3">
-      <a class="btn btn-large btn-danger" target="_" src="">Threatened Wetlands</a>      
-          </div>
-      </div><!-- /.row#threats-buttons -->
-           
-        <div class="row">
-        
-        <!-- Alternatively we could show all the Fauna data in a ReclineJS dataviewer 
-        Enable #faunadata together with JS at the end of this file, and hide the iframe
-        -->
-        <!-- div id="faunadata" class="bigarea"></div-->
+
+      <!-- Three columns of text -->
+      <div class="row">
+        <div class="col-lg-3">
+          <img class="img-circle" 
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" 
+          alt="Threatened Fauna image" style="width: 140px; height: 140px;">
+          <h2>Fauna</h2>
+          <p>Browse Threatened Fauna data</p>
+          <p><a class="btn btn-default" href="http://aws-ckan-001:3333/project?project=2197168485958&ui=%7B%22facets%22%3A%5B%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Scale%22%2C%22columnName%22%3A%22Scale%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22DPaW%20region%22%2C%22columnName%22%3A%22DPaW%20region%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Schedule%22%2C%22columnName%22%3A%22Schedule%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Scientific%20name%22%2C%22columnName%22%3A%22Scientific%20name%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Common%20name%22%2C%22columnName%22%3A%22Common%20name%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%5D%7D" role="button">Browse &raquo;</a></p>
+        </div><!-- /.col-lg-3 -->
+        <div class="col-lg-3">
+          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" 
+          alt="Threatened Flora image" style="width: 140px; height: 140px;">
+          <h2>Flora</h2>
+          <p>Browse Threatened Flora data</p>
+          <p><a class="btn btn-default" href="#threats" role="button">Browse &raquo;</a></p>
+        </div><!-- /.col-lg-3 -->
+        <div class="col-lg-3">
+          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" 
+          alt="Threatened Ccommunities image" style="width: 140px; height: 140px;">
+          <h2>Communities</h2>
+          <p>Browse Threatened Communities data</p>
+          <p><a class="btn btn-default" href="#strategic" role="button">Browse &raquo;</a></p>
+        </div><!-- /.col-lg-3 -->
+        <div class="col-lg-3">
+          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" 
+          alt="Threatened Wetlands image" style="width: 140px; height: 140px;">
+          <h2>Wetlands</h2>
+          <p>Browse Threatened Communities data</p>
+          <p><a class="btn btn-default" href="#strategic" role="button">Browse &raquo;</a></p>
+        </div><!-- /.col-lg-3 -->
+      </div><!-- /.row -->
       
-         <!-- Show an OpenRefine view of the Fauna CSV 
-        <iframe class="bigarea" src="http://aws-ckan-001:3333/project?project=2197168485958&ui=%7B%22facets%22%3A%5B%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Scale%22%2C%22columnName%22%3A%22Scale%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22DPaW%20region%22%2C%22columnName%22%3A%22DPaW%20region%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Schedule%22%2C%22columnName%22%3A%22Schedule%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Scientific%20name%22%2C%22columnName%22%3A%22Scientific%20name%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Common%20name%22%2C%22columnName%22%3A%22Common%20name%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%5D%7D"></iframe>-->     
-        </div>
+      
       </div>
       <p class="pull-right"><a href="#">Back to top</a></p>
 
