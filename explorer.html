@@ -164,7 +164,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">WA Biodiversity Asset Explorer</a>
+              <a class="navbar-brand" href="#">WA Biodiversity Audit II</a>
             </div>
             <div id="navbar" class="collapse navbar-collapse navbar-right">
               <ul class="nav navbar-nav">
@@ -185,28 +185,32 @@
 <!-- Wrap the rest of the page in another container to center all the content. -->
 
     <div class="container marketing">
+    
+    
 
       <!-- Three columns of text -->
       <div class="row" style="padding-top: 200px; padding-bottom: 400px;">
+        <h2 style="padding-bottom: 200px;">catch phrase placeholder and links to background</h2>
+        
         <div class="col-lg-4">
           <img class="img-circle" src="http://internal-data.dpaw.wa.gov.au/uploads/group/20140226-084849.891197ahb.jpg" 
           alt="Biogeography image" style="width: 140px; height: 140px;">
-          <h2>Biogegraphy of WA</h2>
-          <p>Explore spatial, climatic and biodiversity characteristics of biogeographic IBRA subregions of Western Australia.</p>
-          <p><a class="btn btn-default" href="#biogeography" role="button">Explore WA's Biogeography &raquo;</a></p>
+          <h2>Spatial profiles</h2>
+          <p>Explore spatial, climatic and biodiversity characteristics of IBRA subregions of Western Australia.</p>
+          <p><a class="btn btn-default" href="#biogeography" role="button">Explore &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle" src="http://d2tq98mqfjyz2l.cloudfront.net/image_cache/1367151180739698.png" 
           alt="shit's on fire yo" style="width: 140px; height: 140px;">
-          <h2>Threats and Management</h2>
+          <h2>Assets, Threats and Management</h2>
           <p>View threats and management implications for any asset at any region in an interactive, searchable summary of threatened taxa assessments.</p>
           <p><a class="btn btn-default" href="#threats" role="button">Dive into the data &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle" src="http://s1.dmcdn.net/Ane7b/526x297-9oV.jpg" 
           alt="strategic questions image" style="width: 140px; height: 140px;">
-          <h2>Strategic Questions</h2>
-          <p>Explore the status of biodiversity assets by strategic questions.</p>
+          <h2>Trends and Metrics</h2>
+          <p>Explore the status and trends of biodiversity assets.</p>
           <p><a class="btn btn-default" href="#strategic" role="button">Get the answers &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
@@ -226,6 +230,7 @@
           <p>Marine biodiversity assets are summarised by Marine Protected Areas.</p>
           <p>Click any terrestrial region or Marine Protected Area to view details.</p>
           
+          <!--
           <div class="row well">
           <div class="row">
           <h3>Legend for Marine Assets</h3>
@@ -267,6 +272,7 @@
           </div>
           </div>
           </div>
+          -->
         </div>
         <div class="col-md-5">
           <div id="map"></div>
@@ -278,15 +284,31 @@
 
       <div class="row featurette" id="threats">
       
-      <h2 class="featurette-heading">Threatened Taxa <span class="text-muted">and management actions</span></h2>
+      <h2 class="featurette-heading">Threatened Taxa, Communities and Wetlands <span class="text-muted"></span></h2>
       
-      <p><a class="btn btn-large btn-danger pull-right" target="_" src="http://aws-ckan-001:3333/project?project=2197168485958&ui=%7B%22facets%22%3A%5B%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Scale%22%2C%22columnName%22%3A%22Scale%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22DPaW%20region%22%2C%22columnName%22%3A%22DPaW%20region%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Schedule%22%2C%22columnName%22%3A%22Schedule%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Scientific%20name%22%2C%22columnName%22%3A%22Scientific%20name%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Common%20name%22%2C%22columnName%22%3A%22Common%20name%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%5D%7D">Open in new tab</a></p>
-      
+            
       <p class="lead">Browse threatened taxa, communities and wetlands by region and taxon.</p>
       <p>Select the region (scale) and/or taxon (scientific of common name) of interest to view our latest 
       knowledge of ecological details, threats and management actions about a taxon in a region. 
       Click the button to open the same data in a new tab for greater browsing comfort.</p>
-     
+
+
+      <div class="row" id="threats-buttons">
+      <!-- TODO make round images -->
+        <div class="col-md-3">
+      <a class="btn btn-large btn-danger" target="_" src="http://aws-ckan-001:3333/project?project=2197168485958&ui=%7B%22facets%22%3A%5B%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Scale%22%2C%22columnName%22%3A%22Scale%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22DPaW%20region%22%2C%22columnName%22%3A%22DPaW%20region%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Schedule%22%2C%22columnName%22%3A%22Schedule%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Scientific%20name%22%2C%22columnName%22%3A%22Scientific%20name%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Common%20name%22%2C%22columnName%22%3A%22Common%20name%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%5D%7D">Threatened Fauna</a>
+              </div>
+              <div class="col-md-3">
+      <a class="btn btn-large btn-danger" target="_" src="">Threatened Flora</a>
+              </div>
+              <div class="col-md-3">
+      <a class="btn btn-large btn-danger" target="_" src="">Threatened Communities</a>
+              </div>
+              <div class="col-md-3">
+      <a class="btn btn-large btn-danger" target="_" src="">Threatened Wetlands</a>      
+          </div>
+      </div><!-- /.row#threats-buttons -->
+           
         <div class="row">
         
         <!-- Alternatively we could show all the Fauna data in a ReclineJS dataviewer 
@@ -294,8 +316,8 @@
         -->
         <!-- div id="faunadata" class="bigarea"></div-->
       
-         <!-- Show an OpenRefine view of the Fauna CSV -->     
-        <iframe class="bigarea" src="http://aws-ckan-001:3333/project?project=2197168485958&ui=%7B%22facets%22%3A%5B%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Scale%22%2C%22columnName%22%3A%22Scale%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22DPaW%20region%22%2C%22columnName%22%3A%22DPaW%20region%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Schedule%22%2C%22columnName%22%3A%22Schedule%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Scientific%20name%22%2C%22columnName%22%3A%22Scientific%20name%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Common%20name%22%2C%22columnName%22%3A%22Common%20name%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%5D%7D"></iframe>
+         <!-- Show an OpenRefine view of the Fauna CSV 
+        <iframe class="bigarea" src="http://aws-ckan-001:3333/project?project=2197168485958&ui=%7B%22facets%22%3A%5B%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Scale%22%2C%22columnName%22%3A%22Scale%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22DPaW%20region%22%2C%22columnName%22%3A%22DPaW%20region%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Schedule%22%2C%22columnName%22%3A%22Schedule%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Scientific%20name%22%2C%22columnName%22%3A%22Scientific%20name%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Common%20name%22%2C%22columnName%22%3A%22Common%20name%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%5D%7D"></iframe>-->     
         </div>
       </div>
       <p class="pull-right"><a href="#">Back to top</a></p>
@@ -303,9 +325,9 @@
       <hr class="featurette-divider">
       
       <div class="row featurette" id="strategic">
-       <h2 class="featurette-heading">Strategic Questions <span class="text-muted"></span></h2>
+       <h2 class="featurette-heading">Trends and Metrics <span class="text-muted"></span></h2>
        
-       <p class="lead">List strategic questions with links to (filtered data containing) answers.</p>
+       <p class="lead">Find trends and metrics by topic.</p>
        
        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
        
@@ -348,12 +370,15 @@
             <div id="collapseTaxa" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTaxa">
               <div class="panel-body">
               
-                 <!-- Question 57 -->
-                <div class="question">How many extant Threatened Fanua Taxa occur in WA?</div>
-                <div class="jql">The number of distinct 'Scientific name' on Scale 'Western Australia' is:</div>
-                <div class="answer" id="a57">calculating...</div>
-                <!-- /Question 57 -->
+                 <!-- Question 59 -->
+                <div class="question" id="q59">How many extant Threatened Fauna and Flora Taxa occur in WA?</div>
+                <div class="jql" id="jql59">The sum of taxa from fauna, flora, comm, wetlands
+                of regions (rows: ibra sub) by conservation status (cols: cr, en, vv, total).</div>
+                <div class="answer" id="a59">calculating...</div>
                 
+                <!-- /Question 59 -->
+                
+                                
               </div>
             </div>
           </div>
@@ -500,7 +525,7 @@
         var marine_assets = L.geoJson(data, {
           style: marine_style,
           onEachFeature: function (feature, layer) {layer.bindPopup(feature.properties.assets);}});
-        marine_assets.addTo(map);
+        //marine_assets.addTo(map);
       });
     </script>
     <!-- /LeafletJS map definition  -->
