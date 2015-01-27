@@ -33,12 +33,12 @@
     <link href="http://getbootstrap.com/examples/carousel/carousel.css" rel="stylesheet">
     
   <style>
-  //.content { padding: 40px 15px;}
-  //.bigarea { height:800px; width: 100%;}
+  //.content {padding: 40px 15px;}
+  //.bigarea {height:800px; width: 100%;}
   #map {height: 700px;}
   .question {font-weight: bold;}
   .jql {color: #999;}
-  
+  .img140 {width: 140px; height: 140px;}
   </style>
   </head>
   
@@ -69,9 +69,8 @@
             </div>
           </div>
         </nav>
-
       </div>
-    </div>
+    </div><!-- /.navbar-wrapper -->
 
 
     <!-- Carousel ================================================== -->
@@ -243,39 +242,38 @@
       <!-- Three columns of text -->
       <div class="row">
         <div class="col-lg-3">
-          <img class="img-circle" 
-          src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" 
-          alt="Threatened Fauna image" style="width: 140px; height: 140px;">
+          <img class="img-circle img140" alt="Threatened Fauna image"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==">
           <h2>Fauna</h2>
           <p>Browse Threatened Fauna data</p>
-          <p><a class="btn btn-default" href="http://aws-ckan-001:3333/project?project=2197168485958&ui=%7B%22facets%22%3A%5B%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Scale%22%2C%22columnName%22%3A%22Scale%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22DPaW%20region%22%2C%22columnName%22%3A%22DPaW%20region%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Schedule%22%2C%22columnName%22%3A%22Schedule%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Scientific%20name%22%2C%22columnName%22%3A%22Scientific%20name%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Common%20name%22%2C%22columnName%22%3A%22Common%20name%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%5D%7D" role="button">Browse &raquo;</a></p>
+          <p><a class="btn btn-default" target="_" href="http://aws-ckan-001:3333/project?project=2197168485958&ui=%7B%22facets%22%3A%5B%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Scale%22%2C%22columnName%22%3A%22Scale%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22DPaW%20region%22%2C%22columnName%22%3A%22DPaW%20region%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Schedule%22%2C%22columnName%22%3A%22Schedule%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Scientific%20name%22%2C%22columnName%22%3A%22Scientific%20name%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%2C%7B%22c%22%3A%7B%22type%22%3A%22list%22%2C%22name%22%3A%22Common%20name%22%2C%22columnName%22%3A%22Common%20name%22%2C%22expression%22%3A%22value%22%2C%22omitBlank%22%3Afalse%2C%22omitError%22%3Afalse%2C%22selectBlank%22%3Afalse%2C%22selectError%22%3Afalse%2C%22invert%22%3Afalse%7D%2C%22o%22%3A%7B%22sort%22%3A%22name%22%7D%2C%22s%22%3A%5B%5D%7D%5D%7D" role="button">Browse &raquo;</a></p>
         </div><!-- /.col-lg-3 -->
         <div class="col-lg-3">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" 
-          alt="Threatened Flora image" style="width: 140px; height: 140px;">
+          <img class="img-circle img140" alt="Threatened Flora image"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==">
           <h2>Flora</h2>
           <p>Browse Threatened Flora data</p>
-          <p><a class="btn btn-default" href="#threats" role="button">Browse &raquo;</a></p>
+          <p><a class="btn btn-default" target="_"  href="" role="button">Browse &raquo;</a></p>
         </div><!-- /.col-lg-3 -->
         <div class="col-lg-3">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" 
-          alt="Threatened Ccommunities image" style="width: 140px; height: 140px;">
+          <img class="img-circle img140" alt="Threatened Communities image" 
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==">
           <h2>Communities</h2>
           <p>Browse Threatened Communities data</p>
-          <p><a class="btn btn-default" href="#strategic" role="button">Browse &raquo;</a></p>
+          <p><a class="btn btn-default" target="_" href="" role="button">Browse &raquo;</a></p>
         </div><!-- /.col-lg-3 -->
         <div class="col-lg-3">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" 
-          alt="Threatened Wetlands image" style="width: 140px; height: 140px;">
+          <img class="img-circle img140" alt="Threatened Wetlands image"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==">
           <h2>Wetlands</h2>
           <p>Browse Threatened Communities data</p>
-          <p><a class="btn btn-default" href="#strategic" role="button">Browse &raquo;</a></p>
+          <p><a class="btn btn-default" target="_"  href="" role="button">Browse &raquo;</a></p>
         </div><!-- /.col-lg-3 -->
       </div><!-- /.row -->
       
-      
       </div>
       <p class="pull-right"><a href="#">Back to top</a></p>
+      <div style="margin-bottom: 500px;" id="vertical_spacer_data">
 
       <hr class="featurette-divider">
       
