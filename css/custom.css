@@ -4,3 +4,17 @@
 .question {font-weight: bold;}
 .jql {color: #999;}
 .img140 {width: 140px; height: 140px;}
+
+
+/* Carousel base class: override 500px height */
+.carousel {
+  height: 400px;
+}
+
+.carousel .item {
+  height: 400px;
+}
+.carousel-inner > .item > img {
+  height: 400px;
+}
+
