@@ -82,11 +82,11 @@
       }); */
         
       /* Approach 4: ReclineJS reads CSV from CKAN resource URL */
-      recline.Backend.DataProxy.timeout = 10000; // patience you must have if big the data is
-      var faunacsv = new recline.Model.Dataset({url: fauna_csv_url, rows: 10000, backend: 'csv'});
+      //recline.Backend.DataProxy.timeout = 10000; // patience you must have if big the data is
+      //var faunacsv = new recline.Model.Dataset({url: fauna_csv_url, rows: 10000, backend: 'csv'});
       // once data is fetched it will be stored in a local MemoryStore so further querying will not involve the DataProxy
       
-/* To enable the ReclineJS dataviewer at #faunadata, enable the next line */
+/* To enable the ReclineJS dataviewer at #faunadata, enable the next line 
       //faunacsv.fetch();
       
       // Choose from simple Grid view:
@@ -119,7 +119,6 @@
             }
           })
         }
-        /*,
         { 
           // it's only text data, there's not much to plot 
           id: 'graph',
