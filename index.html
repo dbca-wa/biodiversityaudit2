@@ -88,6 +88,8 @@
             <div class="carousel-caption">
               <h1>Biodiversity Audit II</h1>
               <h3>making biodiversity asset trends and metrics available to decision makers</h3>
+              <p>through a snapshot of biodiversity knowledge, conservation priorities, research needs, management requirements</p> 
+              <p>on a state-wide and IBRA subregional scale</p>
               <p><a class="btn btn-lg btn-primary" 
               title="Learn more about the background of the Biodiversity Audit II (opens in a new tab)."
               href="http://internal-data.dpaw.wa.gov.au/dataset/biodiversity" 
@@ -162,14 +164,33 @@
       <hr class="featurette-divider">
 
       <div class="row featurette" id="regional">
-      <h2 class="featurette-heading">Regional profiles <span class="text-muted">of bioregions</span></h2>
+      <h2 class="featurette-heading">Regional profiles <span class="text-muted"></span></h2>
       <p class="lead">Discover the biodiversity of terrestrial <!--and marine -->bioregions.</p>
       
         <div class="col-md-7">
           
           <p>Terrestrial biodiversity assets are summarised by IBRA subregions.</p>
           <!--p>Marine biodiversity assets are summarised by Marine Protected Areas.</p-->
-          <p>Click any terrestrial region <!--or Marine Protected Area--> to view details.</p>
+          <p>Click any terrestrial region <!--or Marine Protected Area--> to access:</p>
+          <ul>
+            <li>A spatial profile:</li>
+            <ul>
+              <li>Description and characteristics of the IBRA subregion</li>
+              <li>History of land degradation</li>
+              <li>Decree of intactness, remnant vegetation, current status and trends</li>
+              <li>Tenure and land uses, current status and trends</li>
+              <li>Past, present and projected climate</li>
+            </ul>
+            <li>Interactive data portals to view and filter:</li>
+            <ul>
+              <li>Threatened and priority species (Fauna and Flora)</li>
+              <li>Threatened and priority ecological communities</li>
+              <li>Wetlands</li>
+            </ul>
+          </ul>
+          
+          
+          
           <!--p>Browse spatial profiles on the data catalogue 
           <a class="btn btn-default btn-xs" target="_"
             href="http://internal-data.dpaw.wa.gov.au/dataset?tags=regional_profile" 
@@ -231,10 +252,22 @@
       <div class="row featurette" id="threats">
       <h2 class="featurette-heading">Assets, Threats and Management <span class="text-muted"></span></h2>
             
-      <p class="lead">Browse threatened taxa, communities and wetlands by region and taxon.</p>
-      <p>Select the region (scale) and/or taxon (scientific of common name) of interest to view our latest 
-      knowledge of ecological details, threats and management actions about a taxon in a region. 
-      Click the button to open the same data in a new tab for greater browsing comfort.</p>
+      <p class="lead">Browse threatened taxa, communities and wetlands by region and taxon:</p>
+      <ul>
+        <li>Current condition and conservation status</li>
+        <li>Past pressures</li>
+        <li>Future threats</li>
+        <li>Research gaps</li>
+        <li>Management requirements</li>
+        <li>Relevant management or recovery plans</li>
+        <li>Notes on species diversity, endemicity, climate refugia</li>
+      </ul>
+      
+      
+      <p>The filtered view is an advanced, interactive data portal which allows to select the region (scale) 
+      and/or taxon (scientific of common name) and conservation status of interest 
+      to view our latest knowledge of ecological details, threats and management actions about a taxon in a region.
+      Be aware that data come from a read-only source and any changes will be discarded. Do not use this interface to update data.</p>
 
       <!-- Four columns of links to data -->
       <div class="row">
@@ -364,6 +397,18 @@
         $(function() {
             $('#trends_metrics').load('html/trends_metrics.html');
         });
+    </script>
+    
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-59044854-1', 'auto');
+      ga('send', 'pageview');
+
     </script>
 
 
