@@ -130,8 +130,8 @@
           id: 'map',
           label: 'Map',
           view: new recline.View.Map({  model: faunacsv })
-        }*/
-      ];
+        }
+      ];*/
      
 /* To enable the RelineJS dataviewer for #faunadata, enable the next line */
      //var multiView = new recline.View.MultiView({ model: faunacsv, el: $('#faunadata'), views: views });

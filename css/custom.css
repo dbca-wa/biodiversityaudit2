@@ -1,3 +1,8 @@
+/* Navbar z-floats over map elements */
+.navbar > .container {
+  z-index: 10;
+}
+
 /* Carousel height override */
 .carousel, 
 .carousel .item,
