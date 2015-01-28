@@ -22,11 +22,10 @@ L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
   id: 'examples.map-i875mjb7'
 }).addTo(map);
 
-/* Terrestrial layer: IBRA map */
+/* GeoJSON layer: IBRA map */
 var ibra_url = "http://internal-data.dpaw.wa.gov.au/dataset/" + 
                 "10b54e2b-7226-4dfb-b3ef-30264cd0670a/resource/" + 
                 "d32d65a1-7ebe-4457-a208-03fd9f1a456f/download/ibra7.geojson"
-
 
 $.getJSON(ibra_url, function(data) {
   var terrestrial_assets = L.geoJson(data, {
@@ -35,7 +34,7 @@ $.getJSON(ibra_url, function(data) {
   terrestrial_assets.addTo(map);
 });
 
-/* Marine layer: MPA map */
+/* GeoJSON layer: MPA map */
 var parks_url = "http://internal-data.dpaw.wa.gov.au/dataset/" + 
                 "0988fd6e-ee4f-47f1-8081-933b71219b51/resource/" + 
                 "9e8e00b6-3e07-4291-8f89-49b95cc3237e/download/cpr.json"

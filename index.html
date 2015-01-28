@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Explore the conservation status, threats, and management of Western Australia's biodiversity assets ">
+    <meta name="description" content="Explore the conservation status, threats, and management of Western Australia's biodiversity assets">
     <meta name="author" content="Florian.Mayer@dpaw.wa.gov.au">
     <link rel="icon" href="http://www.dpaw.wa.gov.au/templates/dpaw/favicon.ico">
 
     <title>WA Biodiversity Assets</title>
     
-    <!-- Page based on template http://getbootstrap.com/examples/carousel/ -->
+    <!-- Page layout based on template http://getbootstrap.com/examples/carousel/ -->
     
-    <!-- download https://github.com/okfn/recline/zipball/master and extract as recline/ next to this file -->
+    <!-- ReclineJS (if needed): https://github.com/okfn/recline/zipball/master = vendor/recline/ -->
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -21,19 +21,20 @@
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
      
-    <!-- Recline CSS -->
-    <link rel="stylesheet" href="recline/css/flot.css" />
-    <link rel="stylesheet" href="recline/css/grid.css" />
-    <link rel="stylesheet" href="recline/css/map.css" />
-    <link rel="stylesheet" href="recline/css/multiview.css" />
-    <link rel="stylesheet" href="recline/css/slickgrid.css" />
-    <link rel="stylesheet" href="recline/css/timeline.css" />
+    <!-- Recline CSS
+    <link rel="stylesheet" href="vendor/recline/css/flot.css" />
+    <link rel="stylesheet" href="vendor/recline/css/grid.css" />
+    <link rel="stylesheet" href="vendor/recline/css/map.css" />
+    <link rel="stylesheet" href="vendor/recline/css/multiview.css" />
+    <link rel="stylesheet" href="vendor/recline/css/slickgrid.css" />
+    <link rel="stylesheet" href="vendor/recline/css/timeline.css" />
+    -->
     
     <!-- Carousel template CSS -->
-    <link href="http://getbootstrap.com/examples/carousel/carousel.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://getbootstrap.com/examples/carousel/carousel.css" />
     
     <!-- Custom CSS -->
-    <link href="css/custom.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/custom.css" />
   </head>
   
 <!-- navbar -->
@@ -401,44 +402,30 @@
 
     </div><!-- /.container -->
 
-<!-- /page content  -->
+    <!-- /page content  -->
 
-<!-- 3rd party JS libraries  -->
-    <!-- main third party dependencies -->
+    <!-- JS resources  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <script src="http://getbootstrap.com/assets/js/docs.min.js"></script>
     
-    <!-- recline -->
+    <!-- recline>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>    
-
-    <!-- recline slickgrid-->
-    <script src="recline/vendor/slickgrid/2.0.1/jquery.event.drag-2.2.js"></script>
-    <script src="recline/vendor/slickgrid/2.0.1/jquery.event.drop-2.2.js"></script>
-
-    <script type="text/javascript" src="recline/vendor/slickgrid/2.0.1/jquery.event.drag-2.0.min.js"></script>
-    <!--script type="text/javascript" src="recline/vendor/slickgrid/2.0.1/slick.grid.min.js"></script-->
-    <script type="text/javascript" src="recline/vendor/slickgrid/2.0.1/slick.core.js"></script>
-    <script type="text/javascript" src="recline/vendor/slickgrid/2.0.1/slick.formatters.js"></script>
-    <script type="text/javascript" src="recline/vendor/slickgrid/2.0.1/slick.editors.js"></script>
-    <script type="text/javascript" src="recline/vendor/slickgrid/2.0.1/slick.grid.js"></script>
-
-    <script type="text/javascript" src="recline/vendor/slickgrid/2.0.1/plugins/slick.rowselectionmodel.js"></script>
-    <script type="text/javascript" src="recline/vendor/slickgrid/2.0.1/plugins/slick.rowmovemanager.js"></script>
-
-
-    <script type="text/javascript" src="recline/vendor/moment/2.0.0/moment.js"></script>
-    <script type="text/javascript" src="recline/vendor/timeline/js/timeline.js"></script>
-    <!-- /recline slickgrid-->
-
-    <!-- reclinejs backend code, here for csv backend -->
+    <script type="text/javascript" src="recline/vendor/slickgrid/2.0.1/jquery.event.drag-2.2.js"></script>
+    <script type="text/javascript" src="recline/vendor/slickgrid/2.0.1/jquery.event.drop-2.2.js"></script>
+    <script type="text/javascript" src="vendor/recline/vendor/slickgrid/2.0.1/jquery.event.drag-2.0.min.js"></script>
+    <script type="text/javascript" src="vendor/recline/vendor/slickgrid/2.0.1/slick.grid.min.js"></script>
+    <script type="text/javascript" src="vendor/recline/vendor/slickgrid/2.0.1/slick.core.js"></script>
+    <script type="text/javascript" src="vendor/recline/vendor/slickgrid/2.0.1/slick.formatters.js"></script>
+    <script type="text/javascript" src="vendor/recline/vendor/slickgrid/2.0.1/slick.editors.js"></script>
+    <script type="text/javascript" src="vendor/recline/vendor/slickgrid/2.0.1/slick.grid.js"></script>
+    <script type="text/javascript" src="vendor/recline/vendor/moment/2.0.0/moment.js"></script>
+    <script type="text/javascript" src="vendor/recline/vendor/timeline/js/timeline.js"></script>
     <script type="text/javascript" src="http://okfnlabs.org/csv.js/csv.js"></script>
-    
-    <!-- reclinejs -->
     <script type="text/javascript" src="http://okfnlabs.org/recline/dist/recline.js"></script>
     <!-- /recline -->
     
@@ -450,4 +437,3 @@
 
   </body>
 </html>
-
