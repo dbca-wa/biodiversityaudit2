@@ -35,6 +35,5 @@ var mpa = new L.GeoJSON.AJAX(mpa_url, {
     }); //.addTo(map);
     
 /* Layer controls */
-var basemaps = {"OpenStreetMap": osm};
 var overlays = {"Terrestrial assets": ibra, "Marine assets": mpa};
-var controls = L.control.layers(basemaps, overlays).addTo(map);
+var controls = L.control.layers(null, overlays).addTo(map);
