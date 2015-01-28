@@ -20,6 +20,9 @@
     
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+
+    <!--<link rel="stylesheet" href="//cdn.datatables.net/1.10.4/css/jquery.dataTables.css" />-->
+    <link rel="stylesheet" href="css/jquery.dataTables.css" />
      
     <!-- Recline CSS
     <link rel="stylesheet" href="vendor/recline/css/flot.css" />
@@ -60,7 +63,7 @@
                 <li><a href="#">Home</a></li>  
                 <li><a href="#biogeography">Spatial profiles</a></li>
                 <li><a href="#threats">Assets, Threats & Management</a></li>
-                <li><a href="#strategic">Trends & Metrics</a></li>
+                <li><a href="#trends_metrics">Trends & Metrics</a></li>
               </ul>
             </div>
           </div>
@@ -96,7 +99,7 @@
           <div class="container">
             <div class="carousel-caption">
               <h1>Discover the data</h1>
-              <h3>Data are archived, discoverable and accessible in our data catalogue.</p>
+              <h3>Data are archived, discoverable and accessible in our data catalogue.</h3>
               <p><a class="btn btn-lg btn-primary" href="http://internal-data.dpaw.wa.gov.au/group/biodiversity-audit" 
               role="button" target="_">Discover the data</a></p>
             </div>
@@ -149,7 +152,7 @@
           alt="Strategic questions about threats and trends">
           <h2>Trends and Metrics</h2>
           <p>Explore the status and trends of biodiversity assets.</p>
-          <p><a class="btn btn-default" href="#strategic" role="button">Get the answers &raquo;</a></p>
+          <p><a class="btn btn-default" href="#trends_metrics" role="button">Get the answers &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
       <!-- /Section: Three facets -->
@@ -281,111 +284,14 @@
       
       </div>
       <p class="pull-right"><a href="#">Back to top</a></p>
-      <div style="margin-bottom: 500px;" id="vertical_spacer_data">
       <!-- /Section: Featurette "data" -->
       
       <!-- Section: Featurette "trends" -->
       <hr class="featurette-divider">
       
-      <div class="row featurette" id="strategic">
-       <h2 class="featurette-heading">Trends and Metrics <span class="text-muted"></span></h2>
-       
-       <p class="lead">Find trends and metrics by topic.</p>
-       
-       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-       
-          <!-- Communities at risk -->
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingEC">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseEC" aria-expanded="false" aria-controls="collapseEC">
-                  Terrestrial Biodiversity Assets – Ecological communities at risk
-                </a>
-                <small class="pull-right text-muted">Table 10</small>
-              </h4>
-            </div>
-            <div id="collapseEC" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingEC">
-              <div class="panel-body">
-         
-                <!-- Question 33 -->
-                <div class="question">How many extant Threatened Ecolocical Communities (TEC) occur in WA?</div>
-                <div class="jql">The number of distinct ecological communities (EC_COMMUNITYNAME)
-                with Conservation status (EC_STATUSWA) 'vulnerable', 'endangered' or 'critically endangered' 
-                on Scale 'Western Australia' is:</div>
-                <div class="answer" id="a33">calculating... (drum roll)</div>
-                <!-- /Question 33 -->
+      <div class="row featurette" id="trends_metrics">
 
-              </div>
-            </div>
-          </div>
-          
-          <!-- Taxa at risk -->
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingTaxa">
-              <h4 class="panel-title">
-                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTaxa" 
-                aria-expanded="false" aria-controls="collapseTaxa">
-                  Terrestrial Biodiversity Assets – Taxa at risk
-                </a>
-                <small class="pull-right text-muted">Table 11</small>
-              </h4>
-            </div>
-            <div id="collapseTaxa" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTaxa">
-              <div class="panel-body">
-              
-                 <!-- Question 59 -->
-                <div class="question" id="q59">How many extant Threatened Fauna and Flora Taxa occur in WA?</div>
-                <div class="jql" id="jql59">The sum of taxa from fauna, flora, comm, wetlands
-                of regions (rows: ibra sub) by conservation status (cols: cr, en, vv, total).</div>
-                <div class="answer" id="a59">calculating...</div>
-                
-                <!-- /Question 59 -->
-                
-                                
-              </div>
-            </div>
-          </div>
-          
-          <!-- Aquatic Ecosystems -->
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingSwamp">
-              <h4 class="panel-title">
-                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" 
-                href="#collapseSwamp" aria-expanded="false" aria-controls="collapseSwamp">
-                 Terrestrial Biodiversity Assets - Aquatic Ecosystems
-                </a>
-                <small class="pull-right text-muted"></small>
-              </h4>
-            </div>
-            <div id="collapseSwamp" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSwamp">
-              <div class="panel-body">
-                Questions and answers.
-              </div>
-            </div>
-          </div>
-          
-          <!-- Priority Flora -->
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingPF">
-              <h4 class="panel-title">
-                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsePF" 
-                aria-expanded="false" aria-controls="collapsePF">
-                  Priority Flora
-                </a>
-                <small class="pull-right text-muted"></small>
-              </h4>
-            </div>
-            <div id="collapsePF" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingPF">
-              <div class="panel-body">
-                Questions and answers.
-              </div>
-            </div>
-          </div>
-          
-        </div><!-- /panel-group -->
-        
-      <div style="height:300px;" id="hacky-spacer">
-      </div><!-- /stratrow -->
+      </div><!-- /#trends_metrics -->
 
       <hr class="featurette-divider">
       <!-- /Section: Featurette "trends" -->
@@ -411,6 +317,8 @@
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <script src="http://getbootstrap.com/assets/js/docs.min.js"></script>
     <script src="js/leaflet.ajax.min.js"></script>
+    <!--<script src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>-->
+    <script src="js/jquery.dataTables.js"></script>
     
     <!-- recline>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
@@ -433,8 +341,15 @@
     <!-- Leaflet JS map definition  -->    
     <script type="text/javascript" src="js/leaflet_custom.js"></script>
 
-    <!-- Calculating answers to strategic questions: ckan_custom.js -->
     <script type="text/javascript" src="js/ckan_custom.js"></script>
+    <script type="text/javascript" src="js/trends_metrics_custom.js"></script>
+
+    <script>
+        $(function() {
+            $('#trends_metrics').load('html/trends_metrics.html');
+        });
+    </script>
+
 
   </body>
 </html>
