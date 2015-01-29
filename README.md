@@ -1,3 +1,5 @@
+[![wercker status](https://app.wercker.com/status/ee3688820dcb795b0c1e23902ac38eee/m "wercker status")](https://app.wercker.com/project/bykey/ee3688820dcb795b0c1e23902ac38eee)
+
 # biodiversity-explorer
 An interactive web portal to explore the conservation status, threats, and management of Western Australia's biodiversity assets.
 
