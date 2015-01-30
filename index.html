@@ -62,9 +62,9 @@
             <div id="navbar" class="collapse navbar-collapse navbar-right">
               <ul class="nav navbar-nav">
                 <li><a href="#">Home</a></li>  
-                <li><a href="#regional">Regional profiles</a></li>
-                <li><a href="#threats">Assets, Threats & Management</a></li>
-                <li><a href="#trends_metrics">Trends & Metrics</a></li>
+                <li><a href="#regional" title="Jump to section Regional Profiles">Regional Profiles</a></li>
+                <li><a href="#threats" title="Jump to section Assets, Threats & Management">Assets, Threats & Management</a></li>
+                <li><a href="#trends_metrics" title="Jump to section Trends & Metrics">Trends & Metrics</a></li>
               </ul>
             </div>
           </div>
@@ -89,10 +89,9 @@
               <h1>Biodiversity Audit II</h1>
               <h3>a snapshot of biodiversity knowledge, conservation priorities, research needs, management requirements</h3>
               <p>making biodiversity asset trends and metrics available to decision makers</p> 
-              <p><a class="btn btn-lg btn-primary" 
+              <p><a class="btn btn-lg btn-primary" role="button" target="_"
               title="Learn more about the background of the Biodiversity Audit II (opens in a new tab)."
-              href="http://internal-data.dpaw.wa.gov.au/dataset/biodiversity" 
-              role="button" target="_">Learn more</a></p>
+              href="http://internal-data.dpaw.wa.gov.au/dataset/biodiversity">Learn more</a></p>
             </div>
           </div><!-- /.container -->
         </div>
@@ -115,8 +114,9 @@
             <div class="carousel-caption">
               <h1>Behind the scenes</h1>
               <h3>The datasets supporting this portal are archived, discoverable and accessible in our data catalogue.</h3>
-              <p><a class="btn btn-lg btn-primary" href="http://internal-data.dpaw.wa.gov.au/group/biodiversity-audit" 
-              role="button" target="_">Discover the data</a></p>
+              <p><a class="btn btn-lg btn-primary" role="button" target="_" 
+                title="View a list Biodiversity Audit II datasets and documents (opens in a new tab)."
+                href="http://internal-data.dpaw.wa.gov.au/group/biodiversity-audit">Discover the data</a></p>
             </div>
           </div>
         </div>
@@ -148,31 +148,39 @@
       <!-- Section: Three facets -->
       <div class="row">
         <div class="col-lg-4">
-          <img class="img-circle img140" src="img/scientist_doing_science.jpg" 
-          alt="Scientist Alan Burbidge doing science. Photo (c) Stephen van Leeuwen">
-          <h2>Regional profiles</h2>
+          <a href="#regional" title="Jump to section Regional Profiles">
+            <img class="img-circle img140" src="img/scientist_doing_science.jpg"
+              alt="Scientist Alan Burbidge doing science. Photo (c) Stephen van Leeuwen" />
+          </a>
+          <h2>Regional Profiles</h2>
           <p>Explore spatial, climatic and biodiversity characteristics of IBRA subregions of Western Australia.</p>
-          <p><a class="btn btn-default" href="#regional" role="button">Explore &raquo;</a></p>
+          <p><a class="btn btn-default" href="#regional" role="button" 
+            title="Jump to section Regional Profiles">Explore &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle img140" src="img/firenado.png" 
-          alt="shit's on fire yo">
+          <a href="#threats" title="Jump to section Assets, Threats and Management">
+            <img class="img-circle img140" src="img/firenado.png" alt="Threats of burning urgency" />
+          </a>
           <h2>Assets, Threats and Management</h2>
           <p>View threats and management implications for any asset at any region in an interactive, 
           searchable summary of threatened taxa assessments.</p>
-          <p><a class="btn btn-default" href="#threats" role="button">Dive into the data &raquo;</a></p>
+          <p><a class="btn btn-default" href="#threats" role="button" 
+            title="Jump to section Assets, Threats and Management">Dive into the data &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle img140" src="img/band_meeting.jpg"
-          alt="Strategic questions about threats and trends">
+          <a href="#trends_metrics" title="Jump to section Trends & Metrics">        
+            <img class="img-circle img140" src="img/band_meeting.jpg" href="#trends_metrics"
+              alt="Strategic questions about threats and trends" />
+          </a>
           <h2>Trends and Metrics</h2>
           <p>Explore the status and trends of biodiversity assets.</p>
-          <p><a class="btn btn-default" href="#trends_metrics" role="button">Get the answers &raquo;</a></p>
+          <p><a class="btn btn-default" href="#trends_metrics" role="button" 
+            title="Jump to section Trends & Metrics">Get the answers &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
       <!-- /Section: Three facets -->
 
-      <!-- Section: Featurette "map" -->
+      <!-- Section: "Regional profiles" -->
       <hr class="featurette-divider">
 
       <div class="row featurette" id="regional">
@@ -255,12 +263,12 @@
         </div>
       </div>
       <p class="pull-right"><a href="#">Back to top</a></p>
-      <!-- /Section: Featurette "map" -->
+      <!-- /Section: "Regional profiles" -->
 
-      <!-- Section: Featurette "data" -->
+      <!-- Section: "Assets, Threats and Management" -->
       <hr class="featurette-divider">
       <div class="row featurette" id="threats">
-      <h2 class="featurette-heading">Assets, Threats and Management <span class="text-muted"></span></h2>
+      <h2 class="featurette-heading">Assets, Threats & Management <span class="text-muted"></span></h2>
             
       <p class="lead">Browse threatened taxa, communities and wetlands by region and taxon</p>
       <ul>
@@ -341,9 +349,9 @@
       
       </div>
       <p class="pull-right"><a href="#">Back to top</a></p>
-      <!-- /Section: Featurette "data" -->
+      <!-- /Section: "Assets, Threats and Management" -->
       
-      <!-- Section: Featurette "trends" -->
+      <!-- Section: "trends" -->
       <hr class="featurette-divider">
       
       <div class="row featurette" id="trends_metrics">
@@ -351,7 +359,7 @@
       </div><!-- /#trends_metrics -->
 
       <hr class="featurette-divider">
-      <!-- /Section: Featurette "trends" -->
+      <!-- /Section: "trends" -->
 
 
       <!-- Footer -->
