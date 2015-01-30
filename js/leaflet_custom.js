@@ -37,3 +37,22 @@ var mpa = new L.GeoJSON.AJAX(mpa_url, {
 /* Layer controls */
 var overlays = {"Terrestrial assets": ibra, "Marine assets": mpa};
 var controls = L.control.layers(null, overlays).addTo(map);
+
+/* Custom Info */
+var info = L.control();
+
+info.onAdd = function (map) {
+    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+    this.update();
+    return this._div;
+};
+
+// method that we will use to update the control based on feature properties passed
+info.update = function (props) {
+    this._div.innerHTML = '<h4>IBRA Subregion</h4>' +  (props ?
+        '<b>' + props.SUB_CODE + ' ' + props.SUB_NAME + '</b><br />' + 
+        'IBRA region ' + props.REG_CODE + ' ' + props.REG_NAME
+        : 'Hover over a region');
+};
+
+info.addTo(map);

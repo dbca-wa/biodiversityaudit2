@@ -29,7 +29,7 @@
     //sort (string) – comma separated field names with ordering e.g.: "fieldname1, fieldname2 desc"
   };
   
-  /* Approach 1: One AJAX call to CKAN's datastore_search populates a total number and a data DOM element */
+  /* Approach 1: One AJAX call to CKAN's datastore_search populates a total number and a data DOM element 
   $.ajax({
     url: ckan_url,
     data: data_33,
@@ -46,9 +46,9 @@
     q:'Western Autralia',
     //fields:'Scale, Scientific name',
     limit: 10000,
-  };
+  }; */
   
-  /* Approach 1: Question 57 as datastore_search query */
+  /* Approach 1: Question 57 as datastore_search query
   $.ajax({
     url: ckan_url,
     data: data_57,
@@ -57,7 +57,7 @@
     success: function(data) {
       $("#a57")[0].innerHTML = (data.result.total);
     }
-  });
+  });*/
  
  /* Approach 2: Question 57 as CKAN Datastore SQL API call 
  var sql_57 = 'SELECT%20*%20from%20%'+ res_id + '%22%20WHERE%20Scale%20LIKE%20%27Western%20Australia%27';
