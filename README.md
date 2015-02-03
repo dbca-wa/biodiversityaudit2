@@ -3,7 +3,7 @@
 # biodiversity-explorer
 An interactive web portal to explore the conservation status, threats, and management of Western Australia's biodiversity assets.
 
-This project contains a static webpage (with JSONP queries fetching data from a CKAN data catalogue), and is hosted on the related [github page](http://florianm.github.io/biodiversity-explorer/).
+This project contains a static webpage (with JSONP queries fetching data from a CKAN data catalogue).
 
 ## Dual Purpose
 This project serves two purposes. Firstly, it makes information about the conservation status and trends of Western Australian biodiversity assets available to decision makers and planners. The data that are shown live in a CKAN data catalogue. In this case, the data are sourced from an intranet-only CKAN instance and will only be visible to visitors from inside the intranet of the Department of Parks and Wildlife, Western Australia.
