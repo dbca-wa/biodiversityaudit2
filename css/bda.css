@@ -4,7 +4,7 @@
 }
 
 /* Carousel height override */
-.carousel, 
+.carousel,
 .carousel .item,
 .carousel-inner > .item > img {height: 400px;}
 
@@ -20,7 +20,7 @@
 
 /* Round images are 140px by 140px */
 .img140 {
-  width: 140px; 
+  width: 140px;
   height: 140px;
 }
 
