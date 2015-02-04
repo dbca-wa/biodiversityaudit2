@@ -128,7 +128,6 @@ bda.tnm = (function () {
                 all: filtered
             };
         }
-
         function summarize(records) {
             var result = _(records)
                 .map(function (r) {
@@ -156,7 +155,6 @@ bda.tnm = (function () {
                 .value();
             return result;
         }
-
         function display(data) {
             var table_options = {paging: true,
                 info: true,
