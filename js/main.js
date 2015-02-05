@@ -1,23 +1,14 @@
-window.Router = Backbone.Router.extend({
-
-    routes: {
-        "": "home",
-        "regions": "regions",
-        "species": "species",
-        "tnm": "tnm",
-        "data": "data"
-    },
-
-    initialize: function () {
-        console.log("Init Router");
-        this.headerView = new HeaderView();
-        $('.header').html(this.headerView.render().el);
+// Define shortcut alias
+require.config({
+    paths: {
+        jquery: 'lib/jquery.min',
+        underscore: 'lib/lodash.min',
+        backbone: 'lib/backbone-min',
+        leaflet: 'lib/leaflet',
+        templates: '../templates'
     }
-
 });
 
-templateLoader.load(["header", "home", "regions", "species", "data", "tnm"],
-    function () {
-        app = new Router();
-        Backbone.history.start();
-    });
+require(['app'], function (App) {
+    App.initialize();
+});
