@@ -1,9 +1,15 @@
 define([
     'backbone',
     'views/headerView',
-    'views/footerView'
+    'views/footerView',
+    'views/homeView',
+    'views/regionsView',
+    'views/speciesView',
+    'views/tnmView',
+    'views/dataView'
 
-], function (Backbone, HeaderView, FooterView) {
+], function (Backbone,
+             HeaderView, FooterView, HomeView, RegionsView, SpeciesView, TnmView, DataView) {
 
     var Router = Backbone.Router.extend({
         routes: {
@@ -12,7 +18,10 @@ define([
             "regions": "regions",
             "species": "species",
             "tnm": "tnm",
-            "data": "data"
+            "data": "data",
+
+            // Default
+            "*actions": "defaultRoute"
 
         }
     });
@@ -26,24 +35,30 @@ define([
 
 
         router.on('route:home', function () {
-            console.log('route: home');
+            new HomeView().render();
         });
 
         router.on('route:regions', function () {
-            console.log('route: regions');
+            new RegionsView().render();
         });
 
         router.on('route:species', function () {
-            console.log('route: species');
+            new SpeciesView().render();
         });
 
         router.on('route:tnm', function () {
-            console.log('route: tnm');
+            new TnmView().render();
         });
 
         router.on('route:data', function () {
-            console.log('route: data');
+            new DataView().render();
         });
+
+        router.on('route:defaultRoute', function (actions) {
+            console.log("route - default!!");
+            new HomeView().render();
+        });
+
 
         Backbone.history.start();
     }

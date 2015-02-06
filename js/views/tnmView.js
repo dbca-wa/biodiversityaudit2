@@ -2,15 +2,11 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'text!templates/footer.html'
+    'text!templates/tnm.html'
 ], function ($, _, Backbone, template) {
 
     return Backbone.View.extend({
-        el: '#footer',
-
-        initialize: function () {
-            this.render();
-        },
+        el: '#content',
 
         render: function () {
             this.$el.html(_.template(template, {}));
