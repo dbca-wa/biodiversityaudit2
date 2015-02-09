@@ -54,7 +54,7 @@ define([
             new DataView().render();
         });
 
-        router.on('route:defaultRoute', function (actions) {
+        router.on('route:defaultRoute', function () {
             console.log("route - default!!");
             new HomeView().render();
         });

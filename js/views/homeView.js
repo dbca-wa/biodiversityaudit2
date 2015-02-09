@@ -3,7 +3,7 @@ define([
     'underscore',
     'backbone',
     'bootstrap',
-    'app/dataApi',
+    '../app/dataFacade',
     'text!templates/home.html'
 ], function ($, _, Backbone, bootsrap, api, template) {
 
