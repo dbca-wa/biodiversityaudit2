@@ -5,7 +5,7 @@ require.config({
         underscore: 'lib/lodash.min',
         backbone: 'lib/backbone-min',
         leaflet: 'lib/leaflet',
-        dataTable: 'lib/jquery.dataTables',
+        datatables: 'lib/jquery.dataTables',
         recline: 'lib/recline',
         bootstrap: 'lib/bootstrap.min',
         templates: '../templates'
@@ -16,9 +16,9 @@ require.config({
         bootstrap: {
             deps: ['jquery']
         },
-        dataTable: {
-            deps: ['jquery']
-        },
+//        dataTable: {
+//            deps: ['jquery']
+//        },
         recline: {
             deps: ['jquery', 'underscore', 'backbone', 'lib/csv'],
             init: function () {

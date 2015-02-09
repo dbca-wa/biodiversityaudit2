@@ -5,7 +5,9 @@ define([
     'text!templates/tnm.html',
     'app/dataFacade',
     'app/tableFacade'
-], function ($, _, Backbone, template, dataFacade, tables) {
+], function ($, _, Backbone, template,
+             dataFacade,
+             tables) {
     function not_empty(s) {
         return s && s.trim().length > 0;
     }
@@ -50,15 +52,8 @@ define([
             return result;
         }
         function display(data) {
-            var table_options = {paging: true,
-                info: true,
-                searching: true,
-                scrollCollapse: true,
-                processing: true,
-                deferRender: true,
-                language: {"search": "Filter:"} // change the label of the search box to filter};
-            };
-            var columns_summary = [
+            var tableOptions = {  }; //use default
+            var colsSummary = [
                 {
                     title: 'Scale',
                     width: "0%",
@@ -93,7 +88,7 @@ define([
                     data: 'Total'
                 }
             ];
-            var columns_details = [
+            var colsDetails = [
                 {
                     title: 'Scale',
                     width: "0%",
@@ -116,10 +111,10 @@ define([
                 }
 
             ];
-            var table_summary = tables.init_table('#table_q59_summary', table_options, columns_summary),
-                table_details = tables.init_table('#table_q59_details', table_options, columns_details);
-            table_summary.populate(data['summary']);
-            table_details.populate(data['all']);
+            var tableSummary = tables.initTable('#table_q59_summary', tableOptions, colsSummary),
+                tableDetails = tables.initTable('#table_q59_details', tableOptions, colsDetails);
+            tableSummary.populate(data['summary']);
+            tableDetails.populate(data['all']);
         }
         var params = {
             fields: "Scale, Scientific name,Common name,Conservation status WA",
