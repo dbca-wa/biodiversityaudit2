@@ -5,18 +5,18 @@ define([
     'text!templates/tnm.html',
     'app/dataFacade',
     'app/tableFacade'
-], function ($, _, Backbone, template,
-             dataFacade,
-             tables) {
+], function ($, _, Backbone, template, dataFacade, tables) {
     function not_empty(s) {
         return s && s.trim().length > 0;
     }
 
     function show_Q59() {
-        function format (records) {
+        function format(records) {
             // filter empty Conservation status WA
             var filtered = _(records)
-                .filter(function (r) { return not_empty(r['Conservation status WA'])})
+                .filter(function (r) {
+                    return not_empty(r['Conservation status WA'])
+                })
                 .value();
             var summary = summarize(filtered);
             return {
@@ -24,6 +24,7 @@ define([
                 all: filtered
             };
         }
+
         function summarize(records) {
             var result = _(records)
                 .map(function (r) {
@@ -31,13 +32,21 @@ define([
                 })
                 .groupBy('Scale')
                 .map(function (values, scale) {
-                    var cr_count=0, en_count=0, vu_count=0, error_count = 0;
+                    var cr_count = 0, en_count = 0, vu_count = 0, error_count = 0;
                     _.forEach(values, function (v) {
                         var status = v['Conservation status WA'].trim().toLowerCase();
-                        if (_.startsWith(status, 'cr')) { cr_count +=1; }
-                        else if (_.startsWith(status, 'en')) { en_count +=1;}
-                        else if (_.startsWith(status, 'vu')) { vu_count +=1;}
-                        else { error_count +=1;}
+                        if (_.startsWith(status, 'cr')) {
+                            cr_count += 1;
+                        }
+                        else if (_.startsWith(status, 'en')) {
+                            en_count += 1;
+                        }
+                        else if (_.startsWith(status, 'vu')) {
+                            vu_count += 1;
+                        }
+                        else {
+                            error_count += 1;
+                        }
                     });
                     return {
                         'Scale': scale,
@@ -51,6 +60,7 @@ define([
                 .value();
             return result;
         }
+
         function display(data) {
             var tableOptions = {  }; //use default
             var colsSummary = [
@@ -116,11 +126,12 @@ define([
             tableSummary.populate(data['summary']);
             tableDetails.populate(data['all']);
         }
+
         var params = {
             fields: "Scale, Scientific name,Common name,Conservation status WA",
             limit: 100 * 1000
         };
-        dataFacade.search_fauna(params, function(data) {
+        dataFacade.search_fauna(params, function (data) {
             display(format(data.result.records));
 
         })

@@ -11,16 +11,15 @@ define([
         var search_url_base = 'http://internal-data.dpaw.wa.gov.au/api/3/action/datastore_search',
             sql_url_base = 'http://internal-data.dpaw.wa.gov.au/api/3/action/datastore_search_sql';
 
-        var dataset = new recline.Model.Dataset({
-            url: '../data/fauna.csv',
-            backend: 'csv',
-            delimiter: ',',
-            quotechar: '"',
-            encoding: 'utf8'
-        });
+//        var dataset = new recline.Model.Dataset({
+//            url: '../data/fauna.csv',
+//            backend: 'csv',
+//            delimiter: ',',
+//            quotechar: '"',
+//            encoding: 'utf8'
+//        });
 
         return {
-            ds: dataset,
             search_fauna: function (params, success) {
                 params = params || {};
                 params['resource_id'] = ref_ids['fauna_master_human_headers'];
