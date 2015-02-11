@@ -11,7 +11,6 @@ define([
     function handleRegionClick (properties) {
         var model = new RegionModel(properties);
         var view = new RegionView({model: model});
-        console.log("Region clicked: ", properties);
         view.$el = this.$('#region_content');
         view.render();
     }

@@ -55,7 +55,6 @@ define([
         });
 
         router.on('route:defaultRoute', function () {
-            console.log("route - default!!");
             new HomeView().render();
         });
 
