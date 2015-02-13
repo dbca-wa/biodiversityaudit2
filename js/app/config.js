@@ -31,7 +31,8 @@ define([
             wetland_datastore: build_ckan_resource_base_url(ckan.master_dataset, ckan.resources.wetland_datastore),
             ibra_geojson: build_url([
                 build_ckan_resource_base_url('10b54e2b-7226-4dfb-b3ef-30264cd0670a', 'd32d65a1-7ebe-4457-a208-03fd9f1a456f'),
-                'download/ibra7.geojson'])
+                'download/ibra7.geojson']),
+            fauna_csv_test: '../data/Fauna-Master.csv'
         }
     };
 });

@@ -6,10 +6,11 @@ define([
     'views/regionsView',
     'views/speciesView',
     'views/tnmView',
-    'views/dataView'
+    'views/dataView',
+    'views/spikeView'
 
 ], function (Backbone,
-             HeaderView, FooterView, HomeView, RegionsView, SpeciesView, TnmView, DataView) {
+             HeaderView, FooterView, HomeView, RegionsView, SpeciesView, TnmView, DataView, SpikeView) {
 
     var Router = Backbone.Router.extend({
         routes: {
@@ -19,6 +20,7 @@ define([
             "species": "species",
             "tnm": "tnm",
             "data": "data",
+            'spike': 'spike',
 
             // Default
             "*actions": "defaultRoute"
@@ -52,6 +54,10 @@ define([
 
         router.on('route:data', function () {
             new DataView().render();
+        });
+
+        router.on('route:spike', function () {
+            new SpikeView().render();
         });
 
         router.on('route:defaultRoute', function () {
