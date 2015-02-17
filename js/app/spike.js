@@ -8,7 +8,7 @@ define([
     ],
     function ($, _, Backbone, recline, csv, config) {
 
-        var faunaCSVUrl = config.urls.fauna_csv_test;
+        var faunaCSVUrl = config.urls.fauna_csv;
         var faunaDataset = new recline.Model.Dataset({
             url: faunaCSVUrl,
             backend: 'csv'
@@ -40,6 +40,7 @@ define([
         }
 
         return {
+            faunDef: faunaDeferred,
             getFaunaDataset: function () {return faunaDataset;},
             getAllFaunaRecords: function (success) {
                 faunaDeferred.done(success)

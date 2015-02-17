@@ -22,8 +22,10 @@ define([
             "data": "data",
             'spike': 'spike',
 
-            // Default
-            "*actions": "defaultRoute"
+//            "region/:id/fauna": 'region_fauna',
+
+//            // Default
+//            "*actions": "defaultRoute"
 
         }
     });

@@ -1,43 +1,52 @@
 define([
+        'jquery',
+        'underscore',
+        'backbone',
         'recline',
-        'lib/csv'
     ],
-    function (recline, csv) {
-        var ref_ids = {
-            fauna_master_human_headers: 'd66bf8af-9456-4b4b-a60c-3dbaa788bcfc',
-            fauna_master_machine_headers: 'ab5bd599-73cc-4dbc-94f2-6d35ee24d1c6',
-            fauna_headers_mapping: 'f3368ce6-0de5-4a9d-98df-6de0d5f69196'
-        };
-        var search_url_base = 'http://internal-data.dpaw.wa.gov.au/api/3/action/datastore_search',
-            sql_url_base = 'http://internal-data.dpaw.wa.gov.au/api/3/action/datastore_search_sql';
+    function ($, _, Backbone, recline) {
 
-//        var dataset = new recline.Model.Dataset({
-//            url: '../data/fauna.csv',
-//            backend: 'csv',
-//            delimiter: ',',
-//            quotechar: '"',
-//            encoding: 'utf8'
-//        });
+        var deferred = new $.Deferred();
+
+        // the first row of the data contains the column name.
+        // we set the field.label with this value.
+        function _setFields(dataset) {
+            var df = new $.Deferred();
+            var labels = dataset.records.at(0);
+            dataset.fields.each(function (f) {
+                f.set('label', labels.get(f.get('id')));
+            });
+            df.resolve(dataset);
+            return df.promise();
+        }
+
+        // Query all the rows but the first one
+        function _queryAll(dataset) {
+            return dataset.query({size: dataset.recordCount, from: 1, q: ''});
+        }
+
+        function init(dataset) {
+            dataset.fetch()
+                .done(function () {
+                    _setFields(dataset)
+                        .done(function () {
+                            _queryAll(dataset)
+                                .done(function () {
+                                    deferred.resolve(dataset.records.clone());
+                                });
+                        });
+                });
+            return deferred;
+        }
 
         return {
-            search_fauna: function (params, success) {
-                params = params || {};
-                params['resource_id'] = ref_ids['fauna_master_human_headers'];
-                success = success || function (data) {
-                    console.log(data);
-                };
-                $.ajax({
-                    url: search_url_base,
-                    dataType: "json",
-                    data: params,
-                    success: success,
-                    error: function (data) {
-                        var msg = data.responseJSON.error.fields[0];
-                        console.log("Error = ", msg);
-                    }
-                })
+            deferred: deferred,
+            init: init,
+            onReady: function (success, err) {
+                deferred.then(function (collection) {
+                    success(collection, collection.models);
+                }, err)
             }
-
         };
 
 

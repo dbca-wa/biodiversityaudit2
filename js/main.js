@@ -7,7 +7,7 @@ require.config({
         leaflet: 'lib/leaflet',
         leaflet_ajax: 'lib/leaflet.ajax.min',
         datatables: 'lib/jquery.dataTables',
-        recline: 'lib/recline',
+        recline: 'lib/recline.dataset',
         bootstrap: 'lib/bootstrap.min',
         templates: '../templates',
         config: 'app/config'
@@ -19,7 +19,7 @@ require.config({
             deps: ['jquery']
         },
         recline: {
-            deps: ['jquery', 'underscore', 'backbone'],
+            deps: ['jquery', 'underscore', 'backbone', 'lib/csv', 'lib/ckan'],
             init: function () {
                 return this.recline;
             }
@@ -30,6 +30,11 @@ require.config({
     }
 });
 
-require(['router'], function (Router) {
+require(['router', 'models/fauna'], function (Router, fauna) {
     Router.initialize();
+
+    // start the data download
+    fauna.init(fauna.datasetCSV);
+    // @todo: remove
+    window.fauna = fauna
 });

@@ -66,14 +66,6 @@ define([
         }
 
         return {
-            getAPI: function (selector) {
-                return $(selector).DataTable();
-            },
-
-            getTableObject: function (selector) {
-                return $(selector).dataTable();
-            },
-
             initTable: function (selector, tableOptions, columnsOptions) {
                 var options = {},
                     table;
