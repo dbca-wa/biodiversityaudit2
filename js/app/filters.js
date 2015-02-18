@@ -2,8 +2,10 @@ define([
     'underscore'
 ], function (_) {
 
-    function notEmpty(s) {
-        return s && s.trim().length > 0
+    function notEmpty(val) {
+        var undef = typeof val === 'undefined' || val === null;
+        var emptyString = typeof val === 'string' && val.trim().length === 0;
+        return !undef && !emptyString;
     }
 
 
