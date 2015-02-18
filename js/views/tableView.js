@@ -18,6 +18,10 @@ define([
 //                field: 'TT_STATUSWA',
 //                predicate: notEmpty
 //            }
+//            {
+//                field: '__one__',
+//                predicate: notEmpty
+//            }
             ],
             debug: true
         },
@@ -48,23 +52,28 @@ define([
         _applyFilters: function () {
             var rows = this.model || this.collection.models;
             var filters = this.options.filters;
+            var viewedFields = this.options.fields;
             _.each(filters, function (filter) {
                 rows = rows.filter(function (row) {
-                    return filter.predicate(row.get(filter.field));
+                    var viewedAttributes = !_.isEmpty(viewedFields) ? _.pick(row.attributes, viewedFields) : rows.attributes;
+                    if (filter.field === '__one__'){
+                        // one of the field must verify
+                        return _.some(viewedAttributes, filter.predicate);
+                    } else if (filter.field === '__all__') {
+                        return _.all(viewedAttributes, filter.predicate);
+                    }
+                    else{
+                        return filter.predicate(row.get(filter.field));
+                    }
                 });
             });
             return rows;
-        },
-
-        _initTable: function () {
-
         },
 
         render: function () {
             var columnDefs = this.columnDefs || this._buildColumnDefinitions();
             var table = tables.initTable('#' + this.id, {}, columnDefs);
             var rows = this._applyFilters();
-            console.log('rows', rows);
             var json = _.map(rows, function (model) {
                 return model.toJSON();
             });

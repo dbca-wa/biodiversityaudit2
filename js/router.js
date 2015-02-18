@@ -7,10 +7,12 @@ define([
     'views/speciesView',
     'views/tnmView',
     'views/dataView',
-    'views/spikeView'
+    'views/spikeView',
+    'models/regionModel'
 
 ], function (Backbone,
-             HeaderView, FooterView, HomeView, RegionsView, SpeciesView, TnmView, DataView, SpikeView) {
+             HeaderView, FooterView, HomeView, RegionsView, SpeciesView, TnmView, DataView, SpikeView,
+             RegionModel) {
 
     var Router = Backbone.Router.extend({
         routes: {
@@ -59,7 +61,8 @@ define([
         });
 
         router.on('route:spike', function () {
-            new SpikeView().render();
+            var model = new RegionModel({'SUB_CODE': 'AVW01'});
+            new SpikeView({model: model}).render();
         });
 
         router.on('route:defaultRoute', function () {

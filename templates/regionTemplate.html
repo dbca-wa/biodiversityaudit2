@@ -7,37 +7,24 @@
         <h3><a href="<%= spatial_profile_url %>" target="_">Spatial Profile (PDF)</a></h3>
     </div>
 </div>
-<ul class="nav nav-tabs nav-justified" role="tablist">
+<ul class="nav nav-pills nav-justified">
     <li role="presentation" class="active" ><a href="#fauna" data-toggle="tab">Fauna</a></li>
-    <li role="presentation"><a href="#flora" data-toggle="tab">Flora</a></li>
-    <li role="presentation" class="disabled"><a href="#!">TECs & PECs</a></li>
-    <li role="presentation" class="disabled"><a href="#!">Wetlands</a></li>
+    <li role="presentation" class="disabled"><a>Flora</a></li>
+    <li role="presentation" class="disabled"><a>TECs & PECs</a></li>
+    <li role="presentation" class="disabled"><a>Wetlands</a></li>
     <div class="tab-content">
         <div class="tab-pane active" id="fauna">
             <div class="row">
                 <div class="col-md12 top-buffer">
-                    <table id="fauna_summary" class="table table-bordered table-striped top-buffer"></table>
+                    <table id="fauna_summary" class="table display"></table>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md12">
-                    <table id="fauna_details" class="table table-bordered table-striped"></table>
+                    <div id="details_content">
+                        <table class="table display" id="details_table"></table>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="tab-pane active" id="flora">
-            <div class="row">
-                <div class="col-md12">
-                    <table id="flora_summary" class="table table-bordered table-striped"></table>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md12">
-                    <table id="flora_details" class="table table-bordered table-striped"></table>
-                </div>
-            </div>
-        </div>
-
-    </div>
 </ul>
