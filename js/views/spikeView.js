@@ -3,7 +3,7 @@ define([
     'underscore',
     'backbone',
     'text!templates/spike.html',
-    'models/fauna',
+    'fauna',
     'views/tableView',
     'app/filters',
     'views/faunaSummaryView'

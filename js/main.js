@@ -10,7 +10,11 @@ require.config({
         recline: 'lib/recline.dataset',
         bootstrap: 'lib/bootstrap.min',
         templates: '../templates',
-        config: 'config'
+        config: 'config',
+        fauna: 'models/fauna',
+        flora: 'models/flora',
+        communities: 'models/communities',
+        wetlands: 'models/wetlands'
     },
 
     // Dependencies and return values for scripts that are not AMD friendly
@@ -30,11 +34,22 @@ require.config({
     }
 });
 
-require(['router', 'models/fauna'], function (Router, fauna) {
-    Router.initialize();
+require(['router', 'config',
+        'fauna', 'flora', 'communities', 'wetlands'
 
-    // start the data download
-    fauna.init(fauna.datasetCSV);
-    // @todo: remove
-    window.fauna = fauna
-});
+    ],
+    function (Router, config, fauna, flora, communities, wetlands) {
+        var dataSource = config.datasource || 'test'; // 'csv', 'datastore', 'test'
+
+        Router.initialize();
+
+        // start the data fetching
+        fauna.init(fauna.dataSets[dataSource]);
+//        flora.init(flora.dataSets[dataSource]);
+        communities.init(communities.dataSets[dataSource]);
+//        wetlands.init(wetlands.dataSets[dataSource]);
+
+
+        // @todo: remove
+        window.fauna = fauna
+    });

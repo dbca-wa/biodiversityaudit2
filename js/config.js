@@ -1,6 +1,7 @@
 define([
-
-], function () {
+    'underscore',
+    'config.local'
+], function (_, local) {
     var ckan = {
         base_url: 'http://internal-data.dpaw.wa.gov.au',
         master_dataset: '63a9cb0f-3d8a-4feb-9c2a-2431f7017d10',
@@ -39,6 +40,18 @@ define([
         communities_csv_test: '../data/communities-master.csv'
     };
 
+    var config = {
+        ckan: ckan,
+        urls: urls,
+        datasource: 'csv' // [csv|datastore|test] ckan csv files, ckan datasore, test: local files in data folder
+    };
+
+    // if local config it overrides the default
+    if (local) {
+        _.extend(config, local)
+    }
+
+
     function build_ckan_resource_base_url(dataset, resource_id) {
         return build_url([ckan.base_url, 'dataset', dataset, 'resource', resource_id]);
     }
@@ -48,8 +61,6 @@ define([
         return parts.join('/')
     }
 
-    return {
-        ckan: ckan,
-        urls: urls
-    };
+
+    return config;
 });

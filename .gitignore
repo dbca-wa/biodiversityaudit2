@@ -1,2 +1,4 @@
 #Jetbrains
 .idea/
+# anything with local in name
+*local*

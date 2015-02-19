@@ -6,21 +6,17 @@ define([
 
         var my = Object.create(dataFacade);
 
-        my.dataSets = {
-
-        };
-
         my.datasetCSV = new recline.Model.Dataset({
-            url: config.urls.fauna_csv,
+            url: config.urls.wetlands_csv,
             backend: 'csv'
         });
         my.datasetTest = new recline.Model.Dataset({
-            url: config.urls.fauna_csv_test,
+            url: config.urls.wetlands_csv_test,
             backend: 'csv'
         });
 
         my.datasetStore = new recline.Model.Dataset({
-            url: config.urls.fauna_datastore,
+            url: config.urls.wetlands_datastore,
             backend: 'ckan'
         });
 

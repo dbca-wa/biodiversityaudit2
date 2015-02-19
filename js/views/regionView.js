@@ -3,7 +3,7 @@ define([
     'underscore',
     'backbone',
     'text!templates/regionTemplate.html',
-    'models/fauna',
+    'fauna',
     'app/tableFacade',
     'views/faunaSummaryView'
 ], function ($, _, Backbone, template, fauna, tables,

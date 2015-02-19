@@ -3,7 +3,7 @@ define([
     'underscore',
     'backbone',
     'config',
-    'models/fauna'
+    'fauna'
 ], function ($, _, Backbone, config, fauna) {
 
     var model = Backbone.Model.extend({
