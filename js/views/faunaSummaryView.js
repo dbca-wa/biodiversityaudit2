@@ -4,8 +4,9 @@ define([
     'backbone',
     'app/tableFacade',
     'app/filters',
-    'views/tableView'
-], function ($, _, Backbone, tables, filters, TableView) {
+    'views/tableView',
+    'text!templates/cells/region/threats.html'
+], function ($, _, Backbone, tables, filters, TableView, threatsCellTemplate) {
 
     var View = Backbone.View.extend({
 
@@ -14,9 +15,7 @@ define([
         speciesTemplate: _.template(
             '<%= species %>'
         ),
-        threatsTemplate: _.template(
-            '<a id="threats_<%= species %>">click for details</a>'
-        ),
+        threatsTemplate: _.template(threatsCellTemplate),
         trendsTemplate: _.template(
             '<a  id="trends_<%= species %>">click for details</a>'
         ),
@@ -30,13 +29,23 @@ define([
         columnDefinitions: [
             {
                 title: 'Species',
+                width: '0%',
                 data: 'species',
                 render: function (data, type, row, meta) {
                     return data.rendered
                 }
             },
             {
+                title: 'Status',
+                width: '0%',
+                data: 'status',
+                render: function (data, type, row, meta) {
+                    return data.rendered
+                }
+            },
+            {
                 title: 'Threats',
+                width: '0%',
                 data: 'threats',
                 render: function (data, type, row, meta) {
                     return data.rendered
@@ -50,14 +59,8 @@ define([
                 }
             },
             {
-                title: 'Status',
-                data: 'status',
-                render: function (data, type, row, meta) {
-                    return data.rendered
-                }
-            },
-            {
                 title: 'Management Required',
+                width: '0%',
                 data: 'management',
                 render: function (data, type, row, meta) {
                     return data.rendered
@@ -67,6 +70,21 @@ define([
 
 
         buildRowData: function (records, speciesName) {
+
+            function buildThreatsData() {
+                var pastCount = 0,
+                    futureCount = 0;
+
+                _(records).each(function (r) {
+
+                });
+
+                return {
+                    species: speciesName,
+                    pastCount: pastCount,
+                    futureCount: futureCount
+                }
+            }
 
             function getStatus() {
                 var filter = _(records)
@@ -84,7 +102,7 @@ define([
                     rendered: this.speciesTemplate({species: speciesName})
                 },
                 threats = {
-                    rendered: this.threatsTemplate({species: speciesName})
+                    rendered: this.threatsTemplate(buildThreatsData())
                 },
                 trends = {
                     rendered: this.trendsTemplate({species: speciesName})
@@ -160,7 +178,7 @@ define([
         },
 
         renderThreatDetails: function (species, records) {
-            var fields = ['TT_PASTPRESSURES_CAT','TT_PASTPRESSURES_SPECIFY','TT_FUTURETHREATS_CAT','TT_FUTURETHREATS_SPECIFY','TT_RECOVERYPLANCOMMENCE'];
+            var fields = ['TT_PASTPRESSURES_CAT', 'TT_PASTPRESSURES_SPECIFY', 'TT_FUTURETHREATS_CAT', 'TT_FUTURETHREATS_SPECIFY', 'TT_RECOVERYPLANCOMMENCE'];
             var model = records;
             var view = new TableView({
                 id: 'details_table',

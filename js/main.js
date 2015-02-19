@@ -46,7 +46,7 @@ require(['router', 'config',
         // start the data fetching
         fauna.init(fauna.dataSets[dataSource]);
 //        flora.init(flora.dataSets[dataSource]);
-        communities.init(communities.dataSets[dataSource]);
+//        communities.init(communities.dataSets[dataSource]);
 //        wetlands.init(wetlands.dataSets[dataSource]);
 
 

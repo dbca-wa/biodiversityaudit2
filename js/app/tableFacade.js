@@ -12,7 +12,8 @@ define([
             searching: true,
             scrollCollapse: true,
             processing: true,
-            deferRender: true
+            deferRender: true,
+            autowidth: true
         };
 
         function decorateTable(table) {
