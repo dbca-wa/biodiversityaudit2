@@ -10,7 +10,7 @@ require.config({
         recline: 'lib/recline.dataset',
         bootstrap: 'lib/bootstrap.min',
         templates: '../templates',
-        config: 'app/config'
+        config: 'config'
     },
 
     // Dependencies and return values for scripts that are not AMD friendly

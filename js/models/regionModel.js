@@ -2,7 +2,7 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'app/config',
+    'config',
     'models/fauna'
 ], function ($, _, Backbone, config, fauna) {
 

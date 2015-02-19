@@ -1,5 +1,5 @@
 define([
-        'app/config',
+        'config',
         'app/dataFacade'
     ],
     function (config, dataFacade) {

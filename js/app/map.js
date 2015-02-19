@@ -3,7 +3,7 @@ define([
     'underscore',
     'leaflet',
     'leaflet_ajax',
-    'app/config'
+    'config'
 ], function ($, _, L, ajax, config) {
 
     function initMap(id, onclick) {

@@ -4,7 +4,7 @@ define([
         'backbone',
         'recline',
         'lib/csv',
-        'app/config'
+        'config'
     ],
     function ($, _, Backbone, recline, csv, config) {
 
