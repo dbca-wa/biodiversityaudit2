@@ -22,7 +22,7 @@ define([
             "species": "species",
             "tnm": "tnm",
             "data": "data",
-            'spike': 'spike',
+            'spike(/:region)': 'spike',
 
 //            "region/:id/fauna": 'region_fauna',
 
@@ -60,8 +60,9 @@ define([
             new DataView().render();
         });
 
-        router.on('route:spike', function () {
-            var model = new RegionModel({'SUB_CODE': 'AVW02'});
+        router.on('route:spike', function (region) {
+            var rcode = region || 'Western Australia';
+            var model = new RegionModel({'SUB_CODE': rcode});
             new SpikeView({model: model}).render();
         });
 

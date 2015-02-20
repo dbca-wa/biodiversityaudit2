@@ -80,7 +80,7 @@ define([
                     if (filters.notEmpty(past)) {
                         past = past.toLowerCase();
                         if (_.contains(past, 'unknown')) {
-                            pastCount = 'unknown';
+                            pastCount = '??';
                         } else if (_.contains(past, 'no known')) {
                             pastCount = 0; //'No known';
                         } else {
