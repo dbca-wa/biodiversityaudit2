@@ -8,7 +8,7 @@ define([
     'text!templates/cells/region/threats.html'
 ], function ($, _, Backbone, tables, filters, TableView, threatsCellTemplate) {
 
-    var View = Backbone.View.extend({
+    return Backbone.View.extend({
 
         el: '#fauna_summary',
 
@@ -31,15 +31,7 @@ define([
                 title: 'Species',
                 width: '0%',
                 data: 'species',
-                render: function (data, type, row, meta) {
-                    return data.rendered
-                }
-            },
-            {
-                title: 'Status',
-                width: '0%',
-                data: 'status',
-                render: function (data, type, row, meta) {
+                render: function (data) {
                     return data.rendered
                 }
             },
@@ -47,14 +39,22 @@ define([
                 title: 'Threats',
                 width: '0%',
                 data: 'threats',
-                render: function (data, type, row, meta) {
+                render: function (data) {
+                    return data.rendered
+                }
+            },
+            {
+                title: 'Status',
+                width: '0%',
+                data: 'status',
+                render: function (data) {
                     return data.rendered
                 }
             },
             {
                 title: 'Trends',
                 data: 'trends',
-                render: function (data, type, row, meta) {
+                render: function (data) {
                     return data.rendered
                 }
             },
@@ -62,7 +62,7 @@ define([
                 title: 'Management Required',
                 width: '0%',
                 data: 'management',
-                render: function (data, type, row, meta) {
+                render: function (data) {
                     return data.rendered
                 }
             }
@@ -74,9 +74,29 @@ define([
             function buildThreatsData() {
                 var pastCount = 0,
                     futureCount = 0;
-
-                _(records).each(function (r) {
-
+                _.each(records, function (r) {
+                    var past = r.get('TT_PASTPRESSURES_CAT');
+                    var fut = r.get('TT_FUTURETHREATS_CAT');
+                    if (filters.notEmpty(past)) {
+                        past = past.toLowerCase();
+                        if (_.contains(past, 'unknown')) {
+                            pastCount = 'unknown';
+                        } else if (_.contains(past, 'no known')) {
+                            pastCount = 0; //'No known';
+                        } else {
+                            pastCount += 1;
+                        }
+                    }
+                    if (filters.notEmpty(fut)) {
+                        fut = fut.toLowerCase();
+                        if (_.contains(fut, 'unknown')) {
+                            futureCount = 'unknown';
+                        } else if (_.contains(fut, 'no known')) {
+                            futureCount = 0; //'No known';
+                        } else {
+                            futureCount += 1;
+                        }
+                    }
                 });
 
                 return {
@@ -94,7 +114,7 @@ define([
                 if (filter.length > 0) {
                     return filter[0].get('TT_STATUSWA');
                 } else {
-                    return '?????';
+                    return ''; //'?????';
                 }
             }
 
@@ -125,7 +145,7 @@ define([
         },
 
 
-        initialize: function (options) {
+        initialize: function () {
             _.bindAll(this, 'render');
         },
 
@@ -134,14 +154,14 @@ define([
                 var table = tables.initTable(this.el, {}, this.columnDefinitions);
                 var buildRow = _.bind(this.buildRowData, this);
                 var rows = _(this.model)
-                    .map(function (v, k, c) {
+                    .map(function (v, k) {
                         return buildRow(v, k);
                     })
                     .value();
                 var el = this.el;
                 var renderDetails = _.bind(this.renderDetails, this);
                 //bind details links (should be done with the router)
-                table.on('draw.dt', function (e, settings) {
+                table.on('draw.dt', function () {
                     $(el).find('tr a').on('click', function (e) {
                         var split = e.target.id.split('_');
                         renderDetails(split[0], split[1]);
@@ -154,7 +174,6 @@ define([
 
         renderDetails: function (type, species) {
             var records = this.model[species];
-//            console.log('render', type, species, records);
             this.resetDetails();
             if (type == 'threats') {
                 this.renderThreatDetails(species, records);
@@ -178,11 +197,11 @@ define([
         },
 
         renderThreatDetails: function (species, records) {
-            var fields = ['TT_PASTPRESSURES_CAT', 'TT_PASTPRESSURES_SPECIFY', 'TT_FUTURETHREATS_CAT', 'TT_FUTURETHREATS_SPECIFY', 'TT_RECOVERYPLANCOMMENCE'];
-            var model = records;
+            var fields = ['TT_PASTPRESSURES_CAT', 'TT_PASTPRESSURES_SPECIFY', 'TT_FUTURETHREATS_CAT',
+                'TT_FUTURETHREATS_SPECIFY', 'TT_RECOVERYPLANCOMMENCE'];
             var view = new TableView({
                 id: 'details_table',
-                model: model,
+                model: records,
                 fields: fields,
                 filters: [
                     {
@@ -193,16 +212,8 @@ define([
             });
 
             view.render();
-        },
-
-        renderTrendsDetails: function (species, records) {
-
         }
-
-
     });
-
-    return View;
 
 
 });

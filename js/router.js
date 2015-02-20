@@ -61,7 +61,7 @@ define([
         });
 
         router.on('route:spike', function () {
-            var model = new RegionModel({'SUB_CODE': 'AVW01'});
+            var model = new RegionModel({'SUB_CODE': 'AVW02'});
             new SpikeView({model: model}).render();
         });
 
