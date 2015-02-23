@@ -8,8 +8,8 @@ define([
         resources: {
             fauna_csv: 'e9af8028-a790-4a5c-b713-84eb69298175',
             flora_csv: 'e9af8028-a790-4a5c-b713-84eb69298175',
-            tecpec_csv: '7bdc88b6-2b78-471c-9f87-e133efeed90e',
-            wetland_csv: 'e9af8028-a790-4a5c-b713-84eb69298175'
+            communities_csv: '7bdc88b6-2b78-471c-9f87-e133efeed90e',
+            wetlands_csv: 'e9af8028-a790-4a5c-b713-84eb69298175'
         }
     };
     var urls = {
@@ -23,14 +23,14 @@ define([
             build_ckan_resource_base_url(ckan.master_dataset, ckan.resources.flora_csv),
             'download',
             'flora.csv' ]),
-        communities_datastore: build_ckan_resource_base_url(ckan.master_dataset, ckan.resources.tecpec_csv),
+        communities_datastore: build_ckan_resource_base_url(ckan.master_dataset, ckan.resources.communities_csv),
         communities_csv: build_url([
-            build_ckan_resource_base_url(ckan.master_dataset, ckan.resources.tecpec_csv),
+            build_ckan_resource_base_url(ckan.master_dataset, ckan.resources.communities_csv),
             'download',
             'communities.csv' ]),
-        wetlands_datastore: build_ckan_resource_base_url(ckan.master_dataset, ckan.resources.wetland_csv),
+        wetlands_datastore: build_ckan_resource_base_url(ckan.master_dataset, ckan.resources.wetlands_csv),
         wetlands_csv: build_url([
-            build_ckan_resource_base_url(ckan.master_dataset, ckan.resources.wetland_csv),
+            build_ckan_resource_base_url(ckan.master_dataset, ckan.resources.wetlands_csv),
             'download',
             'wetlands.csv' ]),
         ibra_geojson: build_url([
@@ -43,7 +43,7 @@ define([
     var config = {
         ckan: ckan,
         urls: urls,
-        datasource: 'csv' // [csv|datastore|test] ckan csv files, ckan datasore, test: local files in data folder
+        datasource: 'csv' // [csv|datastore|test] ckan csv files, ckan datastore, test: local files in data folder
     };
 
     // if local config it overrides the default

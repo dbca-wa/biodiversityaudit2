@@ -17,13 +17,13 @@ define([
         ),
         threatsTemplate: _.template(threatsCellTemplate),
         trendsTemplate: _.template(
-            '<a  id="trends_<%= species %>">click for details</a>'
+            '<a  id="trends_<%= species %>">details</a>'
         ),
         statusTemplate: _.template(
             '<%= status %>'
         ),
         managementTemplate: _.template(
-            '<a id="management_<%= species %>">click for details</a>'
+            '<a id="management_<%= species %>">details</a>'
         ),
 
         columnDefinitions: [
@@ -179,10 +179,10 @@ define([
                 this.renderThreatDetails(species, records);
             }
             else if (type === 'trends') {
-
+                this.renderTrendsDetails(species, records);
             }
             else if (type === 'management') {
-
+                this.renderManagementDetails(species, records);
             }
             else {
                 console.error('No details for type:', type)
@@ -212,7 +212,226 @@ define([
             });
 
             view.render();
+        },
+
+        renderTrendsDetails: function (species, records) {
+            function getValue(column, def) {
+                var vals = getValues(column);
+                var result = vals[0] || def || '';
+                if (vals.length == 0) {
+//                    console.error("No value for ", column, ".Species:", species);
+                }
+                else if (vals.length > 1) {
+                    console.error("More than one value for ", column, vals, ".Species:", species);
+                }
+                return result;
+            }
+
+            function getValues(column) {
+                return _(records)
+                    .map(function (r) {
+                        return r.get(column);
+                    })
+                    .filter(function (val) {
+                        return filters.notEmpty(val);
+                    })
+                    .value()
+            }
+
+            function buildESURow() {
+                return {
+                    type: 'ESU',
+                    raw: getValue('TT_KNOWNESU_NUM'),
+                    trans: 'N/A',
+                    trend: getValue('TT_KNOWNESU_TREND'),
+                    reliability: getValue('TT_KNOWNESU_TRENDRELIAB'),
+                    notes: getValue('TT_KNOWNESU_NOTES'),
+                    IUCN: 'N/A'
+                };
+
+            }
+
+            function buildPopRow() {
+                return {
+                    type: 'Pop',
+                    raw: getValue('TT_KNOWNPOPS_NUM'),
+                    trans: getValue('TT_KNOWNPOPS_TRANS'),
+                    trend: getValue('TT_KNOWNPOPS_TREND'),
+                    reliability: getValue('TT_KNOWNPOPS_TRENDRELIAB'),
+                    notes: getValue('TT_KNOWNPOPS_NOTES'),
+                    IUCN: getValue('TT_KNOWNPOPS_CAT')
+                };
+
+            }
+
+            function buildIndRow() {
+                return {
+                    type: '# Ind',
+                    raw: getValue('TT_MATIND_RAW'),
+                    trans: 'N/A',
+                    trend: getValue('TT_MATIND_TREND'),
+                    reliability: getValue('TT_MATIND_TRENDRELIAB'),
+                    notes: getValue('TT_MATIND_NOTES'),
+                    IUCN: getValue('TT_MATIND_CAT')
+                };
+
+            }
+
+            function buildEOORow() {
+                return {
+                    type: 'EOO',
+                    raw: getValue('TT_EOOAREA_RAW'),
+                    trans: 'N/A',
+                    trend: getValue('TT_EOOAREA_TREND'),
+                    reliability: 'N/A',
+                    notes: getValue('TT_EOOAREA_NOTES'),
+                    IUCN: getValue('TT_EOOAREA_CAT')
+                };
+
+            }
+
+            function buildAOORow() {
+                return {
+                    type: 'AOO',
+                    raw: getValue('TT_AOOAREA_RAW'),
+                    trans: 'N/A',
+                    trend: getValue('TT_AOOAREA_TREND'),
+                    reliability: 'N/A',
+                    notes: getValue('TT_AOOAREA_NOTES'),
+                    IUCN: getValue('TT_AOOAREA_CAT')
+                };
+
+            }
+
+            var columnDefs = [
+                {
+                    title: '',
+                    data: 'type',
+                    orderable: false
+                },
+                {
+                    title: 'Raw #',
+                    data: 'raw'
+                },
+                {
+                    title: 'Trans',
+                    data: 'trans'
+                },
+                {
+                    title: 'Trend',
+                    data: 'trend'
+                },
+                {
+                    title: 'Trend Reliability',
+                    data: 'reliability'
+                },
+                {
+                    title: 'Notes',
+                    data: 'notes'
+                },
+                {
+                    title: 'IUCN',
+                    data: 'IUCN'
+                },
+
+            ];
+            var table = tables.initTable('#details_table', {paging: false, info: false, searching: false, ordering: false}, columnDefs);
+
+            table.populate([buildESURow(), buildPopRow(), buildIndRow(), buildEOORow(), buildAOORow()]);
+        },
+
+        renderManagementDetails: function (species, records) {
+
+            function getNotEmptyValues(column) {
+                return _(records)
+                    .map(function (r) {
+                        return r.get(column);
+                    })
+                    .filter(function (val) {
+                        return filters.notEmpty(val);
+                    })
+                    .value();
+            }
+
+            function renderAsList(values) {
+                var compiled = _.template('<ul><% _.forEach(values, function(value) { %><li><%- value %></li><% }); %></ul>');
+                return compiled({ values: values });
+            }
+
+            function buildResearchRow() {
+                return {
+                    type: 'Research',
+                    category: getNotEmptyValues('TT_MANREQ_RESEARCH_CAT'),
+                    comment: getNotEmptyValues('TT_MANREQ_RESEARCH_SPECIFY')
+                };
+            }
+
+            function buildEvalRow() {
+                return {
+                    type: 'Evaluation',
+                    category: getNotEmptyValues('TT_MANREQ_EVALUATION_CAT'),
+                    comment: getNotEmptyValues('TT_MANREQ_EVALUATION_SPECIFY')
+                };
+            }
+
+            function buildPlanningRow() {
+                return {
+                    type: 'Conservation Planning',
+                    category: getNotEmptyValues('TT_MANREQ_CONSPLAN_CAT'),
+                    comment: getNotEmptyValues('TT_MANREQ_CONSPLAN_SPECIFY')
+                };
+            }
+
+            function buildDirectRow() {
+                return {
+                    type: 'Direct',
+                    category: getNotEmptyValues('TT_MANREQ_DIRECT_CAT'),
+                    comment: getNotEmptyValues('TT_MANREQ_DIRECT_SPECIFY')
+                };
+            }
+
+            function buildIndirectRow() {
+                return {
+                    type: 'Indirect',
+                    category: getNotEmptyValues('TT_MANREQ_INDIRECT_CAT'),
+                    comment: getNotEmptyValues('TT_MANREQ_INDIRECT_SPECIFY')
+                };
+            }
+
+            function buildOtherRow() {
+                return {
+                    type: 'Other',
+                    category: getNotEmptyValues('TT_MANREQ_OTHER_CAT'),
+                    comment: getNotEmptyValues('TT_MANREQ_OTHER_SPECIFY')
+                };
+            }
+
+            var columnDefs = [
+                {
+                    title: 'Type',
+                    data: 'type',
+                },
+                {
+                    title: 'Category',
+                    data: 'category',
+                    render: function (data) {
+                        return renderAsList(data)
+                    }
+                },
+                {
+                    title: 'Comment',
+                    data: 'comment',
+                    render: function (data) {
+                        return renderAsList(data)
+                    }
+                },
+            ];
+            var table = tables.initTable('#details_table', {paging: false, info: false, searching: false, ordering: false}, columnDefs);
+
+            table.populate([buildResearchRow(), buildEvalRow(), buildPlanningRow(), buildDirectRow(), buildIndirectRow(), buildOtherRow()]);
+
         }
+
     });
 
 
