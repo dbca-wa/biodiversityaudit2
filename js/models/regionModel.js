@@ -3,15 +3,15 @@ define([
     'underscore',
     'backbone',
     'config',
-    'fauna'
-], function ($, _, Backbone, config, fauna) {
+    'faunaModel'
+], function ($, _, Backbone, config, faunaModel) {
 
     var model = Backbone.Model.extend({
 
         initialize: function () {
             this.set("spatial_profile_url", this.getSpatialProfileURL());
 //            _.bindAll(this);
-            fauna.onReady(_.bind(this.setFaunaRecords, this))
+            faunaModel.onReady(_.bind(this.setFaunaRecords, this))
         },
 
         /*

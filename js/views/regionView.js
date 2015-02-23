@@ -3,10 +3,8 @@ define([
     'underscore',
     'backbone',
     'text!templates/regionTemplate.html',
-    'fauna',
-    'app/tableFacade',
     'views/faunaSummaryView'
-], function ($, _, Backbone, template, fauna, tables,
+], function ($, _, Backbone, template,
     FaunaSummaryView) {
 
 

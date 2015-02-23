@@ -3,11 +3,11 @@ define([
     'underscore',
     'backbone',
     'text!templates/spike.html',
-    'fauna',
+    'faunaModel',
     'views/tableView',
     'app/filters',
     'views/faunaSummaryView'
-], function ($, _, Backbone, template, fauna, TableView, filters, FaunaSummaryView) {
+], function ($, _, Backbone, template, faunaModel, TableView, filters, FaunaSummaryView) {
 
 
     return Backbone.View.extend({
@@ -33,7 +33,7 @@ define([
                    this.renderFaunaSummary();
                 }
             }
-            window.fauna = fauna;
+            window.fauna = faunaModel;
             window.spike = this
         },
 
