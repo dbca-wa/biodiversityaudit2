@@ -8,6 +8,8 @@ require.config({
         leaflet_ajax: 'lib/leaflet.ajax.min',
         datatables: 'lib/jquery.dataTables',
         recline: 'lib/recline.dataset',
+        CSVBackend: 'lib/csv',
+        CKANBackend: 'lib/ckan',
         bootstrap: 'lib/bootstrap.min',
         templates: '../templates',
         config: 'config',
@@ -22,8 +24,14 @@ require.config({
         bootstrap: {
             deps: ['jquery']
         },
+        CSVBackend:{
+            deps: ['jquery', 'underscore']
+        },
+        CKANBackend:{
+            deps: ['jquery', 'underscore']
+        },
         recline: {
-            deps: ['jquery', 'underscore', 'backbone', 'lib/csv', 'lib/ckan'],
+            deps: ['jquery', 'underscore', 'backbone', 'CSVBackend', 'CKANBackend'],
             init: function () {
                 return this.recline;
             }
