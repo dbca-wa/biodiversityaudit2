@@ -39,7 +39,7 @@ require(['router', 'config',
 
     ],
     function (Router, config, fauna, flora, communities, wetlands) {
-        var dataSource = config.datasource || 'test'; // 'csv', 'datastore', 'test'
+        var dataSource = config.datasource || 'csv'; // 'csv', 'datastore', 'test'
 
         Router.initialize();
 
