@@ -1,6 +1,6 @@
 define([
     'underscore',
-    'config.local'
+//    'config.local'
 ], function (_, local) {
     var ckan = {
         base_url: 'http://internal-data.dpaw.wa.gov.au',
