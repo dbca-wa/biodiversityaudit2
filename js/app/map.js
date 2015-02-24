@@ -19,11 +19,12 @@ define([
         }).addTo(map);
 
         // Ibra regions layer
+        // Use the local file in test mode.
+        var ibra_url = config.datasource === 'test' ? config.urls.ibra_geojson_test : config.urls.ibra_geojson;
         new L.GeoJSON.AJAX(
-            config.urls.ibra_geojson, {
+            ibra_url, {
             style: {"color": "#ff9933", "weight": 2, "opacity": 0.8},
             onEachFeature: function (feature, layer) {
-//                layer.bindPopup(feature.properties.popup);
                 layer.on('click', function (e) {
                     if (typeof onclick === 'function') {
                         onclick(feature.properties);

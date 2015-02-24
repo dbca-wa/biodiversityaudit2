@@ -58,6 +58,7 @@ require(['router', 'config',
 //        wetlands.init(wetlands.dataSets[dataSource]);
 
 
-        // @todo: remove
-        window.faunaModel = faunaModel
+        // @todo: remove when prod
+        window.faunaModel = faunaModel;
+        window.config = config;
     });

@@ -1,6 +1,6 @@
 define([
     'underscore',
-//    'config.local'
+    'config.local'
 ], function (_, local) {
     var ckan = {
         base_url: 'http://internal-data.dpaw.wa.gov.au',
@@ -37,7 +37,8 @@ define([
             build_ckan_resource_base_url('10b54e2b-7226-4dfb-b3ef-30264cd0670a', 'd32d65a1-7ebe-4457-a208-03fd9f1a456f'),
             'download/ibra7.geojson']),
         fauna_csv_test: '../data/fauna-master.csv',
-        communities_csv_test: '../data/communities-master.csv'
+        communities_csv_test: '../data/communities-master.csv',
+        ibra_geojson_test: '../data/ibra7.geojson'
     };
 
     var config = {
