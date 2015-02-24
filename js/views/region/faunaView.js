@@ -5,10 +5,10 @@ define([
     '../../app/tableFacade',
     'app/filters',
     'views/tableView',
+    'text!templates/region/summaryDefaultTemplate.html',
     'text!templates/region/detailsDefaultTemplate.html',
     'text!templates/region/threatsSummaryTemplate.html'
-], function ($, _, Backbone, tables, filters, TableView,
-             detailsDefaultTemplate, threatsCellTemplate) {
+], function ($, _, Backbone, tables, filters, TableView, summaryDefaultTemplate, detailsDefaultTemplate, threatsCellTemplate) {
 
     return Backbone.View.extend({
 
@@ -174,6 +174,30 @@ define([
             }
         },
 
+        renderSummary: function () {
+            var compiled = _.template(summaryDefaultTemplate);
+            this.setSummaryContent(compiled({}));
+            var tableSelctor = '#fauna_summary_content #summary_table';
+            var table = tables.initTable(tableSelctor, {}, this.columnDefinitions);
+            var buildRow = _.bind(this.buildRowData, this);
+            var rows = _(this.model)
+                .map(function (v, k) {
+                    return buildRow(v, k);
+                })
+                .value();
+            var el = this.el;
+            var renderDetails = _.bind(this.renderDetails, this);
+            //bind details links (should be done with the router)
+            table.on('draw.dt', function () {
+                $(el).find('tr a').on('click', function (e) {
+                    var split = e.target.id.split('_');
+                    renderDetails(split[0], split[1]);
+                });
+
+            });
+            table.populate(rows);
+        },
+
         renderDetails: function (type, species) {
             var records = this.model[species];
             if (type == 'threats') {
@@ -189,6 +213,12 @@ define([
                 console.error('No details for type:', type)
             }
 
+        },
+
+        setSummaryContent: function (html) {
+            var container = $('#fauna_summary_content');
+            container.html(html);
+            return container;
         },
 
         setDetailsContent: function (html) {
