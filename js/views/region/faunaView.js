@@ -2,18 +2,20 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'app/tableFacade',
+    '../../app/tableFacade',
     'app/filters',
     'views/tableView',
-    'text!templates/cells/region/threats.html'
-], function ($, _, Backbone, tables, filters, TableView, threatsCellTemplate) {
+    'text!templates/region/detailsDefaultTemplate.html',
+    'text!templates/region/threatsSummaryTemplate.html'
+], function ($, _, Backbone, tables, filters, TableView,
+             detailsDefaultTemplate, threatsCellTemplate) {
 
     return Backbone.View.extend({
 
-        el: '#fauna_summary',
+        el: '#fauna_summary_table',
 
         speciesTemplate: _.template(
-            '<%= species %>'
+            '<span class="taxa"><%= species %></span>'
         ),
         threatsTemplate: _.template(threatsCellTemplate),
         trendsTemplate: _.template(
@@ -174,7 +176,6 @@ define([
 
         renderDetails: function (type, species) {
             var records = this.model[species];
-            this.resetDetails();
             if (type == 'threats') {
                 this.renderThreatDetails(species, records);
             }
@@ -190,19 +191,19 @@ define([
 
         },
 
-        resetDetails: function () {
-            var container = $('#details_content');
-            container.empty();
-            container.html('<table class="table display" id="details_table"></table>');
+        setDetailsContent: function (html) {
+            var container = $('#fauna_details_content');
+            container.html(html);
+            return container;
         },
 
         renderThreatDetails: function (species, records) {
-            var fields = ['TT_PASTPRESSURES_CAT', 'TT_PASTPRESSURES_SPECIFY', 'TT_FUTURETHREATS_CAT',
+            var tableFields = ['TT_PASTPRESSURES_CAT', 'TT_PASTPRESSURES_SPECIFY', 'TT_FUTURETHREATS_CAT',
                 'TT_FUTURETHREATS_SPECIFY', 'TT_RECOVERYPLANCOMMENCE'];
-            var view = new TableView({
+            var tableView = new TableView({
                 id: 'details_table',
                 model: records,
-                fields: fields,
+                fields: tableFields,
                 filters: [
                     {
                         field: '__one__',
@@ -210,8 +211,10 @@ define([
                     }
                 ]
             });
+            var compiled = _.template(detailsDefaultTemplate);
 
-            view.render();
+            this.setDetailsContent(compiled({type: 'Threats', species: species}));
+            tableView.render();
         },
 
         renderTrendsDetails: function (species, records) {
@@ -335,6 +338,8 @@ define([
                 },
 
             ];
+            var compiled = _.template(detailsDefaultTemplate);
+            this.setDetailsContent(compiled({type: 'Trends', species: species}));
             var table = tables.initTable('#details_table', {paging: false, info: false, searching: false, ordering: false}, columnDefs);
 
             table.populate([buildESURow(), buildPopRow(), buildIndRow(), buildEOORow(), buildAOORow()]);
@@ -426,6 +431,9 @@ define([
                     }
                 },
             ];
+
+            var compiled = _.template(detailsDefaultTemplate);
+            this.setDetailsContent(compiled({type: 'Management', species: species}));
             var table = tables.initTable('#details_table', {paging: false, info: false, searching: false, ordering: false}, columnDefs);
 
             table.populate([buildResearchRow(), buildEvalRow(), buildPlanningRow(), buildDirectRow(), buildIndirectRow(), buildOtherRow()]);

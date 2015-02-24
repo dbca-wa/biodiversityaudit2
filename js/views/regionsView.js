@@ -5,7 +5,7 @@ define([
     'text!templates/regions.html',
     'app/map',
     'models/regionModel',
-    'views/regionView'
+    'views/region/regionView'
 ], function ($, _, Backbone, template, map, RegionModel, RegionView) {
 
     function handleRegionClick (properties) {

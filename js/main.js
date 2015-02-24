@@ -14,9 +14,9 @@ require.config({
         templates: '../templates',
         config: 'config',
         faunaModel: 'models/fauna',
-        flora: 'models/flora',
-        communities: 'models/communities',
-        wetlands: 'models/wetlands'
+        floraModel: 'models/flora',
+        communitiesModel: 'models/communities',
+        wetlandsModel: 'models/wetlands'
     },
 
     // Dependencies and return values for scripts that are not AMD friendly
@@ -43,19 +43,19 @@ require.config({
 });
 
 require(['router', 'config',
-        'faunaModel', 'flora', 'communities', 'wetlands'
+        'faunaModel', 'floraModel', 'communitiesModel', 'wetlandsModel'
 
     ],
-    function (Router, config, faunaModel, flora, communities, wetlands) {
+    function (Router, config, faunaModel, floraModel, communitiesModel, wetlandsModel) {
         var dataSource = config.datasource || 'csv'; // 'csv', 'datastore', 'test'
 
         Router.initialize();
 
         // start the data fetching
         faunaModel.init(faunaModel.dataSets[dataSource]);
-//        flora.init(flora.dataSets[dataSource]);
-//        communities.init(communities.dataSets[dataSource]);
-//        wetlands.init(wetlands.dataSets[dataSource]);
+//        floraModel.init(floraModel.dataSets[dataSource]);
+        communitiesModel.init(communitiesModel.dataSets[dataSource]);
+//        wetlandsModel.init(wetlandsModel.dataSets[dataSource]);
 
 
         // @todo: remove when prod

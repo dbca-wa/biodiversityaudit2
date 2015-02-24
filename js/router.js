@@ -7,11 +7,12 @@ define([
     'views/speciesView',
     'views/tnmView',
     'views/dataView',
+    'views/region/regionView',
     'views/spikeView',
     'models/regionModel'
 
 ], function (Backbone,
-             HeaderView, FooterView, HomeView, RegionsView, SpeciesView, TnmView, DataView, SpikeView,
+             HeaderView, FooterView, HomeView, RegionsView, SpeciesView, TnmView, DataView, RegionView, SpikeView,
              RegionModel) {
 
     var Router = Backbone.Router.extend({
@@ -24,7 +25,9 @@ define([
             "data": "data",
             'spike(/:region)': 'spike',
 
-//            "region/:id/fauna": 'region_fauna',
+            "region/:id/summary/:data": 'region_summary',
+            "region/:id/species/:species/details/:type": 'region_details'
+
 
 //            // Default
 //            "*actions": "defaultRoute"
@@ -58,6 +61,14 @@ define([
 
         router.on('route:data', function () {
             new DataView().render();
+        });
+
+        router.on('route:region_summary', function (region, data) {
+            console.log('Summary of', region, 'for', data);
+        });
+
+        router.on('route:region_details', function (region, species, type) {
+            console.log('Details of', region, 'species', species, 'type', type);
         });
 
         router.on('route:spike', function (region) {

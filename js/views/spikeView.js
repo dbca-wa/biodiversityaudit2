@@ -6,7 +6,7 @@ define([
     'faunaModel',
     'views/tableView',
     'app/filters',
-    'views/faunaSummaryView'
+    'views/region/faunaView'
 ], function ($, _, Backbone, template, faunaModel, TableView, filters, FaunaSummaryView) {
 
 
@@ -21,8 +21,6 @@ define([
 //                this.model.on('change', this.render, this);
                 this.model.on('change:fauna', this.renderFaunaSummary, this);
             }
-
-
         },
 
         render: function () {
