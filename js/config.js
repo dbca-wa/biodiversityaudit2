@@ -51,7 +51,7 @@ define([
         function (local) {
             _.extend(config, local);
         }, function (err) {
-            console.log("No local config. Use default.", err)
+            console.log("No local config. Use default.")
         });
 
     function build_ckan_resource_base_url(dataset, resource_id) {
