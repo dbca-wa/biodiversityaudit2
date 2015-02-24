@@ -43,10 +43,10 @@ require.config({
 });
 
 require(['router', 'config',
-        'faunaModel', 'floraModel', 'communitiesModel', 'wetlandsModel'
+        'faunaModel'
 
     ],
-    function (Router, config, faunaModel, floraModel, communitiesModel, wetlandsModel) {
+    function (Router, config, faunaModel) {
         var dataSource = config.datasource || 'csv'; // 'csv', 'datastore', 'test'
 
         Router.initialize();
@@ -54,7 +54,7 @@ require(['router', 'config',
         // start the data fetching
         faunaModel.init(faunaModel.dataSets[dataSource]);
 //        floraModel.init(floraModel.dataSets[dataSource]);
-        communitiesModel.init(communitiesModel.dataSets[dataSource]);
+//        communitiesModel.init(communitiesModel.dataSets[dataSource]);
 //        wetlandsModel.init(wetlandsModel.dataSets[dataSource]);
 
 

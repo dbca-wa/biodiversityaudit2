@@ -15,9 +15,9 @@ define([
             this.set("spatial_profile_url", this.getSpatialProfileURL());
 //            _.bindAll(this);
             faunaModel.onReady(_.bind(this.setFaunaRecords, this));
-            floraModel.onReady(_.bind(this.setFloraRecords, this));
-            communitiesModel.onReady(_.bind(this.setCommunitiesRecords, this));
-            wetlandsModel.onReady(_.bind(this.setWetlandsRecords, this));
+//            floraModel.onReady(_.bind(this.setFloraRecords, this));
+//            communitiesModel.onReady(_.bind(this.setCommunitiesRecords, this));
+//            wetlandsModel.onReady(_.bind(this.setWetlandsRecords, this));
         },
 
         /*
