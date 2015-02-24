@@ -1,7 +1,6 @@
 define([
-    'underscore',
-    'config.local'
-], function (_, local) {
+    'underscore'
+], function (_) {
     var ckan = {
         base_url: 'http://internal-data.dpaw.wa.gov.au',
         master_dataset: '63a9cb0f-3d8a-4feb-9c2a-2431f7017d10',
@@ -47,11 +46,13 @@ define([
         datasource: 'csv' // [csv|datastore|test] ckan csv files, ckan datastore, test: local files in data folder
     };
 
-    // if local config it overrides the default
-    if (local) {
-        _.extend(config, local)
-    }
-
+    // if local config overrides the default
+    require(['config.local'],
+        function (local) {
+            _.extend(config, local);
+        }, function (err) {
+            console.log("No local config. Use default.", err)
+        });
 
     function build_ckan_resource_base_url(dataset, resource_id) {
         return build_url([ckan.base_url, 'dataset', dataset, 'resource', resource_id]);
