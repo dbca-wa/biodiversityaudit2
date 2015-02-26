@@ -13,10 +13,7 @@ require.config({
         bootstrap: 'lib/bootstrap.min',
         templates: '../templates',
         config: 'config',
-        faunaModel: 'models/fauna',
-        floraModel: 'models/flora',
-        communitiesModel: 'models/communities',
-        wetlandsModel: 'models/wetlands'
+        dataSources: 'models/dataSources',
     },
 
     // Dependencies and return values for scripts that are not AMD friendly
@@ -42,23 +39,16 @@ require.config({
     }
 });
 
-require(['router', 'config',
-        'faunaModel'
+require(['router', 'dataSources',
 
     ],
-    function (Router, config, faunaModel) {
-        var dataSource = config.datasource || 'csv'; // 'csv', 'datastore', 'test'
+    function (Router, dataSources ) {
 
         Router.initialize();
 
         // start the data fetching
-        faunaModel.init(faunaModel.dataSets[dataSource]);
-//        floraModel.init(floraModel.dataSets[dataSource]);
-//        communitiesModel.init(communitiesModel.dataSets[dataSource]);
-//        wetlandsModel.init(wetlandsModel.dataSets[dataSource]);
-
+        dataSources.fetchAll();
 
         // @todo: remove when prod
-        window.faunaModel = faunaModel;
-        window.config = config;
+        window.sources = dataSources;
     });

@@ -6,9 +6,10 @@ define([
         master_dataset: '63a9cb0f-3d8a-4feb-9c2a-2431f7017d10',
         resources: {
             fauna_csv: 'e9af8028-a790-4a5c-b713-84eb69298175',
-            flora_csv: 'e9af8028-a790-4a5c-b713-84eb69298175',
+            flora_csv: '9d9cda48-c08c-4de1-9339-789b8dc3c431',
             communities_csv: '7bdc88b6-2b78-471c-9f87-e133efeed90e',
-            wetlands_csv: 'e9af8028-a790-4a5c-b713-84eb69298175'
+            //@todo: this is the the same as above. To be set when wetlands arrives
+            wetlands_csv: '7bdc88b6-2b78-471c-9f87-e133efeed90e'
         }
     };
     var urls = {
@@ -36,7 +37,9 @@ define([
             build_ckan_resource_base_url('10b54e2b-7226-4dfb-b3ef-30264cd0670a', 'd32d65a1-7ebe-4457-a208-03fd9f1a456f'),
             'download/ibra7.geojson']),
         fauna_csv_test: '../data/fauna-master.csv',
+        flora_csv_test: '../data/flora-master.csv',
         communities_csv_test: '../data/communities-master.csv',
+        wetlands_csv_test: '../data/wetlands-master.csv',
         ibra_geojson_test: '../data/ibra7.geojson'
     };
 

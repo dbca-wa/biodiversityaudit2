@@ -3,21 +3,16 @@ define([
     'underscore',
     'backbone',
     'config',
-    'faunaModel',
-    'floraModel',
-    'communitiesModel',
-    'wetlandsModel'
-], function ($, _, Backbone, config, faunaModel, floraModel, communitiesModel, wetlandsModel) {
+    'dataSources'
+], function ($, _, Backbone, config, dataSources) {
 
     var model = Backbone.Model.extend({
 
         initialize: function () {
             this.set("spatial_profile_url", this.getSpatialProfileURL());
-//            _.bindAll(this);
-            faunaModel.onReady(_.bind(this.setFaunaRecords, this));
-//            floraModel.onReady(_.bind(this.setFloraRecords, this));
-//            communitiesModel.onReady(_.bind(this.setCommunitiesRecords, this));
-//            wetlandsModel.onReady(_.bind(this.setWetlandsRecords, this));
+            dataSources.fauna.onReady(_.bind(this.setFaunaRecords, this));
+            dataSources.flora.onReady(_.bind(this.setFloraRecords, this));
+            dataSources.communities.onReady(_.bind(this.setCommunitiesRecords, this));
         },
 
         /*

@@ -3,9 +3,8 @@ define([
     'underscore',
     'backbone',
     'text!templates/tnm.html',
-    'app/dataFacade',
     'app/tableFacade'
-], function ($, _, Backbone, template, dataFacade, tables) {
+], function ($, _, Backbone, template, tables) {
     function not_empty(s) {
         return s && s.trim().length > 0;
     }
@@ -131,10 +130,6 @@ define([
             fields: "Scale, Scientific name,Common name,Conservation status WA",
             limit: 100 * 1000
         };
-        dataFacade.search_fauna(params, function (data) {
-            display(format(data.result.records));
-
-        })
     }
 
     return Backbone.View.extend({
