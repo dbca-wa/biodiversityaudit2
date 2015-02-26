@@ -21,6 +21,8 @@ define([
         render: function () {
             this.$el.html(_.template(template, {}));
             map.init_map('map', handleRegionClick);
+            // show the state level data.
+//            handleRegionClick({REG_NAME: 'State Level', SUB_CODE: 'Western Australia'});
         }
     });
 });

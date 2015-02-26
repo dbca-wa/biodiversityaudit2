@@ -30,7 +30,7 @@ define([
 
         columnDefinitions: [
             {
-                title: 'Species',
+                title: 'Taxon',
                 width: '0%',
                 data: 'species',
                 render: function (data) {
@@ -46,7 +46,7 @@ define([
                 }
             },
             {
-                title: 'Status',
+                title: 'Status WA',
                 width: '0%',
                 data: 'status',
                 render: function (data) {
@@ -61,7 +61,7 @@ define([
                 }
             },
             {
-                title: 'Management Required',
+                title: 'Management Requirement',
                 width: '0%',
                 data: 'management',
                 render: function (data) {
@@ -242,9 +242,12 @@ define([
                 ]
             });
             var compiled = _.template(detailsDefaultTemplate);
+            var table;
 
             this.setDetailsContent(compiled({type: 'Threats', species: species}));
-            tableView.render();
+            table = tableView.render();
+            // reverse order to put blank line at the end
+            table.order([0,'desc']).draw();
         },
 
         renderTrendsDetails: function (species, records) {
@@ -338,33 +341,35 @@ define([
 
             var columnDefs = [
                 {
-                    title: '',
+                    title: 'Trend Type',
                     data: 'type',
+                    width: '5%',
                     orderable: false
                 },
                 {
                     title: 'Raw #',
+                    width: '5%',
                     data: 'raw'
                 },
                 {
-                    title: 'Trans',
+                    title: '# Translocated',
+                    width: '5%',
                     data: 'trans'
                 },
                 {
                     title: 'Trend',
+                    width: '10%',
                     data: 'trend'
                 },
                 {
                     title: 'Trend Reliability',
+                    width: '20%',
                     data: 'reliability'
                 },
                 {
                     title: 'Notes',
+
                     data: 'notes'
-                },
-                {
-                    title: 'IUCN',
-                    data: 'IUCN'
                 },
 
             ];
@@ -419,7 +424,7 @@ define([
 
             function buildDirectRow() {
                 return {
-                    type: 'Direct',
+                    type: 'Direct Intervention',
                     category: getNotEmptyValues('TT_MANREQ_DIRECT_CAT'),
                     comment: getNotEmptyValues('TT_MANREQ_DIRECT_SPECIFY')
                 };
@@ -427,7 +432,7 @@ define([
 
             function buildIndirectRow() {
                 return {
-                    type: 'Indirect',
+                    type: 'Indirect Intervention',
                     category: getNotEmptyValues('TT_MANREQ_INDIRECT_CAT'),
                     comment: getNotEmptyValues('TT_MANREQ_INDIRECT_SPECIFY')
                 };
@@ -445,6 +450,7 @@ define([
                 {
                     title: 'Type',
                     data: 'type',
+                    width:'15%'
                 },
                 {
                     title: 'Category',

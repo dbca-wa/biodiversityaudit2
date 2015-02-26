@@ -17,7 +17,7 @@ define([
         /*
          fetch all the records and prepare for use
          */
-        fetch: function () {
+        fetch: function (force) {
             // the first row of the data contains the column name.
             // we set the field.label with this value.
             function setFields(dataset) {
@@ -37,18 +37,23 @@ define([
 
             var deferred = new $.Deferred(),
                 dataset = this.get('dataset');
-            dataset.fetch()
-                .done(function () {
-                    setFields(dataset)
-                        .done(function () {
-                            queryAll(dataset)
-                                .done(function () {
-                                    // all done, clone the records to avoid mutation with the dataset
-                                    deferred.resolve(dataset.records.clone());
-                                });
-                        });
-                });
-            this.readyDeferred = deferred;
+            if (!this.readyDeferred || force) {
+                dataset.fetch()
+                    .done(function () {
+                        setFields(dataset)
+                            .done(function () {
+                                queryAll(dataset)
+                                    .done(function () {
+                                        // all done, clone the records to avoid mutation with the dataset
+                                        deferred.resolve(dataset.records.clone());
+                                    });
+                            });
+                    });
+                this.readyDeferred = deferred;
+            }
+            else {
+                deferred = this.readyDeferred;
+            }
             return deferred;
         },
 
