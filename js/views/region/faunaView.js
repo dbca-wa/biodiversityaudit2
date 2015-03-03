@@ -31,7 +31,7 @@ define([
         columnDefinitions: [
             {
                 title: 'Taxon',
-                width: '0%',
+                width: '25%',
                 data: 'species',
                 render: function (data) {
                     return data.rendered
@@ -39,7 +39,7 @@ define([
             },
             {
                 title: 'Threats',
-                width: '0%',
+                width: '25%',
                 data: 'threats',
                 render: function (data) {
                     return data.rendered
@@ -47,7 +47,7 @@ define([
             },
             {
                 title: 'Status WA',
-                width: '0%',
+                width: '15%',
                 data: 'status',
                 render: function (data) {
                     return data.rendered
@@ -56,13 +56,14 @@ define([
             {
                 title: 'Trends',
                 data: 'trends',
+                width: '15%',
                 render: function (data) {
                     return data.rendered
                 }
             },
             {
                 title: 'Management Requirement',
-                width: '0%',
+                width: '15%',
                 data: 'management',
                 render: function (data) {
                     return data.rendered
