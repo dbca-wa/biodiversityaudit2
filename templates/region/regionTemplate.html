@@ -7,75 +7,67 @@
         <h3><a href="<%= spatial_profile_url %>" target="_" title="Click to display a regional profile">Spatial Profile (PDF)</a></h3>
     </div>
 </div>
-<ul class="nav nav-pills nav-justified">
+<ul class="nav nav-pills nav-justified" id="detailsTab" role="tablist">
     <li role="presentation" class="active"><a href="#faunaTab" data-toggle="tab">Fauna</a></li>
     <li role="presentation"><a href="#floraTab" data-toggle="tab">Flora</a></li>
     <li role="presentation"><a href="#communitiesTab" data-toggle="tab">Communities</a></li>
     <li role="presentation"><a href="#wetlandsTab" data-toggle="tab">Wetlands</a></li>
-    <div class="tab-content">
-        <div class="tab-pane active" id="faunaTab">
-            <div class="row">
-                <div class="col-md12 top-buffer">
-                    <div id="fauna_summary_content">
-                        <table id="fauna_summary_table" class="table display cell-border"></table>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md12">
-                        <div id="fauna_details_content">
-                            <table id="fauna_details_table" class="table display cell-border"></table>
-                        </div>
-                    </div>
+</ul>
+<div class="tab-content">
+    <div class="tab-pane active" id="faunaTab">
+        <div class="row">
+            <div class="col-md12 top-buffer">
+                <div id="summary_content">
                 </div>
             </div>
-        </div>
-        <div class="tab-pane active" id="floraTab">
             <div class="row">
-                <div class="col-md12 top-buffer">
-                    <div id="flora_summary_content">
-                        <table id="flora_summary_table" class="table display cell-border"></table>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md12">
-                        <div id="flora_details_content">
-                            <table id="flora_details_table" class="table display cell-border"></table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane active" id="communitiesTab">
-            <div class="row">
-                <div class="col-md12 top-buffer">
-                    <div id="communities_summary_content">
-                        <table id="communities_summary_table" class="table display cell-border"></table>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md12">
-                        <div id="communities_details_content">
-                            <table id="communities_details_table" class="table display cell-border"></table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane active" id="wetlandsTab">
-            <div class="row">
-                <div class="col-md12 top-buffer">
-                    <div id="wetlands_summary_content">
-                        <table id="wetlands_summary_table" class="table display cell-border"></table>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md12">
-                        <div id="wetlands_details_content">
-                            <table id="wetlands_details_table" class="table display cell-border"></table>
-                        </div>
+                <div class="col-md12">
+                    <div id="details_content">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</ul>
+    <div class="tab-pane" id="floraTab">
+        <div class="row">
+            <div class="col-md12 top-buffer">
+                <div id="summary_content">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md12">
+                    <div id="details_content">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane" id="communitiesTab">
+        <div class="row">
+            <div class="col-md12 top-buffer">
+                <div id="summary_content">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md12">
+                    <div id="details_content">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane" id="wetlandsTab">
+        <div class="row">
+            <div class="col-md12 top-buffer">
+                <div id="summary_content">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md12">
+                    <div id="details_content">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

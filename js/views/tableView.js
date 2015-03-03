@@ -9,7 +9,9 @@ define([
 
     var TableView = Backbone.View.extend({
 
-        id: 'table',
+//        id: 'table',
+
+        el:'#table',
 
         options: {
             fields: [],
@@ -72,7 +74,7 @@ define([
 
         render: function () {
             var columnDefs = this.columnDefs || this._buildColumnDefinitions();
-            var table = tables.initTable('#' + this.id, {}, columnDefs);
+            var table = tables.initTable(this.$el.selector, {}, columnDefs);
             var rows = this._applyFilters();
             var json = _.map(rows, function (model) {
                 return model.toJSON();

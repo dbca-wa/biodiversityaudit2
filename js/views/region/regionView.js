@@ -2,9 +2,11 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'bootstrap',
     'text!templates/region/regionTemplate.html',
-    'views/region/faunaView'
-], function ($, _, Backbone, template, FaunaSummaryView) {
+    'views/region/faunaView',
+    'views/region/floraView'
+], function ($, _, Backbone, bootstrap, template, FaunaSummaryView, FloraSummaryView) {
 
 
     var View = Backbone.View.extend({
@@ -17,6 +19,7 @@ define([
             _.bindAll(this, 'render', 'renderFauna');
             if (this.model) {
                 this.model.on('change:fauna', this.renderFauna, this);
+                this.model.on('change:flora', this.renderFauna, this);
             }
 
         },
@@ -25,6 +28,9 @@ define([
             this.$el.html(this.compiled(this.model.toJSON()));
             if (this.model.get('fauna')) {
                 this.renderFauna();
+            }
+            if (this.model.get('flora')) {
+                this.renderFlora();
             }
         },
 

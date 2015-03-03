@@ -12,7 +12,7 @@ define([
 
     return Backbone.View.extend({
 
-        el: '#fauna_summary_table',
+        el: '#faunaTab',
 
         speciesTemplate: _.template(
             '<span class="taxa"><%= species %></span>'
@@ -153,32 +153,15 @@ define([
 
         render: function () {
             if (this.model) {
-                var table = tables.initTable(this.el, {}, this.columnDefinitions);
-                var buildRow = _.bind(this.buildRowData, this);
-                var rows = _(this.model)
-                    .map(function (v, k) {
-                        return buildRow(v, k);
-                    })
-                    .value();
-                var el = this.el;
-                var renderDetails = _.bind(this.renderDetails, this);
-                //bind details links (should be done with the router)
-                table.on('draw.dt', function () {
-                    $(el).find('tr a').on('click', function (e) {
-                        var split = e.target.id.split('_');
-                        renderDetails(split[0], split[1]);
-                    });
-
-                });
-                table.populate(rows);
+                this.renderSummary()
             }
         },
 
         renderSummary: function () {
             var compiled = _.template(summaryDefaultTemplate);
             this.setSummaryContent(compiled({}));
-            var tableSelctor = '#fauna_summary_content #summary_table';
-            var table = tables.initTable(tableSelctor, {}, this.columnDefinitions);
+            var tableSelector = this.getSummaryTableElement();
+            var table = tables.initTable(tableSelector, {}, this.columnDefinitions);
             var buildRow = _.bind(this.buildRowData, this);
             var rows = _(this.model)
                 .map(function (v, k) {
@@ -189,7 +172,7 @@ define([
             var renderDetails = _.bind(this.renderDetails, this);
             //bind details links (should be done with the router)
             table.on('draw.dt', function () {
-                $(el).find('tr a').on('click', function (e) {
+                $(tableSelector).find('tr a').on('click', function (e) {
                     var split = e.target.id.split('_');
                     renderDetails(split[0], split[1]);
                 });
@@ -216,13 +199,29 @@ define([
         },
 
         setSummaryContent: function (html) {
-            var container = $('#fauna_summary_content');
+            var container = this.$el.find('#summary_content');
             container.html(html);
             return container;
         },
 
+        getSummaryContentElement: function () {
+            return this.$el.find('#summary_content');
+        },
+
+        getSummaryTableElement: function () {
+            return this.getSummaryContentElement().find('#summary_table');
+        },
+
+        getDetailsContentElement: function () {
+            return this.$el.find('#details_content');
+        },
+
+        getDetailsTableElement: function () {
+            return this.getDetailsContentElement().find('#details_table');
+        },
+
         setDetailsContent: function (html) {
-            var container = $('#fauna_details_content');
+            var container = this.getDetailsContentElement();
             container.html(html);
             return container;
         },
@@ -230,8 +229,9 @@ define([
         renderThreatDetails: function (species, records) {
             var tableFields = ['TT_PASTPRESSURES_CAT', 'TT_PASTPRESSURES_SPECIFY', 'TT_FUTURETHREATS_CAT',
                 'TT_FUTURETHREATS_SPECIFY', 'TT_RECOVERYPLANCOMMENCE'];
+            var tableElement = this.getDetailsTableElement();
             var tableView = new TableView({
-                id: 'details_table',
+                el: tableElement.selector,
                 model: records,
                 fields: tableFields,
                 filters: [
@@ -243,7 +243,6 @@ define([
             });
             var compiled = _.template(detailsDefaultTemplate);
             var table;
-
             this.setDetailsContent(compiled({type: 'Threats', species: species}));
             table = tableView.render();
             // reverse order to put blank line at the end
@@ -375,7 +374,7 @@ define([
             ];
             var compiled = _.template(detailsDefaultTemplate);
             this.setDetailsContent(compiled({type: 'Trends', species: species}));
-            var table = tables.initTable('#details_table', {paging: false, info: false, searching: false, ordering: false}, columnDefs);
+            var table = tables.initTable(this.getDetailsTableElement(), {paging: false, info: false, searching: false, ordering: false}, columnDefs);
 
             table.populate([buildESURow(), buildPopRow(), buildIndRow(), buildEOORow(), buildAOORow()]);
         },
@@ -470,7 +469,7 @@ define([
 
             var compiled = _.template(detailsDefaultTemplate);
             this.setDetailsContent(compiled({type: 'Management', species: species}));
-            var table = tables.initTable('#details_table', {paging: false, info: false, searching: false, ordering: false}, columnDefs);
+            var table = tables.initTable(this.getDetailsTableElement(), {paging: false, info: false, searching: false, ordering: false}, columnDefs);
 
             table.populate([buildResearchRow(), buildEvalRow(), buildPlanningRow(), buildDirectRow(), buildIndirectRow(), buildOtherRow()]);
 
