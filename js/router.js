@@ -72,9 +72,7 @@ define([
         });
 
         router.on('route:spike', function (region) {
-            var rcode = region || 'Western Australia';
-            var model = new RegionModel({'SUB_CODE': rcode});
-            new SpikeView({model: model}).render();
+            new SpikeView().render();
         });
 
         router.on('route:defaultRoute', function () {
