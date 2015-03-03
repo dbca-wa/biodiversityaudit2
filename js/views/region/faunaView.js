@@ -169,7 +169,6 @@ define([
                     return buildRow(v, k);
                 })
                 .value();
-            var el = this.el;
             var renderDetails = _.bind(this.renderDetails, this);
             //bind details links (should be done with the router)
             table.on('draw.dt', function () {
@@ -368,9 +367,8 @@ define([
                 },
                 {
                     title: 'Notes',
-
                     data: 'notes'
-                },
+                }
 
             ];
             var compiled = _.template(detailsDefaultTemplate);
@@ -465,7 +463,7 @@ define([
                     render: function (data) {
                         return renderAsList(data)
                     }
-                },
+                }
             ];
 
             var compiled = _.template(detailsDefaultTemplate);
