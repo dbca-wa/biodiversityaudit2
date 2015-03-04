@@ -8,7 +8,7 @@ define([
     'text!templates/region/summaryDefaultTemplate.html',
     'text!templates/region/detailsDefaultTemplate.html',
     'text!templates/region/threatsSummaryTemplate.html'
-], function ($, _, Backbone, tables, filters, TableView, summaryDefaultTemplate, detailsDefaultTemplate, threatsCellTemplate) {
+], function ($, _, Backbone, tables, filters, TableView, summaryTemplate, detailsTemplate, threatsCellTemplate) {
 
     return Backbone.View.extend({
 
@@ -159,8 +159,7 @@ define([
         },
 
         renderSummary: function () {
-            var compiled = _.template(summaryDefaultTemplate);
-            this.setSummaryContent(compiled({}));
+            this.setSummaryContent(this.buildSummaryContent());
             var tableSelector = this.getSummaryTableElement();
             var table = tables.initTable(tableSelector, {}, this.columnDefinitions);
             var buildRow = _.bind(this.buildRowData, this);
@@ -179,6 +178,11 @@ define([
 
             });
             table.populate(rows);
+        },
+
+        buildSummaryContent: function () {
+            var values = {label: this.label || ""};
+            return _.template(summaryTemplate)(values);
         },
 
         renderDetails: function (type, species) {
@@ -241,7 +245,7 @@ define([
                     }
                 ]
             });
-            var compiled = _.template(detailsDefaultTemplate);
+            var compiled = _.template(detailsTemplate);
             var table;
             this.setDetailsContent(compiled({type: 'Threats', species: species}));
             table = tableView.render();
@@ -371,7 +375,7 @@ define([
                 }
 
             ];
-            var compiled = _.template(detailsDefaultTemplate);
+            var compiled = _.template(detailsTemplate);
             this.setDetailsContent(compiled({type: 'Trends', species: species}));
             var table = tables.initTable(this.getDetailsTableElement(), {paging: false, info: false, searching: false, ordering: false}, columnDefs);
 
@@ -466,7 +470,7 @@ define([
                 }
             ];
 
-            var compiled = _.template(detailsDefaultTemplate);
+            var compiled = _.template(detailsTemplate);
             this.setDetailsContent(compiled({type: 'Management', species: species}));
             var table = tables.initTable(this.getDetailsTableElement(), {paging: false, info: false, searching: false, ordering: false}, columnDefs);
 

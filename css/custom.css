@@ -84,11 +84,29 @@
     letter-spacing: -1px;
 }
 
-.top-buffer {
+.top-buffer-20 {
     margin-top: 20px;
+}
+
+.top-buffer-50 {
+    margin-top: 50px;
+}
+
+.vspacer-50 {
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.vspacer-20 {
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .taxa {
     font-style: italic;
 }
 
+
+#species_input {
+    width: 350px
+}
