@@ -16,6 +16,7 @@ define([
         }
     }
 
+    // @todo: this can be much more improved with sortBy collections.
     function getPastPressures(records, region, group) {
         return _(records)
             .filter(function (rec) {
@@ -30,6 +31,9 @@ define([
                 return r;
             })
             .map(function (values, pressure) {
+                // cut off the (specify)
+                // @todo: please use regex
+                pressure = pressure.replace('(specify)',"");
                 return {
                     pressure: pressure,
                     count: values.length
@@ -98,7 +102,12 @@ define([
 
             var columnDefs = this.buildColumnDefinitions(groups);
 //            console.log('columns', columnDefs);
-            var table = tables.initTable('#table_q71_fauna', {}, columnDefs);
+            var tableOptions = {
+                scrollX: true,
+                autoWidth: true,
+                pageLength: 2
+            };
+            var table = tables.initTable('#table_q71_fauna', tableOptions, columnDefs);
 
 //            console.log("fauna rows", rows);
             table.populate(rows);
