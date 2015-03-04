@@ -2,7 +2,7 @@ define([
         'underscore',
         'backbone',
         'dataSources',
-        'models/speciesModelsss'
+        'models/speciesModel'
     ]
     , function (_, Backbone, dataSources, speciesModel) {
 
