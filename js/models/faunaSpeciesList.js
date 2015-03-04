@@ -2,12 +2,12 @@ define([
         'underscore',
         'backbone',
         'dataSources',
-        'models/speciesModel'
+        'models/speciesModelsss'
     ]
-    , function (_, Backbone, dataSources, SpeciesModel) {
+    , function (_, Backbone, dataSources, speciesModel) {
 
         return Backbone.Collection.extend({
-            model: SpeciesModel,
+            model: speciesModel,
             source: dataSources.fauna,
 
             initialize: function () {
