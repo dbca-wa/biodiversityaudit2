@@ -1,0 +1,2 @@
+#! /usr/bin/bash
+s3cmd --exclude-from="./publish-exclude" --delete-removed sync ~/projects/biodiversity-explorer/ s3://dpaw-staticwebsites/biodiversity-audit/
