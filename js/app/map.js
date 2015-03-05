@@ -81,8 +81,8 @@ define([
             if (button.toggleStatus)
                 L.DomUtil.addClass(newButton, 'leaflet-buttons-control-toggleon');
 
-//            var image = L.DomUtil.create('img', 'leaflet-buttons-control-img', newButton);
-//            image.setAttribute('src', button.iconUrl);
+            var image = L.DomUtil.create('img', 'leaflet-buttons-control-img', newButton);
+            image.setAttribute('src', button.iconUrl);
 
             if (button.text !== '') {
 
@@ -126,10 +126,10 @@ define([
             }
         });
         var myButtonOptions = {
-            'text': 'Western Australia',  // string
-            'iconUrl': 'images/myButton.png',  // string
+            'text': 'All Western Australia',  // string
+            'iconUrl': '../images/wa.png',  // string
             'onClick': callback,  // callback function
-            'hideText': true,  // bool
+            'hideText': false,  // bool
             'maxWidth': 30,  // number
             'doToggle': false,  // bool
             'toggleStatus': false  // bool
@@ -138,35 +138,89 @@ define([
     }
 
 
-    function initMap(id, onclick) {
-        var map = L.map(id).setView([-25, 120], 5);
+    function initMap(id, onclickHandler) {
+
+        var map = L.map(id,{
+            center: [-25, 120],
+            zoom: 5,
+            zoomControl: false,
+            attributionControl: false
+        });
+
+
+        // Ibra regions layer
+        // Use the local file in test mode.
+        var ibraURL = config.datasource === 'test' ? config.urls.ibra_geojson_test : config.urls.ibra_geojson;
+
+        var ibraStyle = {
+            color: "#000000",
+            weight: 1,
+            fillColor: "#E7E7BB",
+            fillOpacity: 0
+        };
+
+        var ibraHighlightStyle = {
+            color: "#ffffff",
+            opacity: 1,
+            fillColor: "#CCCCCC",
+            fillOpacity: 0,
+            weight: 5
+        };
+
+
+        // Control to display the region code on the bottom left
+        var regionLabel;
+        var sidebarControl = function() {
+            return new (L.Control.extend({
+                options: { position: 'bottomleft' },
+                onAdd: function () {
+                    regionLabel = L.DomUtil.create('div', 'sidebar-control');
+                    return regionLabel;
+                }
+            }));
+        };
 
         /* Background layer */
         L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
             maxZoom: 18,
-            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap' +
-                '</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">' +
-                'CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
             id: 'examples.map-i875mjb7'
         }).addTo(map);
 
-        // Ibra regions layer
-        // Use the local file in test mode.
-        var ibra_url = config.datasource === 'test' ? config.urls.ibra_geojson_test : config.urls.ibra_geojson;
+
+        // The Ibra layer
         new L.GeoJSON.AJAX(
-            ibra_url, {
-                style: {"color": "#ff9933", "weight": 2, "opacity": 0.8},
+            ibraURL, {
+                style: ibraStyle,
                 onEachFeature: function (feature, layer) {
-                    layer.on('click', function (e) {
-                        if (typeof onclick === 'function') {
-                            onclick(feature.properties);
+                    layer.on({
+                        click: function () {
+                            if (typeof onclickHandler === 'function') {
+                                onclickHandler(feature.properties);
+                            }
+                        },
+                        mouseover: function () {
+                            layer.setStyle(ibraHighlightStyle);
+                            layer.bringToFront();
+                            if (regionLabel) {
+                                regionLabel.innerHTML = feature.properties.SUB_CODE;
+                            }
+                        },
+                        mouseout: function () {
+                            layer.setStyle(ibraStyle);
+                            if (regionLabel) {
+                                regionLabel.innerHTML = '';
+                            }
                         }
                     });
                 }
             }).addTo(map);
 
+        // Add side-pane control
+        map.addControl(sidebarControl());
+
+        // The WA control
         addWAControl(map, function () {
-            onclick({REG_NAME: 'State Level', SUB_CODE: 'Western Australia'});
+            onclickHandler({REG_NAME: 'State Level', SUB_CODE: 'Western Australia'});
         });
         return map;
     }

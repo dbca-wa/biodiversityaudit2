@@ -114,3 +114,7 @@
 #table_q71_fauna td {
     font-size: 0.875em;
 }
+
+.leaflet-button-control-text {
+    font-size: 0.875em;
+}
