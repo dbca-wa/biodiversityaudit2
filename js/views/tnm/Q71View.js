@@ -103,9 +103,8 @@ define([
             var columnDefs = this.buildColumnDefinitions(groups);
 //            console.log('columns', columnDefs);
             var tableOptions = {
-                scrollX: true,
-                autoWidth: true,
-                pageLength: 2
+//                autoWidth: true
+//                pageLength: 2
             };
             var table = tables.initTable('#table_q71_fauna', tableOptions, columnDefs);
 
@@ -165,18 +164,18 @@ define([
             var result = [
                 {
                     title: 'Region',
-                    data: 'region'
+                    data: 'region',
+                    width: '5%'
 
                 }
             ];
-            var coloumnWith = '' + 80/groups.length.toFixed() + '%';
-
+            var coloumnWith = 95/groups.length;
             var renderFunction = _.bind(this.renderAsList, this);
             _.each(groups, function (g) {
                 result.push({
                     title: extractTaxonGroup(g),
                     data: g,
-                    width: coloumnWith,
+                    width: '' + coloumnWith + '%',
                     render: function (data) {
                         return renderFunction(data);
                     }
@@ -192,7 +191,7 @@ define([
             }
             // only the first 3
            values = _.slice(values,0,4);
-            var compiled = _.template('<ul><% _.forEach(values, function(value) { %><li><%- value.pressure %> : <%- value.count %></li><% }); %></ul>');
+            var compiled = _.template('<% _.forEach(values, function(value) { %><span class="badge"><%- value.count %></span>&nbsp;<span class="q71"><%- value.pressure %></br></span><% }); %>');
             return compiled({ values: values });
         }
 
