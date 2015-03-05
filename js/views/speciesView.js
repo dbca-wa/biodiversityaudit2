@@ -36,7 +36,6 @@ define([
         initBox: function () {
             $("#species_input").autocomplete({
                 source: _.bind(function (request, response) {
-                    console.log('search among fauna', this.taxaValues.fauna.length, 'and flora', this.taxaValues.flora.length);
                     var allValues = this.taxaValues.fauna.concat(this.taxaValues.flora);
                     //delegate to the normal auto complete response
                     response($.ui.autocomplete.filter(allValues, request.term));
@@ -51,14 +50,12 @@ define([
         setFaunaValues: function () {
             if (this.fauna && !this.fauna.isEmpty()) {
                 this.taxaValues.fauna = this.buildTaxaValues(this.fauna, 'fauna');
-                console.log('fauna set', _.size(this.taxaValues.fauna));
             }
         },
 
         setFloraValues: function () {
             if (this.flora && !this.flora.isEmpty()) {
                 this.taxaValues.flora = this.buildTaxaValues(this.flora, 'flora');
-                console.log('flora set', _.size(this.taxaValues.flora));
             }
         },
 
