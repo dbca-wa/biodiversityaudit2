@@ -409,6 +409,14 @@ define([
             var table = tables.initTable(this.getDetailsTableElement(), {paging: false, info: false, searching: false, ordering: false}, columnDefs);
 
             table.populate([buildESURow(), buildPopRow(), buildIndRow(), buildEOORow(), buildAOORow()]);
+
+            // add foot note
+            var html = 'ESU: Evolutionary Significant Units &nbsp;&nbsp;&nbsp;' +
+                'Pop: Populations &nbsp;&nbsp;&nbsp;' +
+                '#Ind: Number of Mature Individuals &nbsp;&nbsp;&nbsp;' +
+                'EOO: Extent Of Occurrence  &nbsp;&nbsp;&nbsp;' +
+                'AOO: Area Of Occupancy';
+            this.$el.find('#details_footer').html(html);
         },
 
         renderManagementDetails: function (species, records) {
