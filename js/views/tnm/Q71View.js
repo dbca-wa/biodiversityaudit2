@@ -73,14 +73,12 @@ define([
                 })
                 .value();
             var groups = _.keys(byGroup);
-            console.log('groups', byGroup);
             var byRegion = _(records)
                 .groupBy(function (r) {
                     return r.get('SCALE');
                 })
                 .value();
             var regions = _.keys(byRegion);
-//            console.log('regions', byRegion);
             var rows = [];
 
             rows = _(regions)
@@ -88,9 +86,7 @@ define([
                     var row = {};
                     row.region = region;
                     _.each(groups, function (group) {
-                        var pastPressures = getPastPressures(records, region, group);
-//                        console.log('pastPressure for', region, group, '=', pastPressures);
-                        row[group] = pastPressures;
+                        row[group] = getPastPressures(records, region, group);
                     });
 
 
