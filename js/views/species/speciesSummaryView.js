@@ -22,7 +22,7 @@ define([
             {
                 title: 'Subregion',
                 width: '25%',
-                data: 'species',
+                data: 'id',
                 render: function (data) {
                     return data.rendered
                 }
@@ -62,6 +62,7 @@ define([
         ],
 
         initialize: function (options) {
+            this.label = options.label || "";
             // clear previous tables
             this.$el.find('summary_content').html('');
             this.$el.find('details_content').html('');

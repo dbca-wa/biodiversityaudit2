@@ -14,25 +14,25 @@ define([
 
         el: '#faunaTab',
 
-        speciesTemplate: _.template(
-            '<span class="taxa"><%= species %></span>'
+        idTemplate: _.template(
+            '<span class="taxa"><%= id %></span>'
         ),
         threatsTemplate: _.template(threatsCellTemplate),
         trendsTemplate: _.template(
-            '<a  id="trends_<%= species %>">details</a>'
+            '<a  id="trends_<%= id %>">details</a>'
         ),
         statusTemplate: _.template(
             '<%= status %>'
         ),
         managementTemplate: _.template(
-            '<a id="management_<%= species %>">details</a>'
+            '<a id="management_<%= id %>">details</a>'
         ),
 
         columnDefinitions: [
             {
                 title: 'Taxon',
                 width: '25%',
-                data: 'species',
+                data: 'id',
                 render: function (data) {
                     return data.rendered
                 }
@@ -71,74 +71,71 @@ define([
             }
         ],
 
-
-        buildRowData: function (records, speciesName) {
-
-            function buildThreatsData() {
-                var pastCount = 0,
-                    futureCount = 0;
-                _.each(records, function (r) {
-                    var past = r.get('PASTPRESSURES_CAT');
-                    var fut = r.get('FUTURETHREATS_CAT');
-                    if (filters.notEmpty(past)) {
-                        past = past.toLowerCase();
-                        if (_.contains(past, 'unknown')) {
-                            pastCount = '??';
-                        } else if (_.contains(past, 'no known')) {
-                            pastCount = 0; //'No known';
-                        } else {
-                            pastCount += 1;
-                        }
+        buildSummaryThreats: function (records) {
+            var pastCount = 0,
+                futureCount = 0;
+            _.each(records, function (r) {
+                var past = r.get('PASTPRESSURES_CAT');
+                var fut = r.get('FUTURETHREATS_CAT');
+                if (filters.notEmpty(past)) {
+                    past = past.toLowerCase();
+                    if (_.contains(past, 'unknown')) {
+                        pastCount = '??';
+                    } else if (_.contains(past, 'no known')) {
+                        pastCount = 0; //'No known';
+                    } else {
+                        pastCount += 1;
                     }
-                    if (filters.notEmpty(fut)) {
-                        fut = fut.toLowerCase();
-                        if (_.contains(fut, 'unknown')) {
-                            futureCount = 'unknown';
-                        } else if (_.contains(fut, 'no known')) {
-                            futureCount = 0; //'No known';
-                        } else {
-                            futureCount += 1;
-                        }
+                }
+                if (filters.notEmpty(fut)) {
+                    fut = fut.toLowerCase();
+                    if (_.contains(fut, 'unknown')) {
+                        futureCount = 'unknown';
+                    } else if (_.contains(fut, 'no known')) {
+                        futureCount = 0; //'No known';
+                    } else {
+                        futureCount += 1;
                     }
-                });
-
-                return {
-                    species: speciesName,
-                    pastCount: pastCount,
-                    futureCount: futureCount
                 }
-            }
+            });
 
-            function getStatus() {
-                var filter = _(records)
-                    .filter(function (r) {
-                        return filters.notEmpty(r.get('STATUSWA'))
-                    }).value();
-                if (filter.length > 0) {
-                    return filter[0].get('STATUSWA');
-                } else {
-                    return ''; //'?????';
-                }
+            return {
+                pastCount: pastCount,
+                futureCount: futureCount
             }
+        },
 
-            var species = {
-                    rendered: this.speciesTemplate({species: speciesName})
+        getStatusWA: function (records) {
+            var filter = _(records)
+                .filter(function (r) {
+                    return filters.notEmpty(r.get('STATUSWA'))
+                }).value();
+            if (filter.length > 0) {
+                return filter[0].get('STATUSWA');
+            } else {
+                return ''; //'?????';
+            }
+        },
+
+        buildSummaryRow: function (records, id) {
+            var id_ = {
+                    rendered: this.idTemplate({id: id})
                 },
                 threats = {
-                    rendered: this.threatsTemplate(buildThreatsData())
+                    rendered: this.threatsTemplate(_.extend({id: id},this.buildSummaryThreats(records)))
                 },
                 trends = {
-                    rendered: this.trendsTemplate({species: speciesName})
+                    rendered: this.trendsTemplate({id: id})
                 },
                 status = {
-                    rendered: this.statusTemplate({status: getStatus()})
+                    rendered: this.statusTemplate({status: this.getStatusWA(records)})
                 },
                 management = {
-                    rendered: this.managementTemplate({species: speciesName})
+                    rendered: this.managementTemplate({id: id})
                 };
 
             return {
-                species: species,
+                id: id_,
                 threats: threats,
                 trends: trends,
                 status: status,
@@ -161,7 +158,7 @@ define([
             this.setSummaryContent(this.buildSummaryContent());
             var tableSelector = this.getSummaryTableElement();
             var table = tables.initTable(tableSelector, {}, this.columnDefinitions);
-            var buildRow = _.bind(this.buildRowData, this);
+            var buildRow = _.bind(this.buildSummaryRow, this);
             var rows = _(this.model)
                 .map(function (v, k) {
                     return buildRow(v, k);
@@ -184,16 +181,16 @@ define([
             return _.template(summaryTemplate)(values);
         },
 
-        renderDetails: function (type, species) {
-            var records = this.model[species];
+        renderDetails: function (type, id) {
+            var records = this.model[id];
             if (type == 'threats') {
-                this.renderThreatDetails(species, records);
+                this.renderThreatDetails(id, records);
             }
             else if (type === 'trends') {
-                this.renderTrendsDetails(species, records);
+                this.renderTrendsDetails(id, records);
             }
             else if (type === 'management') {
-                this.renderManagementDetails(species, records);
+                this.renderManagementDetails(id, records);
             }
             else {
                 console.error('No details for type:', type)
@@ -229,7 +226,7 @@ define([
             return container;
         },
 
-        renderThreatDetails: function (species, records) {
+        renderThreatDetails: function (id, records) {
             var tableFields = ['PASTPRESSURES_CAT', 'PASTPRESSURES_SPECIFY', 'FUTURETHREATS_CAT',
                 'FUTURETHREATS_SPECIFY', 'RECOVERYPLANCOMMENCE'];
             var tableElement = this.getDetailsTableElement();
@@ -246,21 +243,18 @@ define([
             });
             var compiled = _.template(detailsTemplate);
             var table;
-            this.setDetailsContent(compiled({type: 'Threats', species: species}));
+            this.setDetailsContent(compiled({type: 'Threats', id: id}));
             table = tableView.render();
             // reverse order to put blank line at the end
             table.order([0, 'desc']).draw();
         },
 
-        renderTrendsDetails: function (species, records) {
+        renderTrendsDetails: function (id, records) {
             function getValue(column, def) {
                 var vals = getValues(column);
                 var result = vals[0] || def || '';
-                if (vals.length == 0) {
-//                    console.error("No value for ", column, ".Species:", species);
-                }
-                else if (vals.length > 1) {
-                    console.error("More than one value for ", column, vals, ".Species:", species);
+                if (vals.length > 1) {
+                    console.error("More than one value for ", column, vals, ".Species:", id);
                 }
                 return result;
             }
@@ -375,7 +369,7 @@ define([
 
             ];
             var compiled = _.template(detailsTemplate);
-            this.setDetailsContent(compiled({type: 'Trends', species: species}));
+            this.setDetailsContent(compiled({type: 'Trends', id: id}));
             var table = tables.initTable(this.getDetailsTableElement(), {paging: false, info: false, searching: false, ordering: false}, columnDefs);
 
             table.populate([buildESURow(), buildPopRow(), buildIndRow(), buildEOORow(), buildAOORow()]);
@@ -389,7 +383,7 @@ define([
             this.$el.find('#details_footer').html(html);
         },
 
-        renderManagementDetails: function (species, records) {
+        renderManagementDetails: function (id, records) {
 
             function getNotEmptyValues(column) {
                 return _(records)
@@ -478,14 +472,10 @@ define([
             ];
 
             var compiled = _.template(detailsTemplate);
-            this.setDetailsContent(compiled({type: 'Management', species: species}));
+            this.setDetailsContent(compiled({type: 'Management', id: id}));
             var table = tables.initTable(this.getDetailsTableElement(), {paging: false, info: false, searching: false, ordering: false}, columnDefs);
 
             table.populate([buildResearchRow(), buildEvalRow(), buildPlanningRow(), buildDirectRow(), buildIndirectRow(), buildOtherRow()]);
-
         }
-
     });
-
-
 });
