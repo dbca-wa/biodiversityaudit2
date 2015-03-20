@@ -53,7 +53,7 @@ define([
 
         setCommunitiesRecords: function (collection, allRecords) {
             var regionCode = this.get('SUB_CODE');
-            var myRecordsBySpecies = _(allRecords)
+            var recordsByCommunity = _(allRecords)
                 .filter(function (r) {
                     return r.get('SCALE') === regionCode;
                 })
@@ -61,7 +61,7 @@ define([
                     return r.get('EC_COMMUNITYID');
                 })
                 .value();
-            this.set('communities', myRecordsBySpecies);
+            this.set('communities', recordsByCommunity);
         },
 
         setWetlandsRecords: function (collection, allRecords) {
