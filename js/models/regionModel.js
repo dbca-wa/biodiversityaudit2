@@ -32,7 +32,7 @@ define([
                     return r.get('SCALE') === regionCode;
                 })
                 .groupBy(function (r) {
-                    return r.get('TT_NAMESCIEN');
+                    return r.get('NAMESCIEN');
                 })
                 .value();
             this.set('fauna', myRecordsBySpecies);
@@ -45,7 +45,7 @@ define([
                     return r.get('SCALE') === regionCode;
                 })
                 .groupBy(function (r) {
-                    return r.get('TT_NAMESCIEN');
+                    return r.get('NAMESCIEN');
                 })
                 .value();
             this.set('flora', myRecordsBySpecies);
@@ -58,7 +58,7 @@ define([
                     return r.get('SCALE') === regionCode;
                 })
                 .groupBy(function (r) {
-                    return r.get('EC_COMMUNITYID');
+                    return r.get('COMMUNITYID');
                 })
                 .value();
             this.set('communities', recordsByCommunity);

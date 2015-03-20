@@ -17,7 +17,7 @@ define([
             fields: [],
             filters: [
 //            {
-//                field: 'TT_STATUSWA',
+//                field: 'STATUSWA',
 //                predicate: notEmpty
 //            }
 //            {

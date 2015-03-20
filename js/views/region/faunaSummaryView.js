@@ -78,8 +78,8 @@ define([
                 var pastCount = 0,
                     futureCount = 0;
                 _.each(records, function (r) {
-                    var past = r.get('TT_PASTPRESSURES_CAT');
-                    var fut = r.get('TT_FUTURETHREATS_CAT');
+                    var past = r.get('PASTPRESSURES_CAT');
+                    var fut = r.get('FUTURETHREATS_CAT');
                     if (filters.notEmpty(past)) {
                         past = past.toLowerCase();
                         if (_.contains(past, 'unknown')) {
@@ -112,10 +112,10 @@ define([
             function getStatus() {
                 var filter = _(records)
                     .filter(function (r) {
-                        return filters.notEmpty(r.get('TT_STATUSWA'))
+                        return filters.notEmpty(r.get('STATUSWA'))
                     }).value();
                 if (filter.length > 0) {
-                    return filter[0].get('TT_STATUSWA');
+                    return filter[0].get('STATUSWA');
                 } else {
                     return ''; //'?????';
                 }
@@ -230,8 +230,8 @@ define([
         },
 
         renderThreatDetails: function (species, records) {
-            var tableFields = ['TT_PASTPRESSURES_CAT', 'TT_PASTPRESSURES_SPECIFY', 'TT_FUTURETHREATS_CAT',
-                'TT_FUTURETHREATS_SPECIFY', 'TT_RECOVERYPLANCOMMENCE'];
+            var tableFields = ['PASTPRESSURES_CAT', 'PASTPRESSURES_SPECIFY', 'FUTURETHREATS_CAT',
+                'FUTURETHREATS_SPECIFY', 'RECOVERYPLANCOMMENCE'];
             var tableElement = this.getDetailsTableElement();
             var tableView = new TableView({
                 el: tableElement.selector,
@@ -279,11 +279,11 @@ define([
             function buildESURow() {
                 return {
                     type: 'ESU',
-                    raw: getValue('TT_KNOWNESU_NUM'),
+                    raw: getValue('KNOWNESU_NUM'),
                     trans: 'N/A',
-                    trend: getValue('TT_KNOWNESU_TREND'),
-                    reliability: getValue('TT_KNOWNESU_TRENDRELIAB'),
-                    notes: getValue('TT_KNOWNESU_NOTES'),
+                    trend: getValue('KNOWNESU_TREND'),
+                    reliability: getValue('KNOWNESU_TRENDRELIAB'),
+                    notes: getValue('KNOWNESU_NOTES'),
                     IUCN: 'N/A'
                 };
 
@@ -292,12 +292,12 @@ define([
             function buildPopRow() {
                 return {
                     type: 'Pop',
-                    raw: getValue('TT_KNOWNPOPS_NUM'),
-                    trans: getValue('TT_KNOWNPOPS_TRANS'),
-                    trend: getValue('TT_KNOWNPOPS_TREND'),
-                    reliability: getValue('TT_KNOWNPOPS_TRENDRELIAB'),
-                    notes: getValue('TT_KNOWNPOPS_NOTES'),
-                    IUCN: getValue('TT_KNOWNPOPS_CAT')
+                    raw: getValue('KNOWNPOPS_NUM'),
+                    trans: getValue('KNOWNPOPS_TRANS'),
+                    trend: getValue('KNOWNPOPS_TREND'),
+                    reliability: getValue('KNOWNPOPS_TRENDRELIAB'),
+                    notes: getValue('KNOWNPOPS_NOTES'),
+                    IUCN: getValue('KNOWNPOPS_CAT')
                 };
 
             }
@@ -305,12 +305,12 @@ define([
             function buildIndRow() {
                 return {
                     type: '# Ind',
-                    raw: getValue('TT_MATIND_RAW'),
+                    raw: getValue('MATIND_RAW'),
                     trans: 'N/A',
-                    trend: getValue('TT_MATIND_TREND'),
-                    reliability: getValue('TT_MATIND_TRENDRELIAB'),
-                    notes: getValue('TT_MATIND_NOTES'),
-                    IUCN: getValue('TT_MATIND_CAT')
+                    trend: getValue('MATIND_TREND'),
+                    reliability: getValue('MATIND_TRENDRELIAB'),
+                    notes: getValue('MATIND_NOTES'),
+                    IUCN: getValue('MATIND_CAT')
                 };
 
             }
@@ -318,12 +318,12 @@ define([
             function buildEOORow() {
                 return {
                     type: 'EOO',
-                    raw: getValue('TT_EOOAREA_RAW'),
+                    raw: getValue('EOOAREA_RAW'),
                     trans: 'N/A',
-                    trend: getValue('TT_EOOAREA_TREND'),
+                    trend: getValue('EOOAREA_TREND'),
                     reliability: 'N/A',
-                    notes: getValue('TT_EOOAREA_NOTES'),
-                    IUCN: getValue('TT_EOOAREA_CAT')
+                    notes: getValue('EOOAREA_NOTES'),
+                    IUCN: getValue('EOOAREA_CAT')
                 };
 
             }
@@ -331,12 +331,12 @@ define([
             function buildAOORow() {
                 return {
                     type: 'AOO',
-                    raw: getValue('TT_AOOAREA_RAW'),
+                    raw: getValue('AOOAREA_RAW'),
                     trans: 'N/A',
-                    trend: getValue('TT_AOOAREA_TREND'),
+                    trend: getValue('AOOAREA_TREND'),
                     reliability: 'N/A',
-                    notes: getValue('TT_AOOAREA_NOTES'),
-                    IUCN: getValue('TT_AOOAREA_CAT')
+                    notes: getValue('AOOAREA_NOTES'),
+                    IUCN: getValue('AOOAREA_CAT')
                 };
 
             }
@@ -410,48 +410,48 @@ define([
             function buildResearchRow() {
                 return {
                     type: 'Research',
-                    category: getNotEmptyValues('TT_MANREQ_RESEARCH_CAT'),
-                    comment: getNotEmptyValues('TT_MANREQ_RESEARCH_SPECIFY')
+                    category: getNotEmptyValues('MANREQ_RESEARCH_CAT'),
+                    comment: getNotEmptyValues('MANREQ_RESEARCH_SPECIFY')
                 };
             }
 
             function buildEvalRow() {
                 return {
                     type: 'Evaluation',
-                    category: getNotEmptyValues('TT_MANREQ_EVALUATION_CAT'),
-                    comment: getNotEmptyValues('TT_MANREQ_EVALUATION_SPECIFY')
+                    category: getNotEmptyValues('MANREQ_EVALUATION_CAT'),
+                    comment: getNotEmptyValues('MANREQ_EVALUATION_SPECIFY')
                 };
             }
 
             function buildPlanningRow() {
                 return {
                     type: 'Conservation Planning',
-                    category: getNotEmptyValues('TT_MANREQ_CONSPLAN_CAT'),
-                    comment: getNotEmptyValues('TT_MANREQ_CONSPLAN_SPECIFY')
+                    category: getNotEmptyValues('MANREQ_CONSPLAN_CAT'),
+                    comment: getNotEmptyValues('MANREQ_CONSPLAN_SPECIFY')
                 };
             }
 
             function buildDirectRow() {
                 return {
                     type: 'Direct Intervention',
-                    category: getNotEmptyValues('TT_MANREQ_DIRECT_CAT'),
-                    comment: getNotEmptyValues('TT_MANREQ_DIRECT_SPECIFY')
+                    category: getNotEmptyValues('MANREQ_DIRECT_CAT'),
+                    comment: getNotEmptyValues('MANREQ_DIRECT_SPECIFY')
                 };
             }
 
             function buildIndirectRow() {
                 return {
                     type: 'Indirect Intervention',
-                    category: getNotEmptyValues('TT_MANREQ_INDIRECT_CAT'),
-                    comment: getNotEmptyValues('TT_MANREQ_INDIRECT_SPECIFY')
+                    category: getNotEmptyValues('MANREQ_INDIRECT_CAT'),
+                    comment: getNotEmptyValues('MANREQ_INDIRECT_SPECIFY')
                 };
             }
 
             function buildOtherRow() {
                 return {
                     type: 'Other',
-                    category: getNotEmptyValues('TT_MANREQ_OTHER_CAT'),
-                    comment: getNotEmptyValues('TT_MANREQ_OTHER_SPECIFY')
+                    category: getNotEmptyValues('MANREQ_OTHER_CAT'),
+                    comment: getNotEmptyValues('MANREQ_OTHER_SPECIFY')
                 };
             }
 

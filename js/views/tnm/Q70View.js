@@ -21,11 +21,11 @@ define([
         return _(records)
             .filter(function (rec) {
                 return rec.get('SCALE') === region
-                    && rec.get('TT_SCHEDULE') === group
-                    && filters.notEmpty(rec.get('TT_KNOWNPOPS_TREND'));
+                    && rec.get('SCHEDULE') === group
+                    && filters.notEmpty(rec.get('KNOWNPOPS_TREND'));
             })
             .map(function (r) {
-                return r.get('TT_KNOWNPOPS_TREND');
+                return r.get('KNOWNPOPS_TREND');
             })
             .groupBy(function (r) {
                 return r;
@@ -61,13 +61,13 @@ define([
         renderFauna: function (collection, records) {
             records = _(records)
                 .filter(function (r) {
-                    return filters.notEmpty(r.get('TT_PASTPRESSURES_CAT'));
+                    return filters.notEmpty(r.get('PASTPRESSURES_CAT'));
                 })
                 .value();
-            // find group (col TT_SCHEDULE)
+            // find group (col SCHEDULE)
             var byGroup = _(records)
                 .groupBy(function (r) {
-                    return r.get('TT_SCHEDULE');
+                    return r.get('SCHEDULE');
                 })
                 .value();
             var groups = _.keys(byGroup);
@@ -107,13 +107,13 @@ define([
         renderFlora: function (collection, records) {
             records = _(records)
                 .filter(function (r) {
-                    return filters.notEmpty(r.get('TT_PASTPRESSURES_CAT'));
+                    return filters.notEmpty(r.get('PASTPRESSURES_CAT'));
                 })
                 .value();
-            // find group (col TT_SCHEDULE)
+            // find group (col SCHEDULE)
             var byGroup = _(records)
                 .groupBy(function (r) {
-                    return r.get('TT_SCHEDULE');
+                    return r.get('SCHEDULE');
                 })
                 .value();
             var groups = _.keys(byGroup);
