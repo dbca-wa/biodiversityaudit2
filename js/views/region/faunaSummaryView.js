@@ -147,7 +147,6 @@ define([
 
         },
 
-
         initialize: function () {
             _.bindAll(this, 'render');
         },
@@ -250,7 +249,7 @@ define([
             this.setDetailsContent(compiled({type: 'Threats', species: species}));
             table = tableView.render();
             // reverse order to put blank line at the end
-            table.order([0,'desc']).draw();
+            table.order([0, 'desc']).draw();
         },
 
         renderTrendsDetails: function (species, records) {
@@ -460,7 +459,7 @@ define([
                 {
                     title: 'Type',
                     data: 'type',
-                    width:'15%'
+                    width: '15%'
                 },
                 {
                     title: 'Category',

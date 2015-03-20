@@ -5,8 +5,8 @@ define([
     'models/faunaSpeciesList',
     'models/floraSpeciesList',
     'text!templates/species.html',
-    'views/species/taxonView'
-], function ($, _, Backbone, FaunaList, FloraList, template, TaxonView) {
+    'views/species/speciesSummaryView'
+], function ($, _, Backbone, FaunaList, FloraList, template, SpeciesSummaryView) {
 
     function getSpeciesLabel(model) {
         return model.taxon() + ' (' + model.common() + ')';
@@ -86,7 +86,7 @@ define([
                 // clear previous tables
                 this.$el.find('summary_content').html('');
                 this.$el.find('details_content').html('');
-                view = new TaxonView({model: records, label: getSpeciesLabel(model)});
+                view = new SpeciesSummaryView({model: records, label: getSpeciesLabel(model)});
                 view.render();
             }
         }

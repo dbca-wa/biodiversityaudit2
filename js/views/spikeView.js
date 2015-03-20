@@ -30,7 +30,6 @@ define([
             var labels = this.model.map( function (s) {
                 return s.taxon();
             });
-            console.log("Set labels", labels)
             $('#species').autocomplete({
                 source: labels
             });

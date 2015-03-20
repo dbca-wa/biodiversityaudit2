@@ -4,8 +4,8 @@ define([
     'backbone',
     'bootstrap',
     'text!templates/region/regionTemplate.html',
-    'views/region/faunaView',
-    'views/region/floraView'
+    'views/region/faunaSummaryView',
+    'views/region/floraSummaryView'
 ], function ($, _, Backbone, bootstrap, template, FaunaSummaryView, FloraSummaryView) {
 
 
@@ -50,7 +50,8 @@ define([
 
         renderFauna: function () {
             if (this.model.get('fauna')) {
-                new FaunaSummaryView({model: this.model.get('fauna')}).render();
+                var view = new FaunaSummaryView({model: this.model.get('fauna')})
+                view.render();
             }
         },
 
