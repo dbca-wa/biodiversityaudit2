@@ -17,6 +17,12 @@ define([
         idTemplate: _.template(
             '<span class="taxa"><%= id %></span>'
         ),
+        nameTemplate: _.template(
+            '<span><%= name %></span>'
+        ),
+        distTemplate: _.template(
+            '<span><%= value %></span>'
+        ),
         threatsTemplate: _.template(threatsCellTemplate),
         trendsTemplate: _.template(
             '<a  id="trends_<%= id %>">details</a>'
@@ -31,15 +37,31 @@ define([
         columnDefinitions: [
             {
                 title: 'Taxon',
-                width: '25%',
+                width: '15vw',
                 data: 'id',
                 render: function (data) {
                     return data.rendered
                 }
             },
             {
+                title: 'Common Name',
+                width: '20vw',
+                data: 'name',
+                render: function (data) {
+                    return data.rendered
+                }
+            },
+            {
+                title: 'Distribution',
+                width: '20vw',
+                data: 'dist',
+                render: function (data) {
+                    return data.rendered
+                }
+            },
+            {
                 title: 'Threats',
-                width: '25%',
+                width: '12vw',
                 data: 'threats',
                 render: function (data) {
                     return data.rendered
@@ -47,7 +69,7 @@ define([
             },
             {
                 title: 'Status WA',
-                width: '15%',
+                width: '11vw',
                 data: 'status',
                 render: function (data) {
                     return data.rendered
@@ -56,14 +78,14 @@ define([
             {
                 title: 'Trends',
                 data: 'trends',
-                width: '15%',
+                width: '11vw',
                 render: function (data) {
                     return data.rendered
                 }
             },
             {
                 title: 'Management Requirement',
-                width: '15%',
+                width: '11vw',
                 data: 'management',
                 render: function (data) {
                     return data.rendered
@@ -117,9 +139,27 @@ define([
             }
         },
 
+        getDistribution: function (records) {
+            var filter = _(records)
+                .filter(function (r) {
+                    return filters.notEmpty(r.get('DIST'))
+                }).value();
+            if (filter.length > 0) {
+                return filter[0].get('DIST');
+            } else {
+                return ''; //'?????';
+            }
+        },
+
         buildSummaryRow: function (records, id) {
             var id_ = {
                     rendered: this.idTemplate({id: id})
+                },
+                name = {
+                    rendered: this.nameTemplate({name: records[0].get('NAMECOMMON')})
+                },
+                dist = {
+                    rendered: this.distTemplate({value: this.getDistribution(records)})
                 },
                 threats = {
                     rendered: this.threatsTemplate(_.extend({id: id},this.buildSummaryThreats(records)))
@@ -136,6 +176,8 @@ define([
 
             return {
                 id: id_,
+                name: name,
+                dist: dist,
                 threats: threats,
                 trends: trends,
                 status: status,
