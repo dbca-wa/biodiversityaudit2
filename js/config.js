@@ -1,6 +1,7 @@
 define([
-    'underscore'
-], function (_) {
+    'underscore',
+    'jquery'
+], function (_, $) {
     var ckan = {
         base_url: 'http://internal-data.dpaw.wa.gov.au',
         master_dataset: '63a9cb0f-3d8a-4feb-9c2a-2431f7017d10',
@@ -8,8 +9,7 @@ define([
             fauna_csv: 'e9af8028-a790-4a5c-b713-84eb69298175',
             flora_csv: '9d9cda48-c08c-4de1-9339-789b8dc3c431',
             communities_csv: '7bdc88b6-2b78-471c-9f87-e133efeed90e',
-            //@todo: this is the the same as above. To be set when wetlands arrives
-            wetlands_csv: '7bdc88b6-2b78-471c-9f87-e133efeed90e'
+            wetlands_csv: '45b0a788-9ca0-48d7-88b0-24ff299f77a2'
         }
     };
     var urls = {
@@ -62,8 +62,12 @@ define([
     }
 
 
-    function build_url(parts) {
-        return parts.join('/')
+    function build_url(parts, params) {
+        var result = parts.join('/');
+        if (params) {
+            result += '?' + $.param(params)
+        }
+        return result;
     }
 
 

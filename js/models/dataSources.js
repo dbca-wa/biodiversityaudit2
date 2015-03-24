@@ -93,7 +93,7 @@ define([
             faunaModel.fetch();
             floraModel.fetch();
             communitiesModel.fetch();
-//            wetlandsModel.fetch();
+            wetlandsModel.fetch();
         }
     }
 });
