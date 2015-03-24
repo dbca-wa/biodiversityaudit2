@@ -1,5 +1,6 @@
 define([
     'jquery',
+    'jqueryui',
     'underscore',
     'backbone',
     'models/faunaSpeciesList',
@@ -9,7 +10,7 @@ define([
     'views/assets/assetsSpeciesSummaryView',
     'views/assets/assetsCommunitySummaryView',
     'text!templates/assets.html'
-], function ($, _, Backbone, FaunaList, FloraList, CommunityList, WetlandList, SpeciesSummaryView, CommunitySummaryView, template) {
+], function ($, ui, _, Backbone, FaunaList, FloraList, CommunityList, WetlandList, SpeciesSummaryView, CommunitySummaryView, template) {
 
     function getSpeciesLabel(model) {
         var result = model.taxon();
@@ -50,23 +51,17 @@ define([
             this.flora = new FloraList();
             this.communities = new CommunityList();
             this.wetlands = new WetlandList();
-            this.fauna.on("reset", this.setFaunaValues, this);
-            this.flora.on("reset", this.setFloraValues, this);
-            this.communities.on("reset", this.initCommunityInputs(), this);
-            this.wetlands.on("reset", this.initCommunityInputs, this);
         },
 
         render: function () {
             this.$el.html(_.template(template, {}));
-            if (this.fauna || this.flora) {
-                this.initSpeciesInputs();
-            }
-            if (this.communities) {
-                this.initCommunityInputs();
-            }
-            if (this.wetlands) {
-                this.initWetlandInputs();
-            }
+            this.initSpeciesInputs();
+            this.initCommunityInputs();
+            this.initWetlandInputs();
+            this.fauna.on("reset", this.setFaunaValues, this);
+            this.flora.on("reset", this.setFloraValues, this);
+            this.communities.on("reset", this.initCommunityInputs(), this);
+            this.wetlands.on("reset", this.initCommunityInputs, this);
         },
 
         initSpeciesInputs: function () {
