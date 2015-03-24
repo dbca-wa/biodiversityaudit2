@@ -4,7 +4,7 @@ define([
     'views/footerView',
     'views/homeView',
     'views/regionsView',
-    'views/speciesView',
+    'views/assetsView',
     'views/tnmView',
     'views/dataView',
     'views/region/regionView',
@@ -12,7 +12,7 @@ define([
     'models/regionModel'
 
 ], function (Backbone,
-             HeaderView, FooterView, HomeView, RegionsView, SpeciesView, TnmView, DataView, RegionView, SpikeView,
+             HeaderView, FooterView, HomeView, RegionsView, AssetsView, TnmView, DataView, RegionView, SpikeView,
              RegionModel) {
 
     var Router = Backbone.Router.extend({
@@ -20,18 +20,14 @@ define([
             // App URL routes
             "": "home",
             "regions": "regions",
-            "species": "species",
+            "assets": "assets",
             "tnm": "tnm",
             "data": "data",
-            'spike(/:region)': 'spike',
+            'spike(/:region)': 'spike'
 
-            "region/:id/summary/:data": 'region_summary',
-            "region/:id/species/:species/details/:type": 'region_details'
-
-
-//            // Default
+            // Default
+            // important: don't put default rules. It will interfere with the links in the tables (details)
 //            "*actions": "defaultRoute"
-
         }
     });
 
@@ -51,8 +47,8 @@ define([
             new RegionsView().render();
         });
 
-        router.on('route:species', function () {
-            new SpeciesView().render();
+        router.on('route:assets', function () {
+            new AssetsView().render();
         });
 
         router.on('route:tnm', function () {
@@ -63,20 +59,8 @@ define([
             new DataView().render();
         });
 
-        router.on('route:region_summary', function (region, data) {
-            console.log('Summary of', region, 'for', data);
-        });
-
-        router.on('route:region_details', function (region, species, type) {
-            console.log('Details of', region, 'species', species, 'type', type);
-        });
-
         router.on('route:spike', function (region) {
             new SpikeView().render();
-        });
-
-        router.on('route:defaultRoute', function () {
-            new HomeView().render();
         });
 
 

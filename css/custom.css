@@ -106,9 +106,16 @@
     font-style: italic;
 }
 
+.assets-input {
+    margin-top: 30px;
+}
 
-#species_input {
-    width: 350px
+.assets-input .helper-text {
+    font-size: 0.875em;
+}
+
+.assets-input input {
+    width: 60%;
 }
 
 #table_q71_fauna td {
@@ -122,6 +129,8 @@
 .details-footer {
     font-size: 0.875em;
 }
+
+
 
 /*.panel-heading a:after {*/
     /*font-family:'Glyphicons Halflings';*/

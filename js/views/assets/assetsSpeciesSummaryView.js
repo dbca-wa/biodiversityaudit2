@@ -5,7 +5,7 @@ define([
     '../../app/tableFacade',
     'app/filters',
     'views/tableView',
-    'text!templates/species/summaryTemplate.html',
+    'text!templates/assets/assetsSummaryTemplate.html',
     'text!templates/region/detailsDefaultTemplate.html',
     'text!templates/region/threatsSummaryTemplate.html',
     'views/region/faunaSummaryView'
@@ -13,10 +13,10 @@ define([
 
     // very similar to the fauna view in region, except that taxon=region
     /*
-        Identical to the fauna view in region, except that the first column header is Region instead of Taxon.
+        Identical to the fauna view in region, except that the first column is the region instead of the taxon
      */
-    var View = FaunaSummaryView.extend({
-        el: '#taxonTab',
+    return FaunaSummaryView.extend({
+        el: '#result_content',
 
         columnDefinitions: [
             {
@@ -63,9 +63,6 @@ define([
 
         initialize: function (options) {
             this.label = options.label || "";
-            // clear previous tables
-            this.$el.find('summary_content').html('');
-            this.$el.find('details_content').html('');
         },
 
         buildSummaryContent: function () {
@@ -73,7 +70,5 @@ define([
             return _.template(summaryTemplate)(values);
         }
     });
-
-    return View;
 
 });

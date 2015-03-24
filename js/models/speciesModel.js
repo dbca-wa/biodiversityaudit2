@@ -19,7 +19,14 @@ define ([
 
         records: function () {
             return this.get('records');
-        }
+        },
 
+        recordsByRegion: function () {
+            return _(this.records())
+                .groupBy(function (r) {
+                    return r.get('SCALE');
+                })
+                .value();
+        }
     });
 });

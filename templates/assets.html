@@ -1,0 +1,79 @@
+<div class="row featurette" id="assets">
+
+    <div class="col-md-12">
+        <h2 class="featurette-heading">Biodiversity Assets <span class="text-muted"></span></h2>
+
+        <h4>Select the type of biodiversity asset you want to search for: </h4>
+    </div>
+</div>
+
+<div class="row">
+    <ul class="nav nav-pills nav-justified" id="assetsTabs" role="tablist">
+        <li role="presentation"><a id="species_header" href="#species_tab" data-toggle="tab"><h4>Species</h4></a></li>
+        <li role="presentation"><a id="communities_header" href="#community_tab" data-toggle="tab"><h4>Communities</h4></a></li>
+        <li role="presentation" class="disabled"><a id="wetlands_header" href="#wetland_tab" data-toggle="tab" class="disabled"><h4>Wetlands</h4></a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane assets-input" id="species_tab">
+            <div class="row">
+                <div class="col-md-8">
+                    <span class="helper-text">Search for a species by starting to type in the box below.</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="ui-widget">
+                        <label for="species_input">Species: </label>
+                        <input id="species_input">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane assets-input" id="community_tab">
+            <div class="row">
+                <div class="col-md-8">
+                    <span class="helper-text">Search for a community by starting to type in the box below.</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="ui-widget">
+                        <label for="community_input">Community: </label>
+                        <input id="community_input">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane assets-input" id="wetland_tab">
+            <div class="row">
+                <div class="col-md-8">
+                    <span class="helper-text">Search for a wetland by starting to type in the box below.</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="ui-widget">
+                        <label for="wetland_input">Wetland: </label>
+                        <input id="wetland_input">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="result_content">
+    <div class="row vspacer-50"></div>
+    <div class="row">
+        <div class="col-md12">
+            <div id="summary_content">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md12">
+                <div id="details_content">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

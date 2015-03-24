@@ -5,7 +5,7 @@ define([
     'models/faunaSpeciesList',
     'models/floraSpeciesList',
     'text!templates/species.html',
-    'views/species/speciesSummaryView'
+    'assets/speciesSummaryView'
 ], function ($, _, Backbone, FaunaList, FloraList, template, SpeciesSummaryView) {
 
     function getSpeciesLabel(model) {
@@ -30,10 +30,10 @@ define([
 
         render: function () {
             this.$el.html(_.template(template, {}));
-            this.initBox();
+            this.initSpeciesInputs();
         },
 
-        initBox: function () {
+        initSpeciesInputs: function () {
             $("#species_input").autocomplete({
                 source: _.bind(function (request, response) {
                     var allValues = this.taxaValues.fauna.concat(this.taxaValues.flora);
@@ -42,7 +42,7 @@ define([
                 }, this),
 
                 select: _.bind(function (event, ui) {
-                    this.showSummary(ui.item.category, ui.item.value);
+                    this.showSpeciesSummary(ui.item.category, ui.item.value);
                 }, this)
             });
         },
@@ -69,7 +69,7 @@ define([
             });
         },
 
-        showSummary: function (category, taxon) {
+        showSpeciesSummary: function (category, taxon) {
             var collection, model, records, view;
             collection = category === 'fauna' ? this.fauna : this.flora;
             model = collection.find(function (model) {
