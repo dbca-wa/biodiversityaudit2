@@ -8,12 +8,9 @@ define([
     'views/tnmView',
     'views/dataView',
     'views/region/regionView',
-    'views/spikeView',
-    'models/regionModel'
+    'views/aboutView',
 
-], function (Backbone,
-             HeaderView, FooterView, HomeView, RegionsView, AssetsView, TnmView, DataView, RegionView, SpikeView,
-             RegionModel) {
+], function (Backbone, HeaderView, FooterView, HomeView, RegionsView, AssetsView, TnmView, DataView, RegionView, AboutView) {
 
     var Router = Backbone.Router.extend({
         routes: {
@@ -23,7 +20,7 @@ define([
             "assets": "assets",
             "tnm": "tnm",
             "data": "data",
-            'spike(/:region)': 'spike'
+            "about": "about"
 
             // Default
             // important: don't put default rules. It will interfere with the links in the tables (details)
@@ -33,11 +30,8 @@ define([
 
     function initialize() {
         var router = new Router();
-
-
         new HeaderView();
         new FooterView();
-
 
         router.on('route:home', function () {
             new HomeView().render();
@@ -59,10 +53,9 @@ define([
             new DataView().render();
         });
 
-        router.on('route:spike', function (region) {
-            new SpikeView().render();
+        router.on('route:about', function () {
+            new AboutView().render();
         });
-
 
         Backbone.history.start();
     }

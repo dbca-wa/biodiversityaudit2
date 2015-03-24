@@ -1,13 +1,4 @@
 
-.footer {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    background-color: #21272d;
-    margin-top: 50px;
-    color: #9d9d9d;
-    height: 120px;
-}
-
 /* Navbar z-floats over map elements */
 .navbar > .container {
     z-index: 10;
