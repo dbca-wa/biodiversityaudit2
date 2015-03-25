@@ -12,7 +12,7 @@ define([
         el: '#result_content',
 
         idTemplate: _.template(
-            '<span><a title="click to view regional information." href="#regions/<%- id %>"><%= id %></a></span>'
+            '<span><a title="click to view regional information." href="#regions/community/<%- id %>"><%= id %></a></span>'
         ),
 
         columnDefinitions: [

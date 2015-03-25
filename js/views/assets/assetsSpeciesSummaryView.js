@@ -11,21 +11,20 @@ define([
     'views/region/faunaSummaryView'
 ], function ($, _, Backbone, tables, filters, TableView, summaryTemplate, detailsTemplate, threatsCellTemplate, FaunaSummaryView) {
 
-    // very similar to the fauna view in region, except that taxon=region
     /*
-        Identical to the fauna view in region, except that the first column is the region instead of the taxon
+        Very similar to the fauna view in region, except that the first column is the region instead of the taxon
      */
     return FaunaSummaryView.extend({
         el: '#result_content',
 
         idTemplate: _.template(
-            '<span><a title="click to view regional information." href="#regions/<%- id %>"><%= id %></a></span>'
+            '<span><a title="click to view regional information." href="#regions/species/<%- id %>"><%= id %></a></span>'
         ),
 
         columnDefinitions: [
             {
                 title: 'Subregion',
-                width: '25%',
+                width: '25vw',
                 data: 'id',
                 render: function (data) {
                     return data.rendered
@@ -33,7 +32,7 @@ define([
             },
             {
                 title: 'Threats',
-                width: '25%',
+                width: '25vw',
                 data: 'threats',
                 render: function (data) {
                     return data.rendered
@@ -41,7 +40,7 @@ define([
             },
             {
                 title: 'Status WA',
-                width: '15%',
+                width: '11vw',
                 data: 'status',
                 render: function (data) {
                     return data.rendered
@@ -50,14 +49,14 @@ define([
             {
                 title: 'Trends',
                 data: 'trends',
-                width: '15%',
+                width: '11vw',
                 render: function (data) {
                     return data.rendered
                 }
             },
             {
                 title: 'Management Requirement',
-                width: '15%',
+                width: '11vw',
                 data: 'management',
                 render: function (data) {
                     return data.rendered

@@ -6,17 +6,17 @@ define([
     'text!templates/region/regionTemplate.html',
     'views/region/faunaSummaryView',
     'views/region/floraSummaryView',
-    'views/region/communitiesSummaryView',
+    'views/region/communitiesSummaryView'
 ], function ($, _, Backbone, bootstrap, template, FaunaSummaryView, FloraSummaryView, CommunitiesSummaryView) {
 
 
-    var View = Backbone.View.extend({
+    return Backbone.View.extend({
 
         el: '#region_content',
 
         compiled: _.template(template),
 
-        initialize: function (options) {
+        initialize: function () {
             _.bindAll(this, 'render', 'renderFauna');
             if (this.model) {
                 this.model.on('change:fauna', this.renderFauna, this);
@@ -26,10 +26,10 @@ define([
 
         },
 
-        render: function () {
+        render: function (type) {
             this.$el.html(this.compiled(this.model.toJSON()));
-            // for incomplete region model without spatial profile url (l.e Western Australia)
-            if (!this.model.getSpatialProfileURL()){
+            // for incomplete region model without spatial profile url (i.e Western Australia)
+            if (!this.model.getSpatialProfileURL()) {
                 this.$el.find("#spatial_profile_url").html("");
             }
             if (this.model.get('fauna')) {
@@ -40,6 +40,14 @@ define([
             }
             if (this.model.get('communities')) {
                 this.renderCommunities();
+            }
+            if (type) {
+                // select the tab.
+                // type should be fauna,flora,community or wetland
+                if (type === 'species') {
+                    type = 'fauna';
+                }
+                this.$el.find("#" + type + "_header").click();
             }
         },
 
@@ -59,7 +67,7 @@ define([
 
         renderFauna: function () {
             if (this.model.get('fauna')) {
-                var view = new FaunaSummaryView({model: this.model.get('fauna')})
+                var view = new FaunaSummaryView({model: this.model.get('fauna')});
                 view.render();
             }
         },
@@ -82,6 +90,4 @@ define([
             }
         }
     });
-
-    return View;
 });

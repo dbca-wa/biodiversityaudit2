@@ -13,9 +13,9 @@ define([
 ], function ($, ui, _, Backbone, FaunaList, FloraList, CommunityList, WetlandList, SpeciesSummaryView, CommunitySummaryView, template) {
 
     function getSpeciesLabel(model) {
-        var result = model.taxon();
-        if (model.common()) {
-            result += ' (' + model.common() + ')';
+        var result = model.id();
+        if (model.name()) {
+            result += ' (' + model.name() + ')';
         }
         return result;
     }
@@ -137,7 +137,7 @@ define([
             var collection, model, records;
             collection = category === 'fauna' ? this.fauna : this.flora;
             model = collection.find(function (model) {
-                return model.taxon() === taxon;
+                return model.id() === taxon;
             });
             if (model) {
                 records = model.recordsByRegion();
@@ -174,7 +174,7 @@ define([
         buildTaxaValues: function (collection, category) {
             return collection.map(function (model) {
                 return {
-                    value: model.taxon(),
+                    value: model.id(),
                     label: getSpeciesLabel(model),
                     category: category
                 };

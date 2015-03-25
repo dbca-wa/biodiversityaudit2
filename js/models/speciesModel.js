@@ -5,16 +5,27 @@ define ([
 
     return Backbone.Model.extend({
 
-        taxon: function () {
-            return this.get('NAMESCIEN');
+        fields: {
+            id: 'NAMESCIEN',
+            name: 'NAMECOMMON',
+            DPaWRegion: 'DPAWREGION',
+            dist: 'DIST'
+        },
+        // shortcut methods
+        id: function () {
+            return this.get(this.fields.id);
         },
 
-        common: function () {
-            return this.get('NAMECOMMON');
+        name: function () {
+            return this.get(this.fields.name);
+        },
+
+        DPaWRegion: function () {
+            return this.get(this.fields.DPaWRegion);
         },
 
         dist: function () {
-            return this.get('DIST');
+            return this.get(this.fields.dist);
         },
 
         records: function () {

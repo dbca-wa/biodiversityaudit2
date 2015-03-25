@@ -15,18 +15,17 @@ define([
             },
 
             createAll: function (recordCollection, recordArray) {
+                var modelFields = new this.model().fields;
+                var groupByField = modelFields.id;
                 var species = _(recordArray)
                     .groupBy(function (r) {
-                        return r.get('NAMESCIEN');
+                        return r.get(groupByField);
                     })
                     .map(function (records) {
                         var firstRecord = records[0];
-                        return {
-                            NAMESCIEN: firstRecord.get('NAMESCIEN'),
-                            NAMECOMMON: firstRecord.get('NAMECOMMON'),
-                            DIST: firstRecord.get('DIST'),
-                            records: records
-                        }
+                        var attributes = _.pick(firstRecord.attributes, _.values(modelFields));
+                        attributes.records = records;
+                        return attributes;
                     })
                     .value();
                 this.reset(species);

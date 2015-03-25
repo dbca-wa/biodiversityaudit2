@@ -8,17 +8,17 @@ define([
     'views/region/regionView'
 ], function ($, _, Backbone, template, map, RegionModel, RegionView) {
 
-    function handleRegionClick (properties) {
+    function handleRegionClick (properties, type) {
         var model = new RegionModel(properties);
         var view = new RegionView({model: model});
         view.$el = this.$('#region_content');
-        view.render();
+        view.render(type);
     }
 
     return Backbone.View.extend({
         el: '#content',
 
-        render: function (id) {
+        render: function (type, id) {
             var regionProperties;
             this.$el.html(_.template(template, {}));
             map.init_map('map', handleRegionClick);
@@ -27,7 +27,7 @@ define([
                 // warning! if region data is shown before the ibra json data are loaded, we won't have access to it's
                 // name or the url for the profile
                 regionProperties = map.getRegionsProperties()[id] || {REG_NAME: id, SUB_CODE: id};
-                handleRegionClick(regionProperties);
+                handleRegionClick(regionProperties, type);
             }
         }
     });
