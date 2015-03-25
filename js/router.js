@@ -8,7 +8,7 @@ define([
     'views/tnmView',
     'views/dataView',
     'views/region/regionView',
-    'views/aboutView',
+    'views/aboutView'
 
 ], function (Backbone, HeaderView, FooterView, HomeView, RegionsView, AssetsView, TnmView, DataView, RegionView, AboutView) {
 
@@ -17,7 +17,7 @@ define([
             // App URL routes
             "": "home",
             "regions": "regions",
-            "assets": "assets",
+            "assets(/:type/:id)": "assets",
             "tnm": "tnm",
             "data": "data",
             "about": "about"
@@ -41,8 +41,8 @@ define([
             new RegionsView().render();
         });
 
-        router.on('route:assets', function () {
-            new AssetsView().render();
+        router.on('route:assets', function (type, id) {
+            new AssetsView().render(type, id);
         });
 
         router.on('route:tnm', function () {

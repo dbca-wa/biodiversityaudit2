@@ -53,22 +53,38 @@ define([
             this.wetlands = new WetlandList();
         },
 
-        render: function () {
+        render: function (type, id) {
             this.$el.html(_.template(template, {}));
-            this.initSpeciesInputs();
-            this.initCommunityInputs();
-            this.initWetlandInputs();
-            this.fauna.on("reset", this.setFaunaValues, this);
-            this.flora.on("reset", this.setFloraValues, this);
-            this.communities.on("reset", this.initCommunityInputs(), this);
-            this.wetlands.on("reset", this.initCommunityInputs, this);
+            this.fauna.on("reset", this.initSpeciesInputs, this);
+            this.flora.on("reset", this.initSpeciesInputs, this);
+            this.communities.on("reset", this.initCommunityInputs, this);
+            this.wetlands.on("reset", this.initWetlandInputs, this);
+            if (type || id) {
+                if (type === 'fauna'){
+                    this.fauna.on("reset", function () {
+                        this.showSpeciesSummary(type, id);
+                    }, this);
+                } else if (type === 'flora') {
+                    this.flora.on("reset", function () {
+                        this.showSpeciesSummary(type, id);
+                    }, this);
+                } else if (type === 'community') {
+                    this.communities.on("reset", function () {
+                        this.showCommunitySummary(id);
+                    }, this);
+                } else if (type === 'wetland') {
+                    this.wetlands.on("reset", function () {
+                        this.showWetlandSummary(id);
+                    }, this);
+                }
+            }
         },
 
         initSpeciesInputs: function () {
             $("#species_input").autocomplete({
                 source: _.bind(function (request, response) {
-                    var faunaValues = this.buildTaxaValues(this.fauna, 'fauna');
-                    var floraValues = this.buildTaxaValues(this.flora, 'flora');
+                    var faunaValues = this.fauna ? this.buildTaxaValues(this.fauna, 'fauna') : [];
+                    var floraValues = this.flora ? this.buildTaxaValues(this.flora, 'flora') : [];
                     var allValues = faunaValues.concat(floraValues);
                     //delegate to the normal auto complete response
                     response($.ui.autocomplete.filter(allValues, request.term));
@@ -91,7 +107,7 @@ define([
                     response($.ui.autocomplete.filter(allValues, request.term));
                 }, this),
                 select: _.bind(function (event, ui) {
-                    this.showCommunitySummary(ui.item.value, ui.item.label)
+                    this.showCommunitySummary(ui.item.value)
                 }, this)
             })
         },
