@@ -28,6 +28,10 @@ define([
 
         render: function () {
             this.$el.html(this.compiled(this.model.toJSON()));
+            // for incomplete region model without spatial profile url (l.e Western Australia)
+            if (!this.model.getSpatialProfileURL()){
+                this.$el.find("#spatial_profile_url").html("");
+            }
             if (this.model.get('fauna')) {
                 this.renderFauna();
             }
