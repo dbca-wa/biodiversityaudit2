@@ -55,29 +55,33 @@ define([
 
         render: function (type, id) {
             this.$el.html(_.template(template, {}));
+            this.initSpeciesInputs();
+            this.initCommunityInputs();
+            this.initWetlandInputs();
             this.fauna.on("reset", this.initSpeciesInputs, this);
             this.flora.on("reset", this.initSpeciesInputs, this);
             this.communities.on("reset", this.initCommunityInputs, this);
             this.wetlands.on("reset", this.initWetlandInputs, this);
+            // show something?
             if (type || id) {
-                if (type === 'fauna'){
-                    this.fauna.on("reset", function () {
-                        this.showSpeciesSummary(type, id);
-                    }, this);
-                } else if (type === 'flora') {
-                    this.flora.on("reset", function () {
-                        this.showSpeciesSummary(type, id);
-                    }, this);
-                } else if (type === 'community') {
-                    this.communities.on("reset", function () {
-                        this.showCommunitySummary(id);
-                    }, this);
-                } else if (type === 'wetland') {
-                    this.wetlands.on("reset", function () {
-                        this.showWetlandSummary(id);
-                    }, this);
+                if (type === 'fauna' || type === 'flora'){
+                    type = 'species';
                 }
+                this.doSelectValue(type, id);
             }
+        },
+
+        doSelectValue: function (type, id){
+            // here type must be species, community, wetland
+            var tab = this.$el.find("#" + type + "_header"),
+                input = this.$el.find("#" + type + "_input"),
+                menu;
+            // select the tab
+            tab.click();
+            // simulate a auto complete selection
+            input.autocomplete("search", id);
+            menu = input.autocomplete("widget");
+            $(menu[0].children[0]).click();
         },
 
         initSpeciesInputs: function () {
@@ -184,7 +188,6 @@ define([
 
         clearInput: function (type) {
             this.$el.find('#' + type + '_input').autocomplete().val('');
-
         },
 
         clear: function (type) {

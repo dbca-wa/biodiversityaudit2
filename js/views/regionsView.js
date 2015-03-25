@@ -18,11 +18,17 @@ define([
     return Backbone.View.extend({
         el: '#content',
 
-        render: function () {
+        render: function (id) {
+            var regionProperties;
             this.$el.html(_.template(template, {}));
             map.init_map('map', handleRegionClick);
-            // show the state level data.
-//            handleRegionClick({REG_NAME: 'State Level', SUB_CODE: 'Western Australia'});
+            // show region?
+            if (id) {
+                // warning! if region data is shown before the ibra json data are loaded, we won't have access to it's
+                // name or the url for the profile
+                regionProperties = map.getRegionsProperties()[id] || {REG_NAME: id, SUB_CODE: id};
+                handleRegionClick(regionProperties);
+            }
         }
     });
 });

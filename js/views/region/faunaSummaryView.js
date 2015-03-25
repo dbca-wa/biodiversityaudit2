@@ -15,7 +15,7 @@ define([
         el: '#faunaTab',
 
         idTemplate: _.template(
-            '<span class="taxa"><%= id %></span>'
+            '<span class="taxa"><a title="click to view asset information." href="#assets/species/<%- id %>"><%= id %></a></span>'
         ),
         nameTemplate: _.template(
             '<span><%= name %></span>'
@@ -209,7 +209,7 @@ define([
             var renderDetails = _.bind(this.renderDetails, this);
             //bind details links (should be done with the router)
             table.on('draw.dt', function () {
-                $(tableSelector).find('tr a').on('click', function (e) {
+                $(tableSelector).find("tr a:contains('details')").on('click', function (e) {
                     var split = e.target.id.split('_');
                     renderDetails(split[0], split[1]);
                 });

@@ -118,14 +118,10 @@ define([
 
     });
 
+    var regionsProperties = {};
+
     function addWAControl(map, callback) {
-        var Controller = L.Control.extend({
-            options: {
-                position: 'topleft',
-                title: 'Click to display a state profile'
-            }
-        });
-        var myButtonOptions = {
+        var buttonOptions = {
             'text': 'All Western Australia',  // string
             'iconUrl': '../images/wa.png',  // string
             'onClick': callback,  // callback function
@@ -134,7 +130,7 @@ define([
             'doToggle': false,  // bool
             'toggleStatus': false  // bool
         };
-        var myButton = new ControlButton(myButtonOptions).addTo(map);
+        new ControlButton(buttonOptions).addTo(map);
     }
 
 
@@ -192,6 +188,7 @@ define([
             ibraURL, {
                 style: ibraStyle,
                 onEachFeature: function (feature, layer) {
+                    regionsProperties[feature.properties.SUB_CODE] = feature.properties;
                     layer.on({
                         click: function () {
                             if (typeof onclickHandler === 'function') {
@@ -226,6 +223,9 @@ define([
     }
 
     return {
-        init_map: initMap
+        init_map: initMap,
+        getRegionsProperties: function () {
+            return regionsProperties;
+        }
     };
 });

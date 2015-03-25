@@ -65,7 +65,7 @@ define([
         ],
 
         idTemplate: _.template(
-            '<span class="taxa"><%= id %></span>'
+            '<span class="taxa"><a title="click to view asset information." href="#assets/community/<%- id %>"><%= id %></a></span>'
         ),
         nameTemplate: _.template(
             '<span><%= name %></span>'

@@ -16,7 +16,7 @@ define([
         routes: {
             // App URL routes
             "": "home",
-            "regions": "regions",
+            "regions(/:id)": "regions",
             "assets(/:type/:id)": "assets",
             "tnm": "tnm",
             "data": "data",
@@ -37,8 +37,8 @@ define([
             new HomeView().render();
         });
 
-        router.on('route:regions', function () {
-            new RegionsView().render();
+        router.on('route:regions', function (id) {
+            new RegionsView().render(id);
         });
 
         router.on('route:assets', function (type, id) {

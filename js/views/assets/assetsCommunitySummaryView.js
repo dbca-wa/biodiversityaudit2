@@ -11,6 +11,10 @@ define([
     return RegionCommunityView.extend({
         el: '#result_content',
 
+        idTemplate: _.template(
+            '<span><a title="click to view regional information." href="#regions/<%- id %>"><%= id %></a></span>'
+        ),
+
         columnDefinitions: [
             {
                 title: 'Subregion',
