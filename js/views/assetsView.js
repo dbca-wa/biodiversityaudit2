@@ -38,10 +38,10 @@ define([
             "click #species_header": function () {
                 this.clear('species')
             },
-            "click #communities_header": function () {
+            "click #community_header": function () {
                 this.clear('community')
             },
-            "click #wetlands_header": function () {
+            "click #wetland_header": function () {
                 this.clear('wetland')
             }
         },
