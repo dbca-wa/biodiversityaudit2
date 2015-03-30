@@ -4,17 +4,17 @@ define([
     'backbone',
     'text!templates/tnm.html',
     'app/tableFacade',
-    'views/tnm/T1View'
-], function ($, _, Backbone, template, tables, T1View) {
+    'views/tnm/Q70View',
+    'views/tnm/Q71View'
+], function ($, _, Backbone, template, tables, Q70View, Q71View) {
 
     return Backbone.View.extend({
         el: '#content',
 
         render: function () {
-            var parentId = 'accordion';
-            var t1View  = new T1View();
             this.$el.html(_.template(template, {}));
-            t1View.render(parentId);
+            new Q70View().render();
+            new Q71View().render();
         }
     });
 });
