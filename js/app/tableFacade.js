@@ -27,7 +27,8 @@ define([
             table.validate_row = function (row) {
                 var fields = table.get_data_fields(),
                     missing_columns = fields.filter(function (x) {
-                        return row[x] === undefined;
+                        var is_dot_notation = _.contains(x,'.'); // don't support dot notation
+                        return !is_dot_notation && row[x] === undefined;
                     }),
                     column_filler = {},
                     column,

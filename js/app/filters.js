@@ -1,16 +1,19 @@
 define([
-    'underscore'
-], function (_) {
+], function () {
 
-    function notEmpty(val) {
+    function notEmpty (val) {
         var undef = typeof val === 'undefined' || val === null;
         var emptyString = typeof val === 'string' && val.trim().length === 0;
         return !undef && !emptyString;
     }
 
+    function isNA (val) {
+        return typeof val === 'string' && val.trim().toUpperCase() === 'N/A'
+    }
 
     return {
-        notEmpty: notEmpty
+        notEmpty: notEmpty,
+        isNA: isNA
     }
 
 
