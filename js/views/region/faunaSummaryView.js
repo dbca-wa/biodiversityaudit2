@@ -163,7 +163,7 @@ define([
                     rendered: this.distTemplate({value: this.getDistribution(records)})
                 },
                 threats = {
-                    rendered: this.threatsTemplate(_.extend({id: id},this.buildSummaryThreats(records)))
+                    rendered: this.threatsTemplate(_.extend({id: id}, this.buildSummaryThreats(records)))
                 },
                 trends = {
                     rendered: this.trendsTemplate({id: id})
@@ -208,13 +208,12 @@ define([
                 })
                 .value();
             var renderDetails = _.bind(this.renderDetails, this);
-            //bind details links (should be done with the router)
-            table.on('draw.dt', function () {
-                $(tableSelector).find("tr a:contains('details')").on('click', function (e) {
+            //bind details links
+            table.on('draw.dt', function (e) {
+                $(e.target).find("td a:contains('details')").on('click', function (e) {
                     var split = e.target.id.split('_');
                     renderDetails(split[0], split[1]);
                 });
-
             });
             table.populate(rows);
         },
@@ -238,7 +237,7 @@ define([
             else {
                 console.error('No details for type:', type)
             }
-            $.scrollTo(this.getDetailsContentElement(),0);
+            $.scrollTo(this.getDetailsContentElement(), 0);
 
         },
 

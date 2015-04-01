@@ -1,4 +1,4 @@
-<div class="panel panel-default">
+<div  id="content_panel_<%= id %>" class="panel panel-default">
     <div class="panel-heading" role="tab" id="heading_<%= id %>">
         <h4 class="panel-title question">
             <a class="title" data-toggle="collapse" data-parent="#<%= parent %>" href="#<%= id %>"
@@ -16,12 +16,16 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <table id="summary_table_<%= id %>" class="table display cell-border"></table>
+                    <div id="summary_content_<%= id %>">
+                        <table id="summary_table_<%= id %>" class="table display cell-border"></table>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <table id="details_table_<%= id %>" class="table display cell-border"></table>
+                    <div id="details_content_<%= id %>">
+                        <table id="details_table_<%= id %>" class="table display cell-border"></table>
+                    </div>
                 </div>
             </div>
         </div>

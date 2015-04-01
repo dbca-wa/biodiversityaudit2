@@ -32,6 +32,26 @@ define([
                 return deferred;
             },
 
+
+            _addModelToTrend: function (result, trend, model) {
+                var previous;
+                if (!result[trend]) {
+                    result[trend] = {
+                        count: 0,
+                        models: []
+                    };
+                }
+                previous = result[trend];
+                // we add a model (species or communities) only if it doesn't already exist.
+                if (!_.find(previous.models, function (m) {
+                    return model.id() === m.id();
+                })) {
+                    previous.count += 1;
+                    previous.models.push(model)
+                }
+                return result
+            },
+
             /*
              Valid for fauna and flora
              Format returned
@@ -48,31 +68,20 @@ define([
                     return model;
                 }
 
-                function append(result, trend, models) {
-                    if (trend in result) {
-                        result[trend].count = result[trend].count + 1;
-                        result[trend]['models'].push(models);
-                    } else {
-                        result[trend] = {
-                            count: 1,
-                            models: [models]
-                        }
-                    }
-                }
-
                 var result = {
-                    population: {},
-                    mature: {}
-                };
+                        population: {},
+                        mature: {}
+                    },
+                    addModel = _.bind(this._addModelToTrend, this);
                 _.each(records, function (r) {
-                    var models = toSpeciesModel(r);
+                    var model = toSpeciesModel(r);
                     var popTrend = r.get('KNOWNPOPS_TREND');
                     var matureTrend = r.get('MATIND_TREND');
                     if (filters.notEmpty(popTrend) && !filters.isNA(popTrend)) {
-                        append(result.population, popTrend, models);
+                        addModel(result.population, popTrend, model);
                     }
                     if (filters.notEmpty(matureTrend) && !filters.isNA(matureTrend)) {
-                        append(result.mature, matureTrend, models);
+                        addModel(result.mature, matureTrend, model);
                     }
                 });
                 return result;
@@ -93,54 +102,43 @@ define([
                     return model;
                 }
 
-                function append(result, trend,  community) {
-                    if (trend in result) {
-                        result[trend].count = result[trend].count + 1;
-                        result[trend]['models'].push(community);
-                    } else {
-                        result[trend] = {
-                            count: 1,
-                            models: [community]
-                        }
-                    }
-                }
-
                 var result = {
-                    occurrence: {},
-                    aoo: {}
-                };
+                        occurrence: {},
+                        aoo: {}
+                    },
+                    addModel = _.bind(this._addModelToTrend, this);
                 _.each(records, function (r) {
                     var community = toCommunityModel(r);
                     var occTrend = r.get('KNOWNOCC_TREND');
                     var aooTrend = r.get('AOOAREA_TREND');
                     if (filters.notEmpty(occTrend) && !filters.isNA(occTrend)) {
-                        append(result.occurrence, occTrend, community);
+                        addModel(result.occurrence, occTrend, community);
                     }
                     if (filters.notEmpty(aooTrend) && !filters.isNA(aooTrend)) {
-                        append(result.aoo, aooTrend, community);
+                        addModel(result.aoo, aooTrend, community);
                     }
                 });
                 return result;
             },
 
             /*
-            Convenient method.
-            Will call success(data) when the all the data (fauna/flora/communities has been parsed)
-            Data format, for fauna same for flora. For communities it is occurrence and aoo instead of mature and population:
-            {
-                fauna: {
-                    mature: {
-                       trend_value: {
-                            count:<number>
-                            species: [speciesModel]
-                    }
-                     population: {
-                         trend_value: {
-                            count:<number>
-                            species: [speciesModel]
+             Convenient method.
+             Will call success(data) when the all the data (fauna/flora/communities has been parsed)
+             Data format, for fauna same for flora. For communities it is occurrence and aoo instead of mature and population:
+             {
+             fauna: {
+             mature: {
+             trend_value: {
+             count:<number>
+             species: [speciesModel]
              }
-                }
-            }
+             population: {
+             trend_value: {
+             count:<number>
+             species: [speciesModel]
+             }
+             }
+             }
              */
             onReady: function (success, err) {
                 this.deferred.promise().then(success, err)
