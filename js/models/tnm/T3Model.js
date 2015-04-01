@@ -19,13 +19,17 @@ define([
                 var result = {};
                 var parseSpecies = _.bind(this.parseSpecies, this);
                 var parseCommunities = _.bind(this.parseCommunities, this);
+                var parseWetlands = _.bind(this.parseWetlands, this);
                 dataSources.fauna.onReady(function (list, records) {
                     result.fauna = parseSpecies(records);
                     dataSources.flora.onReady(function (list, records) {
                         result.flora = parseSpecies(records);
                         dataSources.communities.onReady(function (list, records) {
                             result.communities = parseCommunities(records);
-                            deferred.resolve(result);
+                            dataSources.wetlands.onReady(function (list, records) {
+                                result.wetlands = parseWetlands(records);
+                                deferred.resolve(result);
+                            })
                         })
                     })
                 });
@@ -68,19 +72,19 @@ define([
                 }
 
                 var result = {
-                        population: {},
-                        mature: {}
+                        past: {},
+                        future: {}
                     },
                     addModel = _.bind(this._addModelToValue, this);
                 _.each(records, function (r) {
                     var model = toSpeciesModel(r);
-                    var popTrend = r.get('KNOWNPOPS_TREND');
-                    var matureTrend = r.get('MATIND_TREND');
-                    if (filters.notEmpty(popTrend) && !filters.isNA(popTrend)) {
-                        addModel(result.population, popTrend, model);
+                    var past = r.get('PASTPRESSURES_CAT');
+                    var future = r.get('FUTURETHREATS_CAT');
+                    if (filters.notEmpty(past) && !filters.isNA(past)) {
+                        addModel(result.past, past, model);
                     }
-                    if (filters.notEmpty(matureTrend) && !filters.isNA(matureTrend)) {
-                        addModel(result.mature, matureTrend, model);
+                    if (filters.notEmpty(future) && !filters.isNA(future)) {
+                        addModel(result.future, future, model);
                     }
                 });
                 return result;
@@ -102,42 +106,35 @@ define([
                 }
 
                 var result = {
-                        occurrence: {},
-                        aoo: {}
+                        past: {},
+                        future: {}
                     },
                     addModel = _.bind(this._addModelToValue, this);
                 _.each(records, function (r) {
-                    var community = toCommunityModel(r);
-                    var occTrend = r.get('KNOWNOCC_TREND');
-                    var aooTrend = r.get('AOOAREA_TREND');
-                    if (filters.notEmpty(occTrend) && !filters.isNA(occTrend)) {
-                        addModel(result.occurrence, occTrend, community);
+                    var model = toCommunityModel(r);
+                    var past = r.get('PASTPRESSURES_CAT');
+                    var future = r.get('FUTURETHREATS_CAT');
+                    if (filters.notEmpty(past) && !filters.isNA(past)) {
+                        addModel(result.past, past, model);
                     }
-                    if (filters.notEmpty(aooTrend) && !filters.isNA(aooTrend)) {
-                        addModel(result.aoo, aooTrend, community);
+                    if (filters.notEmpty(future) && !filters.isNA(future)) {
+                        addModel(result.future, future, model);
                     }
                 });
+                return result;
+            },
+
+            parseWetlands: function (records) {
+                var result = {
+                        past: {},
+                        future: {}
+                    };
                 return result;
             },
 
             /*
              Convenient method.
              Will call success(data) when the all the data (fauna/flora/communities has been parsed)
-             Data format, for fauna same for flora. For communities it is occurrence and aoo instead of mature and population:
-             {
-             fauna: {
-             mature: {
-             trend_value: {
-             count:<number>
-             species: [speciesModel]
-             }
-             population: {
-             trend_value: {
-             count:<number>
-             species: [speciesModel]
-             }
-             }
-             }
              */
             onReady: function (success, err) {
                 this.deferred.promise().then(success, err)

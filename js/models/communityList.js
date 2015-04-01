@@ -3,7 +3,7 @@ define([
         'backbone',
         'dataSources',
         'models/communityModel',
-        'models/faunaSpeciesList',
+        'models/faunaSpeciesList'
     ]
     , function (_, Backbone, dataSources, communityModel, FaunaSpeciesList) {
 

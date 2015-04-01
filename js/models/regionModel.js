@@ -8,11 +8,20 @@ define([
 
     var model = Backbone.Model.extend({
 
+        id: function () {
+            return this.get('SUB_CODE');
+        },
+
+        name: function () {
+            return this.get('REG_NAME');
+        },
+
         initialize: function () {
             this.set("spatial_profile_url", this.getSpatialProfileURL());
             dataSources.fauna.onReady(_.bind(this.setFaunaRecords, this));
             dataSources.flora.onReady(_.bind(this.setFloraRecords, this));
             dataSources.communities.onReady(_.bind(this.setCommunitiesRecords, this));
+//            dataSources.wetlands.onReady((_.bind(this.setCommunitiesRecords, this)));
         },
 
         /*
