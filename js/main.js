@@ -1,8 +1,9 @@
 require.config({
-    // Define shortcut alias
+    // Define some shortcut aliases
     paths: {
         jquery: 'lib/jquery.min',
         jqueryui: 'lib/jquery-ui.min',
+        jqueryScrollTo: 'lib/jquery.scrollTo.min',
         underscore: 'lib/lodash.min',
         backbone: 'lib/backbone-min',
         leaflet: 'lib/leaflet',
@@ -20,6 +21,9 @@ require.config({
     // Dependencies and return values for scripts that are not AMD friendly
     shim: {
         jqueryui: {
+            deps: ['jquery']
+        },
+        jqueryScrollTo: {
             deps: ['jquery']
         },
         bootstrap: {

@@ -1,5 +1,6 @@
 define([
     'jquery',
+    'jqueryScrollTo',
     'underscore',
     'backbone',
     '../../app/tableFacade',
@@ -8,7 +9,7 @@ define([
     'text!templates/region/summaryDefaultTemplate.html',
     'text!templates/region/detailsDefaultTemplate.html',
     'text!templates/region/threatsSummaryTemplate.html'
-], function ($, _, Backbone, tables, filters, TableView, summaryTemplate, detailsTemplate, threatsCellTemplate) {
+], function ($, scrollTo, _, Backbone, tables, filters, TableView, summaryTemplate, detailsTemplate, threatsCellTemplate) {
 
     return Backbone.View.extend({
 
@@ -237,6 +238,7 @@ define([
             else {
                 console.error('No details for type:', type)
             }
+            $.scrollTo(this.getDetailsContentElement(),0);
 
         },
 

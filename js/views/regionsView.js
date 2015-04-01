@@ -1,18 +1,20 @@
 define([
     'jquery',
+    'jqueryScrollTo',
     'underscore',
     'backbone',
     'text!templates/regions.html',
     'app/map',
     'models/regionModel',
     'views/region/regionView'
-], function ($, _, Backbone, template, map, RegionModel, RegionView) {
+], function ($, ScrollTo, _, Backbone, template, map, RegionModel, RegionView) {
 
     function handleRegionClick (properties, type) {
         var model = new RegionModel(properties);
         var view = new RegionView({model: model});
-        view.$el = this.$('#region_content');
+        view.$el = $('#region_content');
         view.render(type);
+        $.scrollTo(view.$el, 200);
     }
 
     return Backbone.View.extend({
