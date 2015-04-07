@@ -2,4 +2,5 @@
 .idea/
 # anything with local in name
 *local*
-node_modules
+node_modules/
+.git/
