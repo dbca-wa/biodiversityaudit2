@@ -1,2 +1,3 @@
 #! /usr/bin/bash
-s3cmd --exclude-from="./publish-exclude" --delete-removed sync ~/projects/biodiversity-explorer/ s3://dpaw-staticwebsites/biodiversity-audit/
+PROJ_ROOT=`dirname $PWD`
+s3cmd --exclude-from="./publish-exclude" --delete-removed sync $PROJ_ROOT/ s3://dpaw-staticwebsites/biodiversity-audit/
