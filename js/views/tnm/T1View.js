@@ -7,9 +7,12 @@ define([
     'app/filters',
     'dataSources',
     'models/tnm/T1Model',
+    'views/tnm/regionInputView',
     'text!templates/tnm/T1Template.html',
-    'text!templates/tnm/detailsDefaultTemplate.html'
-], function ($, scrollTo, _, Backbone, tables, filters, dataSources, Model, template, detailsTemplate) {
+    'text!templates/tnm/T1SummaryTemplate.html',
+    'text!templates/tnm/T1DetailsTemplate.html'
+], function ($, scrollTo, _, Backbone, tables, filters, dataSources, T1Model, RegionInputView,
+             mainTemplate, summaryTemplate, detailsTemplate) {
 
     return Backbone.View.extend({
         id: 'T1',
@@ -20,6 +23,7 @@ define([
         columnDefs: [
             {
                 title: "Trend",
+                width: '20vw',
                 data: "trend",
                 render: function (data) {
                     return data.rendered || data;
@@ -69,42 +73,57 @@ define([
             }
         ],
 
+        summaryCellTemplate: _.template(
+            '<a title="click to view details." id="<%= id %>"><%= val %></a></span>'
+        ),
+
         initialize: function () {
-            this.model = new Model();
         },
 
         render: function (parent) {
-            var child = _.template(template)({parent: parent, id: this.id, title: this.title, description: this.description}),
-                tableOptions = {
-                    'paging': false,
-                    'searching': false
-                },
-                table,
-                buildRows = _.bind(this.buildRows, this),
-                renderDetails = _.bind(this.renderDetails, this);
+            var child = _.template(mainTemplate)({
+                    parent: parent,
+                    id: this.id,
+                    title: this.title,
+                    description: this.description});
+            var inputView;
             $("#" + parent).append(child);
-            table = tables.initTable(this.getSummaryTableElement(), tableOptions, this.columnDefs);
+            inputView = new RegionInputView({el: '#region_input_'+ this.id});
+            inputView.render();
+            inputView.setSelectCallback(_.bind(this.renderSummary, this));
+        },
+
+        renderSummary: function (region_code) {
+            var template = _.template(summaryTemplate)({id: this.id});
+            this.getSummaryContentElement().html(template);
+            this.clearDetails();
+            var model = new T1Model(region_code);
+            var tableOptions = {
+                'paging': false,
+                'searching': false,
+                'destroy': true
+            };
+            var buildRows = _.bind(this.buildSummaryRows, this);
+            var renderDetails = _.bind(this.renderDetails, this);
+            var table = tables.initTable(this.getSummaryTableElement(), tableOptions, this.columnDefs);
             // bind the links to the renderDetails method
             table.on('draw.dt', function (e) {
                 $(e.target).find("td a").on('click', function (e) {
-                    renderDetails(e.target.id);
+                    renderDetails(e.target.id, model);
                 });
             });
-            this.model.onReady(function (records) {
+            model.onReady(function (records) {
                 var rows = buildRows(records);
+                table.clear();
                 table.populate(rows);
-                console.log("T1, loaded");
             });
-        },
 
-        cellTemplate: _.template(
-            '<a title="click to view details." id="<%= id %>"><%= val %></a></span>'
-        ),
+        },
 
         /*
          Reformat data from model to accommodate the table rows definition
          */
-        buildRows: function (records) {
+        buildSummaryRows: function (records) {
             function setCellData(row, data, type, trend, source) {
                 row[data][type] = source[type][trend];
                 row[data][type].rendered = cellTemplate({
@@ -122,7 +141,7 @@ define([
                 .union(_.keys(records.communities['occurrence']))
                 .union(_.keys(records.communities['occurrence']))
                 .value();
-            var cellTemplate = this.cellTemplate;
+            var cellTemplate = this.summaryCellTemplate;
             return _(trends)
                 .map(function (trend) {
                     var row = {
@@ -167,16 +186,9 @@ define([
                 .value();
         },
 
-        speciesColDefs: [
-            {
-                title: 'Taxon',
-                data: 'id'
-            },
-            {
-                title: 'Common Name',
-                data: 'name'
-            }
-        ],
+        getSummaryContentElement: function () {
+            return $('#summary_content_' + this.id);
+        },
 
         getSummaryTableElement: function () {
             return $('#summary_table_' + this.id);
@@ -240,20 +252,30 @@ define([
             table.populate(rows);
         },
 
+        clearDetails: function () {
+            this.getDetailsContentElement().html('');
+        },
+
         /*
          id should be something like fauna_population_<trend>
          */
-        renderDetails: function (id) {
+        renderDetails: function (id, model) {
             var split = id.split('_'),
                 data = split[0],
                 type = split[1],
                 trend = split[2],
                 renderSpecies = _.bind(this.renderSpecies, this),
                 renderCommunities = _.bind(this.renderCommunities, this),
-                detailsTable = this.getDetailsTableElement();
+                getDetailsTableElement = _.bind(this.getDetailsTableElement, this),
+                label = 'Trend: ' + trend + ' for ' + data + ' ' + type,
+//                label = '',
+                template = _.template(detailsTemplate)({
+                    id: this.id,
+                    label: label
+             });
 
-
-            this.model.onReady(function (records) {
+            this.getDetailsContentElement().html(template);
+            model.onReady(function (records) {
                 var models = records[data][type][trend].models;
                 if (data === 'fauna' || data === 'flora') {
                     renderSpecies(models);
@@ -261,7 +283,7 @@ define([
                 if (data === 'communities') {
                     renderCommunities(models);
                 }
-                $.scrollTo(detailsTable, 0);
+                $.scrollTo(getDetailsTableElement(), 0);
             });
         }
     });

@@ -6,7 +6,7 @@ define([
     'dataSources'
 ], function ($, _, Backbone, config, dataSources) {
 
-    var model = Backbone.Model.extend({
+    return Backbone.Model.extend({
 
         id: function () {
             return this.get('SUB_CODE');
@@ -21,7 +21,7 @@ define([
             dataSources.fauna.onReady(_.bind(this.setFaunaRecords, this));
             dataSources.flora.onReady(_.bind(this.setFloraRecords, this));
             dataSources.communities.onReady(_.bind(this.setCommunitiesRecords, this));
-//            dataSources.wetlands.onReady((_.bind(this.setCommunitiesRecords, this)));
+            dataSources.wetlands.onReady((_.bind(this.setWetlandsRecords, this)));
         },
 
         /*
@@ -87,6 +87,4 @@ define([
         }
 
     });
-
-    return model;
 });

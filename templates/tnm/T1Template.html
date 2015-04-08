@@ -14,34 +14,27 @@
                     <div class="description"><%- description %></div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <table id="summary_table_<%= id %>" class="table display cell-border compact">
-                        <thead>
-                        <tr>
-                            <th style="border-left: 1px solid; border-top: 1px solid"></th>
-                            <th colspan="2" style="border-left: 1px solid; border-top: 1px solid">Threatened flora</th>
-                            <th colspan="2" style="border-left: 1px solid; border-top: 1px solid">Threatened fauna</th>
-                            <th colspan="2"
-                                style="border-left: 1px solid; border-top: 1px solid; border-right: 1px solid">
-                                Threatened/priority ecological communities
-                            </th>
-                        </tr>
-                        <tr>
-                            <th style="border-left: 1px solid"></th>
-                            <th style="border-left: 1px solid"></th>
-                            <th style="border-left: 1px solid"></th>
-                            <th style="border-left: 1px solid"></th>
-                            <th style="border-left: 1px solid"></th>
-                            <th style="border-left: 1px solid"></th>
-                            <th style="border-left: 1px solid; border-right: 1px solid"></th>
-                        </tr>
-                        </thead>
-                    </table>
+            <div id="input_content_<%= id %>" class="assets-input">
+                <div class="row">
+                    <div class="col-md-8">
+                        <span class="helper-text">Select a region by starting to type in the box below.</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="ui-widget">
+                            <label for="region_input_<%= id %>">Region: </label>
+                            <input id="region_input_<%= id %>">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row">
-                <div id="details_content_<%= id %>" class="col-md-12">
+                <div class="col-md-12 vspacer-20" id="summary_content_<%= id %>">
+                </div>
+            </div>
+            <div class="row">
+                <div id="details_content_<%= id %>" class="col-md-12 vspacer-20">
                     <table id="details_table_<%= id %>" class="table display cell-border"></table>
                 </div>
             </div>

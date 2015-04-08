@@ -36,11 +36,15 @@ define([
         ibra_geojson: build_url([
             build_ckan_resource_base_url('10b54e2b-7226-4dfb-b3ef-30264cd0670a', 'd32d65a1-7ebe-4457-a208-03fd9f1a456f'),
             'download/ibra7.geojson']),
+        ibra_min: build_url([
+            build_ckan_resource_base_url(ckan.master_dataset, '27a73c4d-cc2b-4468-a69d-e33f8217a1f4'),
+            'download/ibra-min.json']),
         fauna_csv_test: '../data/fauna-master.csv',
         flora_csv_test: '../data/flora-master.csv',
         communities_csv_test: '../data/communities-master.csv',
         wetlands_csv_test: '../data/wetlands-master.csv',
-        ibra_geojson_test: '../data/ibra7.geojson'
+        ibra_geojson_test: '../data/ibra7.geojson',
+        ibra_min_test: '../data/ibra-min.json'
     };
 
     var config = {

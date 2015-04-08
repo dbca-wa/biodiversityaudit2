@@ -13,8 +13,11 @@ define([
 
     return {
         notEmpty: notEmpty,
-        isNA: isNA
+        isNA: isNA,
+        regionFilter: function (regionCode){
+            return function (record) {
+                return record.get('SCALE') === regionCode;
+            };
+        }
     }
-
-
 });

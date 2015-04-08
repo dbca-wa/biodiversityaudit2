@@ -81,7 +81,7 @@ define([
                     'searching': false
                 },
                 table,
-                buildRows = _.bind(this.buildRows, this),
+                buildRows = _.bind(this.buildSummaryRows, this),
                 renderDetails = _.bind(this.renderDetails, this);
             $("#" + parent).append(child);
             table = tables.initTable(this.getSummaryTableElement(), tableOptions, this.columnDefs);
@@ -94,18 +94,17 @@ define([
             this.model.onReady(function (records) {
                 var rows = buildRows(records);
                 table.populate(rows);
-                console.log("T1, loaded");
             });
         },
 
-        cellTemplate: _.template(
+        summaryCellTemplate: _.template(
             '<a title="click to view details." id="<%= id %>"><%= val %></a></span>'
         ),
 
         /*
          Reformat data from model to accommodate the table rows definition
          */
-        buildRows: function (records) {
+        buildSummaryRows: function (records) {
             function setCellData(row, data, type, trend, source) {
                 row[data][type] = source[type][trend];
                 row[data][type].rendered = cellTemplate({
@@ -123,7 +122,7 @@ define([
                 .union(_.keys(records.communities['occurrence']))
                 .union(_.keys(records.communities['occurrence']))
                 .value();
-            var cellTemplate = this.cellTemplate;
+            var cellTemplate = this.summaryCellTemplate;
             return _(trends)
                 .map(function (trend) {
                     var row = {
@@ -168,7 +167,7 @@ define([
                 .value();
         },
 
-        speciesColDefs: [
+        detailsSpeciesColumnDefs: [
             {
                 title: 'Taxon',
                 data: 'id'

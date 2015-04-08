@@ -1,4 +1,5 @@
 define([
+        'jquery',
         'underscore',
         'backbone',
         'dataSources',
@@ -6,11 +7,12 @@ define([
         'models/speciesModel',
         'models/communityModel'
     ]
-    , function (_, Backbone, dataSources, filters, SpeciesModel, CommunityModel) {
+    , function ($, _, Backbone, dataSources, filters, SpeciesModel, CommunityModel) {
 
         return Backbone.Model.extend({
 
-            initialize: function () {
+            initialize: function (regionCode) {
+                this.region = regionCode;
                 this.deferred = this.fetch();
             },
 
@@ -19,17 +21,22 @@ define([
                 var result = {};
                 var parseSpecies = _.bind(this.parseSpecies, this);
                 var parseCommunities = _.bind(this.parseCommunities, this);
+                var filterRegion = _.bind(this.filterRegion, this);
                 dataSources.fauna.onReady(function (list, records) {
-                    result.fauna = parseSpecies(records);
+                    result.fauna = parseSpecies(filterRegion(records));
                     dataSources.flora.onReady(function (list, records) {
-                        result.flora = parseSpecies(records);
+                        result.flora = parseSpecies(filterRegion(records));
                         dataSources.communities.onReady(function (list, records) {
-                            result.communities = parseCommunities(records);
+                            result.communities = parseCommunities(filterRegion(records));
                             deferred.resolve(result);
                         })
                     })
                 });
                 return deferred;
+            },
+
+            filterRegion: function (records) {
+                return this.region ? _.filter(records, filters.regionFilter(this.region)) : records;
             },
 
             _addModelToValue: function (result, value, model) {

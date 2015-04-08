@@ -1,4 +1,5 @@
 define([
+        'jquery',
         'underscore',
         'backbone',
         'dataSources',
@@ -6,7 +7,7 @@ define([
         'models/speciesModel',
         'models/communityModel'
     ]
-    , function (_, Backbone, dataSources, filters, SpeciesModel, CommunityModel) {
+    , function ($, _, Backbone, dataSources, filters, SpeciesModel, CommunityModel) {
 
         return Backbone.Model.extend({
 
