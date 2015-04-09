@@ -28,7 +28,10 @@ define([
                         result.flora = parseSpecies(filterRegion(records));
                         dataSources.communities.onReady(function (list, records) {
                             result.communities = parseCommunities(filterRegion(records));
-                            deferred.resolve(result);
+                            dataSources.wetlands.onReady(function (list, records) {
+                                result.wetlands = parseCommunities(filterRegion(records));
+                                deferred.resolve(result);
+                            })
                         })
                     })
                 });
@@ -126,6 +129,15 @@ define([
                 });
                 return result;
             },
+
+            parseWetlands: function (records) {
+                var result = {
+                    past: {},
+                    future: {}
+                };
+                return result;
+            },
+
 
             /*
              Convenient method.

@@ -5,63 +5,20 @@ define([
         'dataSources',
         'app/filters',
         'models/speciesModel',
-        'models/communityModel'
+        'models/communityModel',
+        'models/tnm/T1Model'
     ]
-    , function ($, _, Backbone, dataSources, filters, SpeciesModel, CommunityModel) {
+    , function ($, _, Backbone, dataSources, filters, SpeciesModel, CommunityModel, T1Model) {
 
-        return Backbone.Model.extend({
+        return T1Model.extend({
 
-            initialize: function () {
-                this.deferred = this.fetch();
-            },
-
-            fetch: function () {
-                var deferred = new $.Deferred();
-                var result = {};
-                var parseSpecies = _.bind(this.parseSpecies, this);
-                var parseCommunities = _.bind(this.parseCommunities, this);
-                var parseWetlands = _.bind(this.parseWetlands, this);
-                dataSources.fauna.onReady(function (list, records) {
-                    result.fauna = parseSpecies(records);
-                    dataSources.flora.onReady(function (list, records) {
-                        result.flora = parseSpecies(records);
-                        dataSources.communities.onReady(function (list, records) {
-                            result.communities = parseCommunities(records);
-                            dataSources.wetlands.onReady(function (list, records) {
-                                result.wetlands = parseWetlands(records);
-                                deferred.resolve(result);
-                            })
-                        })
-                    })
-                });
-                return deferred;
-            },
-
-            _addModelToValue: function (result, value, model) {
-                var previous;
-                if (!result[value]) {
-                    result[value] = {
-                        count: 0,
-                        models: []
-                    };
-                }
-                previous = result[value];
-                // we add a model (species or communities) only if it doesn't already exist.
-                if (!_.find(previous.models, function (m) {
-                    return model.id() === m.id();
-                })) {
-                    previous.count += 1;
-                    previous.models.push(model)
-                }
-                return result
-            },
 
             /*
              Valid for fauna and flora
              Format returned
              {
-             pop: {trend: {count: <number> models: [speciesModel]
-             mature: {trend: {count: <number> models: [speciesModel]
+             past: {trend: {count: <number> models: [speciesModel]
+             future: {trend: {count: <number> models: [speciesModel]
              }
              */
             parseSpecies: function (records) {
@@ -94,8 +51,8 @@ define([
             /*
              Format returned
              {
-             occurrence: {trend: {count: <number> models: [communityModel]
-             aoo: {trend: {count: <number> models: [communityModel]
+             past: {trend: {count: <number> models: [communityModel]
+             future: {trend: {count: <number> models: [communityModel]
              }
              */
             parseCommunities: function (records) {
@@ -131,14 +88,6 @@ define([
                         future: {}
                     };
                 return result;
-            },
-
-            /*
-             Convenient method.
-             Will call success(data) when the all the data (fauna/flora/communities has been parsed)
-             */
-            onReady: function (success, err) {
-                this.deferred.promise().then(success, err)
             }
 
         });

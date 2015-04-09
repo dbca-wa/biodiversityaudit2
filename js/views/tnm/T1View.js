@@ -11,7 +11,7 @@ define([
     'text!templates/tnm/T1Template.html',
     'text!templates/tnm/T1SummaryTemplate.html',
     'text!templates/tnm/T1DetailsTemplate.html'
-], function ($, scrollTo, _, Backbone, tables, filters, dataSources, T1Model, RegionInputView,
+], function ($, scrollTo, _, Backbone, tables, filters, dataSources, Model, RegionInputView,
              mainTemplate, summaryTemplate, detailsTemplate) {
 
     return Backbone.View.extend({
@@ -93,11 +93,15 @@ define([
             inputView.setSelectCallback(_.bind(this.renderSummary, this));
         },
 
-        renderSummary: function (region_code) {
+        getModelForRegion: function(regionCode) {
+            return new Model(regionCode);
+        },
+
+        renderSummary: function (regionCode) {
             var template = _.template(summaryTemplate)({id: this.id});
             this.getSummaryContentElement().html(template);
             this.clearDetails();
-            var model = new T1Model(region_code);
+            var model = this.getModelForRegion(regionCode)
             var tableOptions = {
                 'paging': false,
                 'searching': false,
@@ -120,18 +124,18 @@ define([
 
         },
 
+        setCellData: function (row, data, type, trend, source) {
+            row[data][type] = source[type][trend];
+            row[data][type].rendered = this.summaryCellTemplate({
+                id: [data, type, trend].join('_'),
+                val: row[data][type].count || ''
+            });
+        },
+
         /*
          Reformat data from model to accommodate the table rows definition
          */
         buildSummaryRows: function (records) {
-            function setCellData(row, data, type, trend, source) {
-                row[data][type] = source[type][trend];
-                row[data][type].rendered = cellTemplate({
-                    id: [data, type, trend].join('_'),
-                    val: row[data][type].count || ''
-                });
-            }
-
             // build a list of unique trends
             var trends = _([])
                 .union(_.keys(records.fauna['population']))
@@ -141,7 +145,7 @@ define([
                 .union(_.keys(records.communities['occurrence']))
                 .union(_.keys(records.communities['occurrence']))
                 .value();
-            var cellTemplate = this.summaryCellTemplate;
+            var setCellData = _.bind(this.setCellData, this);
             return _(trends)
                 .map(function (trend) {
                     var row = {
@@ -267,7 +271,7 @@ define([
                 renderSpecies = _.bind(this.renderSpecies, this),
                 renderCommunities = _.bind(this.renderCommunities, this),
                 getDetailsTableElement = _.bind(this.getDetailsTableElement, this),
-                label = 'Trend: ' + trend + ' for ' + data + ' ' + type,
+                label = '' + trend + ' for ' + data + ' ' + type,
 //                label = '',
                 template = _.template(detailsTemplate)({
                     id: this.id,
