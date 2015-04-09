@@ -5,8 +5,9 @@ define([
     'text!templates/tnm.html',
     'app/tableFacade',
     'views/tnm/T1View',
-    'views/tnm/T3View'
-], function ($, _, Backbone, template, tables, T1View, T3View) {
+    'views/tnm/T3View',
+    'views/tnm/T4View'
+], function ($, _, Backbone, template, tables, T1View, T3View, T4View) {
 
     return Backbone.View.extend({
         el: '#content',
@@ -21,6 +22,9 @@ define([
 
             t3View = new T3View();
             t3View.render(parentId);
+
+            t4View = new T4View();
+            t4View.render(parentId);
         }
     });
 });
