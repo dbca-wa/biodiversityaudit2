@@ -1,0 +1,43 @@
+<div id="content_panel_<%= id %>" class="panel panel-default">
+    <div class="panel-heading" role="tab" id="heading_<%= id %>">
+        <h4 class="panel-title question">
+            <a class="title" data-toggle="collapse" data-parent="#<%= parent %>" href="#<%= id %>"
+               aria-expanded="false" aria-controls="collapse_<%= id %>">
+                <%- title %>
+            </a>
+        </h4>
+    </div>
+    <div id="<%= id %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading_<%= id %>">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="description"><%- description %></div>
+                </div>
+            </div>
+            <div id="input_content_<%= id %>" class="assets-input">
+                <div class="row">
+                    <div class="col-md-8">
+                        <span class="helper-text">Select a region by starting to type in the box below.</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="ui-widget">
+                            <label for="region_input_<%= id %>">Region: </label>
+                            <input id="region_input_<%= id %>">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 vspacer-20" id="summary_content_<%= id %>">
+                </div>
+            </div>
+            <div class="row">
+                <div id="details_content_<%= id %>" class="col-md-12 vspacer-20">
+                    <table id="details_table_<%= id %>" class="table display cell-border"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
