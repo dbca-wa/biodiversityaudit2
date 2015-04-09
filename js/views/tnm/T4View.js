@@ -72,25 +72,37 @@ define([
                     return data.rendered || data.count;
                 }
             },
-//            {
-//                title: "Research",
-//                data: "wetlands.research",
-//                render: function (data) {
-//                    return data.rendered || data.count;
-//                }
-//            },
-//            {
-//                title: "Conservation Planning",
-//                data: "wetlands.consplan",
-//                render: function (data) {
-//                    return data.rendered || data.count;
-//                }
-//            }
+            {
+                title: "Research",
+                data: "wetlands.research",
+                render: function (data) {
+                    return data.rendered || data.count;
+                }
+            },
+            {
+                title: "Conservation Planning",
+                data: "wetlands.consplan",
+                render: function (data) {
+                    return data.rendered || data.count;
+                }
+            }
         ],
 
 
         getModelForRegion: function(regionCode) {
             return new Model(regionCode);
+        },
+
+        getMainTemplate: function () {
+            return mainTemplate;
+        },
+
+        getSummaryTemplate: function () {
+            return summaryTemplate;
+        },
+
+        getDetailsTemplate: function () {
+            return detailsTemplate;
         },
 
         /*

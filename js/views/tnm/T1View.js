@@ -81,7 +81,7 @@ define([
         },
 
         render: function (parent) {
-            var child = _.template(mainTemplate)({
+            var child = _.template(this.getMainTemplate())({
                     parent: parent,
                     id: this.id,
                     title: this.title,
@@ -97,11 +97,23 @@ define([
             return new Model(regionCode);
         },
 
+        getMainTemplate: function () {
+            return mainTemplate;
+        },
+
+        getSummaryTemplate: function () {
+            return summaryTemplate;
+        },
+
+        getDetailsTemplate: function () {
+            return detailsTemplate;
+        },
+
         renderSummary: function (regionCode) {
-            var template = _.template(summaryTemplate)({id: this.id});
+            var template = _.template(this.getSummaryTemplate())({id: this.id});
             this.getSummaryContentElement().html(template);
             this.clearDetails();
-            var model = this.getModelForRegion(regionCode)
+            var model = this.getModelForRegion(regionCode);
             var tableOptions = {
                 'paging': false,
                 'searching': false,
@@ -260,6 +272,10 @@ define([
             this.getDetailsContentElement().html('');
         },
 
+        buildDetailsLabel: function (trend, data, type) {
+            return '' + trend + ' for ' + data;
+        },
+
         /*
          id should be something like fauna_population_<trend>
          */
@@ -271,9 +287,8 @@ define([
                 renderSpecies = _.bind(this.renderSpecies, this),
                 renderCommunities = _.bind(this.renderCommunities, this),
                 getDetailsTableElement = _.bind(this.getDetailsTableElement, this),
-                label = '' + trend + ' for ' + data + ' ' + type,
-//                label = '',
-                template = _.template(detailsTemplate)({
+                label = this.buildDetailsLabel(trend, data, type),
+                template = _.template(this.getDetailsTemplate())({
                     id: this.id,
                     label: label
              });
