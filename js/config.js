@@ -7,9 +7,13 @@ define([
         master_dataset: '63a9cb0f-3d8a-4feb-9c2a-2431f7017d10',
         resources: {
             fauna_csv: 'e9af8028-a790-4a5c-b713-84eb69298175',
+            fauna_xlsm: 'ff8f7b33-2beb-4577-96d2-53bc9fb92fd0',
             flora_csv: '9d9cda48-c08c-4de1-9339-789b8dc3c431',
+            flora_xlsm: 'd91ae791-83ee-4c83-994f-a329e8f6e6b8',
             communities_csv: '7bdc88b6-2b78-471c-9f87-e133efeed90e',
-            wetlands_csv: '45b0a788-9ca0-48d7-88b0-24ff299f77a2'
+            communities_xlsm: 'f508fbb3-3ee7-4f4b-9d91-31a343a97504',
+            wetlands_csv: '45b0a788-9ca0-48d7-88b0-24ff299f77a2',
+            wetlands_xlsm: 'ba274e83-6de3-49c7-85dd-3252cb99dff0'
         }
     };
     var urls = {
@@ -18,21 +22,37 @@ define([
             build_ckan_resource_base_url(ckan.master_dataset, ckan.resources.fauna_csv),
             'download',
             'fauna.csv' ]),
+        fauna_xlsm: build_url([
+            build_ckan_resource_base_url(ckan.master_dataset, ckan.resources.fauna_xlsm),
+            'download',
+            'fauna.xlsm' ]),
         flora_datastore: build_ckan_resource_base_url(ckan.master_dataset, ckan.resources.flora_csv),
         flora_csv: build_url([
             build_ckan_resource_base_url(ckan.master_dataset, ckan.resources.flora_csv),
             'download',
             'flora.csv' ]),
+        flora_xlsm: build_url([
+            build_ckan_resource_base_url(ckan.master_dataset, ckan.resources.flora_xlsm),
+            'download',
+            'flora.xlsm' ]),
         communities_datastore: build_ckan_resource_base_url(ckan.master_dataset, ckan.resources.communities_csv),
         communities_csv: build_url([
             build_ckan_resource_base_url(ckan.master_dataset, ckan.resources.communities_csv),
             'download',
             'communities.csv' ]),
+        communities_xlsm: build_url([
+            build_ckan_resource_base_url(ckan.master_dataset, ckan.resources.communities_xlsm),
+            'download',
+            'communities.xlsm' ]),
         wetlands_datastore: build_ckan_resource_base_url(ckan.master_dataset, ckan.resources.wetlands_csv),
         wetlands_csv: build_url([
             build_ckan_resource_base_url(ckan.master_dataset, ckan.resources.wetlands_csv),
             'download',
             'wetlands.csv' ]),
+        wetlands_xlsm: build_url([
+            build_ckan_resource_base_url(ckan.master_dataset, ckan.resources.wetlands_xlsm),
+            'download',
+            'wetlands.xlsm' ]),
         ibra_geojson: build_url([
             build_ckan_resource_base_url('10b54e2b-7226-4dfb-b3ef-30264cd0670a', 'd32d65a1-7ebe-4457-a208-03fd9f1a456f'),
             'download/ibra7.geojson']),
