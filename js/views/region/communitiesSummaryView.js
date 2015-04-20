@@ -195,7 +195,7 @@ define([
 
             var columnDefs = [
                 {
-                    title: 'Trend Type',
+                    title: 'Trend Characteristic',
                     data: 'type',
                     width: '5%',
                     orderable: false
