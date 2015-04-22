@@ -18,7 +18,7 @@ define([
     return T1View.extend({
         id: 'T5',
         el: '#content_panel_T5',
-        title: "Evaluation, direct management et indirect management.",
+        title: "Evaluation, direct management and indirect management.",
         description: "",
 
         columnDefs: [
