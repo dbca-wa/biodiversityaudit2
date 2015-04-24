@@ -7,11 +7,11 @@ define([
 ], function ($, _, Backbone, DataTable, tables) {
     'use strict';
 
-    var TableView = Backbone.View.extend({
+    return Backbone.View.extend({
 
 //        id: 'table',
 
-        el:'#table',
+        el: '#table',
 
         options: {
             fields: [],
@@ -35,20 +35,20 @@ define([
         _buildColumnDefinitions: function () {
             // all the fields definition can be retrieve from the fields property of the first record
             var first = this.collection ? this.collection.at(0) : this.model[0];
-            var _fields = first.fields;
-            var wanted = this.options.fields;
-            if (!_.isEmpty(wanted)) {
-                _fields = _fields.filter(function (f) {
-                    return _.contains(wanted, f.get('id').trim());
+            var allFields = first.fields;
+            var width = '' + Math.floor(100/this.options.fields.length) + 'vw';
+            return _.map(this.options.fields, function (id) {
+                var matches = allFields.filter(function (f) {
+                    return f.get('id') === id;
                 });
-            }
-            return _fields.map(
-                function (f) {
-                    return {
-                        title: f.get('label'),
-                        data: f.get('id')
-                    }
-                });
+                var columnTitle = matches ? matches[0].get('label') : id;
+                var dataDefinition = matches ? id : '';
+                return {
+                    title: columnTitle,
+                    data: dataDefinition,
+                    width: width
+                }
+            });
         },
 
         _applyFilters: function () {
@@ -58,13 +58,13 @@ define([
             _.each(filters, function (filter) {
                 rows = rows.filter(function (row) {
                     var viewedAttributes = !_.isEmpty(viewedFields) ? _.pick(row.attributes, viewedFields) : rows.attributes;
-                    if (filter.field === '__one__'){
+                    if (filter.field === '__one__') {
                         // one of the field must verify
                         return _.some(viewedAttributes, filter.predicate);
                     } else if (filter.field === '__all__') {
                         return _.all(viewedAttributes, filter.predicate);
                     }
-                    else{
+                    else {
                         return filter.predicate(row.get(filter.field));
                     }
                 });
@@ -82,9 +82,6 @@ define([
             table.populate(json);
             return table;
         }
-
     });
-
-    return TableView;
 
 });

@@ -271,7 +271,7 @@ define([
 
         renderThreatDetails: function (id, records) {
             var tableFields = ['PASTPRESSURES_CAT', 'PASTPRESSURES_SPECIFY', 'FUTURETHREATS_CAT',
-                'FUTURETHREATS_SPECIFY', 'RECOVERYPLANCOMMENCE'];
+                'FUTURETHREATS_SPECIFY', 'RECOVERYPLANCOMMENCE', 'NOTES1'];
             var tableElement = this.getDetailsTableElement();
             var tableView = new TableView({
                 el: tableElement.selector,
