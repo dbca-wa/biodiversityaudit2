@@ -70,7 +70,7 @@ define([
                 this.doSelectValue(type, id);
             }
             else {
-                $('#species_header').click();
+                this.doSelectValue('species', undefined);
             }
         },
 
@@ -82,7 +82,9 @@ define([
             // select the tab
             tab.click();
             // simulate a auto complete selection
-            input.autocomplete("search", id);
+            if (id) {
+                input.autocomplete("search", id);
+            }
             menu = input.autocomplete("widget");
             $(menu[0].children[0]).click();
         },
