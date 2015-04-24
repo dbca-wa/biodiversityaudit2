@@ -24,7 +24,7 @@ define([
         columnDefinitions: [
             {
                 title: 'Subregion',
-                width: '12vw',
+                width: '20vw',
                 data: 'id',
                 render: function (data) {
                     return data.rendered
@@ -32,7 +32,7 @@ define([
             },
             {
                 title: 'DPaW Region',
-                width: '12vw',
+                width: '30vw',
                 data: 'dpawRegion',
                 render: function (data) {
                     return data.rendered
@@ -40,7 +40,7 @@ define([
             },
             {
                 title: 'Threats',
-                width: '25vw',
+                width: '12.5vw',
                 data: 'threats',
                 render: function (data) {
                     return data.rendered
@@ -48,7 +48,7 @@ define([
             },
             {
                 title: 'Status WA',
-                width: '11vw',
+                width: '12.5vw',
                 data: 'status',
                 render: function (data) {
                     return data.rendered
@@ -57,14 +57,14 @@ define([
             {
                 title: 'Trends',
                 data: 'trends',
-                width: '11vw',
+                width: '12.5vw',
                 render: function (data) {
                     return data.rendered
                 }
             },
             {
                 title: 'Management Requirement',
-                width: '11vw',
+                width: '12.5vw',
                 data: 'management',
                 render: function (data) {
                     return data.rendered
