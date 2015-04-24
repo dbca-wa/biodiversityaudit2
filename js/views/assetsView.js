@@ -69,7 +69,9 @@ define([
                 }
                 this.doSelectValue(type, id);
             }
-            $('#species_header').click();
+            else {
+                $('#species_header').click();
+            }
         },
 
         doSelectValue: function (type, id){
