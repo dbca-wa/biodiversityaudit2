@@ -1,14 +1,18 @@
 define([
     'underscore',
     'backbone',
+    'config',
     'text!templates/about.html'
-], function (_, Backbone, template) {
+], function (_, Backbone, config, template) {
 
     return  Backbone.View.extend({
         el: '#content',
 
         render: function () {
-            this.$el.html(_.template(template, {}));
+            var data = {
+                methodology_pdf: config.urls.methodology_pdf
+            };
+            this.$el.html(_.template(template)(data));
         }
 
     });

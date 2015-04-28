@@ -13,7 +13,7 @@ define([
             communities_csv: '7bdc88b6-2b78-471c-9f87-e133efeed90e',
             communities_xlsm: 'f508fbb3-3ee7-4f4b-9d91-31a343a97504',
             wetlands_csv: '45b0a788-9ca0-48d7-88b0-24ff299f77a2',
-            wetlands_xlsm: 'ba274e83-6de3-49c7-85dd-3252cb99dff0'
+            wetlands_xlsm: 'ba274e83-6de3-49c7-85dd-3252cb99dff0',
         }
     };
     var urls = {
@@ -64,7 +64,13 @@ define([
         communities_csv_test: '../data/communities-master.csv',
         wetlands_csv_test: '../data/wetlands-master.csv',
         ibra_geojson_test: '../data/ibra7.geojson',
-        ibra_min_test: '../data/ibra-min.json'
+        ibra_min_test: '../data/ibra-min.json',
+
+        // resources file
+        methodology_pdf: build_url([
+            build_ckan_resource_base_url(ckan.master_dataset, 'c6378f81-2d68-410f-ba1c-20db21c0bbc6'),
+            'download',
+            'BAII_methodology.pdf'])
     };
 
     var config = {
