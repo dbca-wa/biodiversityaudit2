@@ -12,8 +12,8 @@ define([
             flora_xlsm: 'd91ae791-83ee-4c83-994f-a329e8f6e6b8',
             communities_csv: '7bdc88b6-2b78-471c-9f87-e133efeed90e',
             communities_xlsm: 'f508fbb3-3ee7-4f4b-9d91-31a343a97504',
-            wetlands_csv: '45b0a788-9ca0-48d7-88b0-24ff299f77a2',
-            wetlands_xlsm: 'ba274e83-6de3-49c7-85dd-3252cb99dff0',
+            wetlands_csv: '99cb8471-0499-4548-9a77-ac0e720ca8be',
+            wetlands_xlsm: ''
         }
     };
     var urls = {
