@@ -136,7 +136,7 @@ define([
 
     function initMap(id, onclickHandler) {
 
-        var map = L.map(id,{
+        var map = L.map(id, {
             center: [-25, 120],
             zoom: 5,
             zoomControl: false,
@@ -166,9 +166,9 @@ define([
 
         // Control to display the region code on the bottom left
         var regionLabel;
-        var sidebarControl = function() {
+        var sidebarControl = function () {
             return new (L.Control.extend({
-                options: { position: 'bottomleft' },
+                options: {position: 'bottomleft'},
                 onAdd: function () {
                     regionLabel = L.DomUtil.create('div', 'sidebar-control');
                     return regionLabel;
@@ -177,10 +177,12 @@ define([
         };
 
         /* Background layer */
-        L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
-            maxZoom: 18,
-            id: 'examples.map-i875mjb7'
-        }).addTo(map);
+        L.tileLayer('https://kmi.dpaw.wa.gov.au/geoserver/gwc/service/wmts?' +
+            'layer=dpaw:mapbox_outdoors&tilematrixset=mercator&Service=WMTS&Request=GetTile&Version=1.0.0' +
+            '&Format=image/png&TileMatrix=mercator:{z}&TileCol={x}&TileRow={y}',
+            {
+                maxZoom: 18
+            }).addTo(map);
 
 
         // The Ibra layer
