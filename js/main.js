@@ -7,7 +7,7 @@ require.config({
         underscore: 'lib/lodash.min',
         backbone: 'lib/backbone-min',
         leaflet: 'lib/leaflet',
-        leaflet_ajax: 'lib/leaflet.ajax.min',
+        leaflet_ajax: 'lib/leaflet.ajax',
         datatables: 'lib/jquery.dataTables',
         recline: 'lib/recline.dataset',
         CSVBackend: 'lib/csv',
