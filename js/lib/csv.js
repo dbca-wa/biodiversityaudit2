@@ -30,7 +30,7 @@ var CSV = {};
       out.useMemoryStore = true;
       dfd.resolve(out);
     } else if (dataset.url) {
-      jQuery.get(dataset.url).done(function(data) {
+      jQuery.ajax({url: dataset.url, method: 'GET', xhrFields: {withCredentials: true}}).done(function(data) {
         var out = my.extractFields(my.parse(data, dataset), dataset);
         out.useMemoryStore = true;
         dfd.resolve(out);

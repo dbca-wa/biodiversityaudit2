@@ -346,6 +346,7 @@ module.exports = function (url, options) {
     }
     var response;
     request = new global.XMLHttpRequest();
+    request.withCredentials = true;
     request.open('GET', url);
     if (options.headers) {
       Object.keys(options.headers).forEach(function (key) {

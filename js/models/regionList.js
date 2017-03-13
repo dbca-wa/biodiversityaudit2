@@ -19,14 +19,19 @@ define([
                 var url = config.datasource === 'test' ? config.urls.ibra_min_test : config.urls.ibra_min;
                 var set = _.bind(this.set, this);
                 var that = this;
-                $.getJSON(url, function (data) {
-                    // add the Western Australia 'region'
-                    data.push({
-                        'SUB_CODE': 'Western Australia',
-                        'REG_NAME': 'Western Australia'
-                    });
-                    set(data);
-                    deferred.resolve(that);
+                $.ajax({
+                    url: url,
+                    xhrFields: {withCredentials: true},
+                    dataType: 'json',
+                    success: function (data) {
+                        // add the Western Australia 'region'
+                        data.push({
+                            'SUB_CODE': 'Western Australia',
+                            'REG_NAME': 'Western Australia'
+                        });
+                        set(data);
+                        deferred.resolve(that);
+                    }
                 });
                 return deferred;
             },
