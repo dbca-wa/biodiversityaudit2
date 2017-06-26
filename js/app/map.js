@@ -177,7 +177,7 @@ define([
         };
 
         /* Background layer */
-        L.tileLayer('https://kmi.dpaw.wa.gov.au/geoserver/gwc/service/wmts?' +
+        L.tileLayer('//kmi.dpaw.wa.gov.au/geoserver/gwc/service/wmts?' +
             'layer=dpaw:mapbox_outdoors&tilematrixset=mercator&Service=WMTS&Request=GetTile&Version=1.0.0' +
             '&Format=image/png&TileMatrix=mercator:{z}&TileCol={x}&TileRow={y}',
             {

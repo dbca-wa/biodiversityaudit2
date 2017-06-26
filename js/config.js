@@ -3,7 +3,7 @@ define([
     'jquery'
 ], function (_, $) {
     var ckan = {
-        base_url: '//internal-data-sso.dpaw.wa.gov.au',
+        base_url: '//data.dpaw.wa.gov.au',
         master_dataset: '63a9cb0f-3d8a-4feb-9c2a-2431f7017d10',
         resources: {
             fauna_csv: 'e9af8028-a790-4a5c-b713-84eb69298175',
