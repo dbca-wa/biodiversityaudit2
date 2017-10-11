@@ -73,7 +73,7 @@ define([
             'BAII_methodology.pdf'])
     };
 
-    var isPublic: false;  // parksandwildlife/biodiversityaudit2/issues/10
+    var isPublic = false;  // parksandwildlife/biodiversityaudit2/issues/10
 
     var config = {
         ckan: ckan,
