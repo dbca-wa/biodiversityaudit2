@@ -320,7 +320,7 @@ define([
                     trans: 'N/A',
                     trend: getValue('KNOWNESU_TREND'),
                     reliability: getValue('KNOWNESU_TRENDRELIAB'),
-                    notes: getValue('KNOWNESU_NOTES'),
+                    // notes: getValue('KNOWNESU_NOTES'),
                     IUCN: 'N/A'
                 };
 
@@ -333,7 +333,7 @@ define([
                     trans: getValue('KNOWNPOPS_TRANS'),
                     trend: getValue('KNOWNPOPS_TREND'),
                     reliability: getValue('KNOWNPOPS_TRENDRELIAB'),
-                    notes: getValue('KNOWNPOPS_NOTES'),
+                    // notes: getValue('KNOWNPOPS_NOTES'),
                     IUCN: getValue('KNOWNPOPS_CAT')
                 };
 
@@ -346,7 +346,7 @@ define([
                     trans: 'N/A',
                     trend: getValue('MATIND_TREND'),
                     reliability: getValue('MATIND_TRENDRELIAB'),
-                    notes: getValue('MATIND_NOTES'),
+                    // notes: getValue('MATIND_NOTES'),
                     IUCN: getValue('MATIND_CAT')
                 };
 
@@ -359,7 +359,7 @@ define([
                     trans: 'N/A',
                     trend: getValue('EOOAREA_TREND'),
                     reliability: 'N/A',
-                    notes: getValue('EOOAREA_NOTES'),
+                    // notes: getValue('EOOAREA_NOTES'),
                     IUCN: getValue('EOOAREA_CAT')
                 };
 
@@ -372,7 +372,7 @@ define([
                     trans: 'N/A',
                     trend: getValue('AOOAREA_TREND'),
                     reliability: 'N/A',
-                    notes: getValue('AOOAREA_NOTES'),
+                    // notes: getValue('AOOAREA_NOTES'),
                     IUCN: getValue('AOOAREA_CAT')
                 };
 
@@ -404,11 +404,11 @@ define([
                     title: 'Trend Reliability',
                     width: '20%',
                     data: 'reliability'
-                },
-                {
-                    title: 'Notes',
-                    data: 'notes'
-                }
+                }//,
+                // {
+                //     title: 'Notes',
+                //     data: 'notes'
+                // }
 
             ];
             var compiled = _.template(detailsTemplate);

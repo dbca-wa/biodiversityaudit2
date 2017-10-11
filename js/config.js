@@ -79,7 +79,7 @@ define([
         ckan: ckan,
         urls: urls,
         isPublic: isPublic,  //  parksandwildlife/biodiversityaudit2/issues/10
-        datasource: 'csv' // [csv|datastore|test] ckan csv files, ckan datastore, test: local files in data folder
+        datasource: 'test' // [csv|datastore|test] ckan csv files, ckan datastore, test: local files in data folder
     };
 
     // if local config overrides the default
