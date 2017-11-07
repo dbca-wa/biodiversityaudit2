@@ -85,7 +85,7 @@ define([
                 }
             },
             {
-                title: 'Management Requirement',
+                title: 'Management Options',
                 width: '11vw',
                 data: 'management',
                 render: function (data) {
@@ -269,9 +269,12 @@ define([
             return container;
         },
 
+        // , 'NOTES1' = additional notes in regions > threats > details
         renderThreatDetails: function (id, records) {
             var tableFields = ['PASTPRESSURES_CAT', 'PASTPRESSURES_SPECIFY', 'FUTURETHREATS_CAT',
-                'FUTURETHREATS_SPECIFY', 'RECOVERYPLANCOMMENCE', 'NOTES1'];
+                'FUTURETHREATS_SPECIFY', 'RECOVERYPLANCOMMENCE'
+                
+                ];
             var tableElement = this.getDetailsTableElement();
             var tableView = new TableView({
                 el: tableElement.selector,
@@ -506,7 +509,7 @@ define([
                     }
                 },
                 {
-                    title: 'Comment',
+                    title: 'Potential Strategies',
                     data: 'comment',
                     render: function (data) {
                         return renderAsList(data)

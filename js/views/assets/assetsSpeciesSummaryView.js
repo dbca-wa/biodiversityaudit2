@@ -63,7 +63,7 @@ define([
                 }
             },
             {
-                title: 'Management Requirement',
+                title: 'Management Options',
                 width: '12.5vw',
                 data: 'management',
                 render: function (data) {
