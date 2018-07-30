@@ -73,10 +73,13 @@ define([
             'BAII_methodology.pdf'])
     };
 
+    var isPublic = false;  // dbca-wa/biodiversityaudit2/issues/10
+
     var config = {
         ckan: ckan,
         urls: urls,
-        datasource: 'csv' // [csv|datastore|test] ckan csv files, ckan datastore, test: local files in data folder
+        isPublic: isPublic,  //  dbca-wa/biodiversityaudit2/issues/10
+        datasource: 'test' // [csv|datastore|test] ckan csv files, ckan datastore, test: local files in data folder
     };
 
     // if local config overrides the default

@@ -55,7 +55,7 @@ define([
                 }
             },
             {
-                title: 'Management Requirement',
+                title: 'Management Options',
                 width: '12.5vw',
                 data: 'management',
                 render: function (data) {
@@ -139,8 +139,8 @@ define([
                     degree: 'N/A',
                     severity: 'N/A',
                     trend: getValue('KNOWNOCC_TREND'),
-                    reliability: getValue('KNOWNOCC_TRENDRELIAB'),
-                    notes: getValue('KNOWNOCC_NOTES')
+                    reliability: getValue('KNOWNOCC_TRENDRELIAB')//,
+                    // notes: getValue('KNOWNOCC_NOTES')
                 };
 
             }
@@ -152,8 +152,8 @@ define([
                     degree: getValue('DEGABIOTIC_EXTENTCAT'),
                     severity: getValue('DEGABIOTIC_SEVERITYCAT'),
                     trend: getValue('DEGABIOTIC_SEVERITYTREND'),
-                    reliability: getValue('DEGABIOTIC_RELIAB'),
-                    notes: getValue('DEGABIOTIC_NOTES')
+                    reliability: getValue('DEGABIOTIC_RELIAB')//,
+                    // notes: getValue('DEGABIOTIC_NOTES')
                 };
             }
 
@@ -164,8 +164,8 @@ define([
                     degree: getValue('DEGBIOTIC_EXTENTCAT'),
                     severity: getValue('DEGBIOTIC_SEVERITYCAT'),
                     trend: getValue('DEGBIOTIC_SEVERITYTREND'),
-                    reliability: getValue('DEGBIOTIC_RELIAB'),
-                    notes: getValue('DEGBIOTIC_NOTES')
+                    reliability: getValue('DEGBIOTIC_RELIAB')//,
+                    // notes: getValue('DEGBIOTIC_NOTES')
                 };
             }
 
@@ -176,8 +176,8 @@ define([
                     degree: 'N/A',
                     severity: 'N/A',
                     trend: getValue('EOOAREA_TREND'),
-                    reliability: 'N/A',
-                    notes: getValue('EOOAREA_NOTES')
+                    reliability: 'N/A'//,
+                    // notes: getValue('EOOAREA_NOTES')
                 };
             }
 
@@ -188,8 +188,8 @@ define([
                     degree: 'N/A',
                     severity: 'N/A',
                     trend: getValue('AOOAREA_TREND'),
-                    reliability: 'N/A',
-                    notes: getValue('AOOAREA_NOTES')
+                    reliability: 'N/A'//,
+                    // notes: getValue('AOOAREA_NOTES')
                 };
             }
 
@@ -224,11 +224,11 @@ define([
                     title: 'Trend Reliability',
                     width: '20%',
                     data: 'reliability'
-                },
-                {
-                    title: 'Notes',
-                    data: 'notes'
-                }
+                }//,
+                // {
+                //     title: 'Notes',
+                //     data: 'notes'
+                // }
 
             ];
             var compiled = _.template(detailsTemplate);
