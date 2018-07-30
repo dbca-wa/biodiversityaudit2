@@ -2397,7 +2397,7 @@
             "properties": {
                 "PERIMETER": 28.652099,
                 "REG_CODE": "AVW",
-                "popup": "<h3>AVW01 Merredin</h3>\n<p>AVW Avon Wheatbelt</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-AVW01.pdf\" class=\"\" title=\"View the spatial profile for IBRA AVW01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA AVW01</a>",
+                "popup": "<h3>AVW01 Merredin</h3>\n<p>AVW Avon Wheatbelt</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-AVW01.pdf\" class=\"\" title=\"View the spatial profile for IBRA AVW01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA AVW01</a>",
                 "SUB_NAME": "Merredin",
                 "OBJECTID": 448,
                 "AREA": 6.142688,
@@ -4854,7 +4854,7 @@
             "properties": {
                 "PERIMETER": 27.442243,
                 "REG_CODE": "AVW",
-                "popup": "<h3>AVW02 Katanning</h3>\n<p>AVW Avon Wheatbelt</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-AVW02.pdf\" class=\"\" title=\"View the spatial profile for IBRA AVW02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA AVW02</a>",
+                "popup": "<h3>AVW02 Katanning</h3>\n<p>AVW Avon Wheatbelt</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-AVW02.pdf\" class=\"\" title=\"View the spatial profile for IBRA AVW02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA AVW02</a>",
                 "SUB_NAME": "Katanning",
                 "OBJECTID": 449,
                 "AREA": 2.86961,
@@ -5763,7 +5763,7 @@
             "properties": {
                 "PERIMETER": 13.219424,
                 "REG_CODE": "CAR",
-                "popup": "<h3>CAR01 Cape Range</h3>\n<p>CAR Carnarvon</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-CAR01.pdf\" class=\"\" title=\"View the spatial profile for IBRA CAR01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA CAR01</a>",
+                "popup": "<h3>CAR01 Cape Range</h3>\n<p>CAR Carnarvon</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-CAR01.pdf\" class=\"\" title=\"View the spatial profile for IBRA CAR01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA CAR01</a>",
                 "SUB_NAME": "Cape Range",
                 "OBJECTID": 450,
                 "AREA": 2.063277,
@@ -6996,7 +6996,7 @@
             "properties": {
                 "PERIMETER": 19.920323,
                 "REG_CODE": "CAR",
-                "popup": "<h3>CAR02 Wooramel</h3>\n<p>CAR Carnarvon</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-CAR02.pdf\" class=\"\" title=\"View the spatial profile for IBRA CAR02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA CAR02</a>",
+                "popup": "<h3>CAR02 Wooramel</h3>\n<p>CAR Carnarvon</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-CAR02.pdf\" class=\"\" title=\"View the spatial profile for IBRA CAR02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA CAR02</a>",
                 "SUB_NAME": "Wooramel",
                 "OBJECTID": 451,
                 "AREA": 5.404622,
@@ -8081,7 +8081,7 @@
             "properties": {
                 "PERIMETER": 15.700616,
                 "REG_CODE": "CEK",
-                "popup": "<h3>CEK01 Pentecost</h3>\n<p>CEK Central Kimberley</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-CEK01.pdf\" class=\"\" title=\"View the spatial profile for IBRA CEK01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA CEK01</a>",
+                "popup": "<h3>CEK01 Pentecost</h3>\n<p>CEK Central Kimberley</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-CEK01.pdf\" class=\"\" title=\"View the spatial profile for IBRA CEK01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA CEK01</a>",
                 "SUB_NAME": "Pentecost",
                 "OBJECTID": 452,
                 "AREA": 3.728832,
@@ -9022,7 +9022,7 @@
             "properties": {
                 "PERIMETER": 14.073982,
                 "REG_CODE": "CEK",
-                "popup": "<h3>CEK02 Hart</h3>\n<p>CEK Central Kimberley</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-CEK02.pdf\" class=\"\" title=\"View the spatial profile for IBRA CEK02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA CEK02</a>",
+                "popup": "<h3>CEK02 Hart</h3>\n<p>CEK Central Kimberley</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-CEK02.pdf\" class=\"\" title=\"View the spatial profile for IBRA CEK02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA CEK02</a>",
                 "SUB_NAME": "Hart",
                 "OBJECTID": 453,
                 "AREA": 1.982384,
@@ -9499,7 +9499,7 @@
             "properties": {
                 "PERIMETER": 7.33607,
                 "REG_CODE": "CEK",
-                "popup": "<h3>CEK03 Mount Eliza</h3>\n<p>CEK Central Kimberley</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-CEK03.pdf\" class=\"\" title=\"View the spatial profile for IBRA CEK03 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA CEK03</a>",
+                "popup": "<h3>CEK03 Mount Eliza</h3>\n<p>CEK Central Kimberley</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-CEK03.pdf\" class=\"\" title=\"View the spatial profile for IBRA CEK03 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA CEK03</a>",
                 "SUB_NAME": "Mount Eliza",
                 "OBJECTID": 454,
                 "AREA": 0.81017,
@@ -10184,7 +10184,7 @@
             "properties": {
                 "PERIMETER": 14.209689,
                 "REG_CODE": "CER",
-                "popup": "<h3>CER01 Mann-Musgrave Block</h3>\n<p>CER Central Ranges</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-CER01.pdf\" class=\"\" title=\"View the spatial profile for IBRA CER01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA CER01</a>",
+                "popup": "<h3>CER01 Mann-Musgrave Block</h3>\n<p>CER Central Ranges</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-CER01.pdf\" class=\"\" title=\"View the spatial profile for IBRA CER01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA CER01</a>",
                 "SUB_NAME": "Mann-Musgrave Block",
                 "OBJECTID": 455,
                 "AREA": 4.213666,
@@ -10993,7 +10993,7 @@
             "properties": {
                 "PERIMETER": 14.491223,
                 "REG_CODE": "COO",
-                "popup": "<h3>COO01 Mardabilla</h3>\n<p>COO Coolgardie</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-COO01.pdf\" class=\"\" title=\"View the spatial profile for IBRA COO01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA COO01</a>",
+                "popup": "<h3>COO01 Mardabilla</h3>\n<p>COO Coolgardie</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-COO01.pdf\" class=\"\" title=\"View the spatial profile for IBRA COO01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA COO01</a>",
                 "SUB_NAME": "Mardabilla",
                 "OBJECTID": 456,
                 "AREA": 1.76745,
@@ -13466,7 +13466,7 @@
             "properties": {
                 "PERIMETER": 28.353397,
                 "REG_CODE": "COO",
-                "popup": "<h3>COO02 Southern Cross</h3>\n<p>COO Coolgardie</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-COO02.pdf\" class=\"\" title=\"View the spatial profile for IBRA COO02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA COO02</a>",
+                "popup": "<h3>COO02 Southern Cross</h3>\n<p>COO Coolgardie</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-COO02.pdf\" class=\"\" title=\"View the spatial profile for IBRA COO02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA COO02</a>",
                 "SUB_NAME": "Southern Cross",
                 "OBJECTID": 457,
                 "AREA": 5.682046,
@@ -15751,7 +15751,7 @@
             "properties": {
                 "PERIMETER": 28.07706,
                 "REG_CODE": "COO",
-                "popup": "<h3>COO03 Eastern Goldfield</h3>\n<p>COO Coolgardie</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-COO03.pdf\" class=\"\" title=\"View the spatial profile for IBRA COO03 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA COO03</a>",
+                "popup": "<h3>COO03 Eastern Goldfield</h3>\n<p>COO Coolgardie</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-COO03.pdf\" class=\"\" title=\"View the spatial profile for IBRA COO03 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA COO03</a>",
                 "SUB_NAME": "Eastern Goldfield",
                 "OBJECTID": 458,
                 "AREA": 4.794371,
@@ -16932,7 +16932,7 @@
             "properties": {
                 "PERIMETER": 15.609783,
                 "REG_CODE": "DAL",
-                "popup": "<h3>DAL01 Fitzroy Trough</h3>\n<p>DAL Dampierland</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-DAL01.pdf\" class=\"\" title=\"View the spatial profile for IBRA DAL01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA DAL01</a>",
+                "popup": "<h3>DAL01 Fitzroy Trough</h3>\n<p>DAL Dampierland</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-DAL01.pdf\" class=\"\" title=\"View the spatial profile for IBRA DAL01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA DAL01</a>",
                 "SUB_NAME": "Fitzroy Trough",
                 "OBJECTID": 459,
                 "AREA": 2.923028,
@@ -18245,7 +18245,7 @@
             "properties": {
                 "PERIMETER": 22.766372,
                 "REG_CODE": "DAL",
-                "popup": "<h3>DAL02 Pindanland</h3>\n<p>DAL Dampierland</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-DAL02.pdf\" class=\"\" title=\"View the spatial profile for IBRA DAL02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA DAL02</a>",
+                "popup": "<h3>DAL02 Pindanland</h3>\n<p>DAL Dampierland</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-DAL02.pdf\" class=\"\" title=\"View the spatial profile for IBRA DAL02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA DAL02</a>",
                 "SUB_NAME": "Pindanland",
                 "OBJECTID": 460,
                 "AREA": 4.213135,
@@ -19174,7 +19174,7 @@
             "properties": {
                 "PERIMETER": 12.828732,
                 "REG_CODE": "ESP",
-                "popup": "<h3>ESP01 Fitzgerald</h3>\n<p>ESP Esperance Plains</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-ESP01.pdf\" class=\"\" title=\"View the spatial profile for IBRA ESP01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA ESP01</a>",
+                "popup": "<h3>ESP01 Fitzgerald</h3>\n<p>ESP Esperance Plains</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-ESP01.pdf\" class=\"\" title=\"View the spatial profile for IBRA ESP01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA ESP01</a>",
                 "SUB_NAME": "Fitzgerald",
                 "OBJECTID": 461,
                 "AREA": 1.540166,
@@ -20227,7 +20227,7 @@
             "properties": {
                 "PERIMETER": 16.659214,
                 "REG_CODE": "ESP",
-                "popup": "<h3>ESP02 Recherche</h3>\n<p>ESP Esperance Plains</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-ESP02.pdf\" class=\"\" title=\"View the spatial profile for IBRA ESP02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA ESP02</a>",
+                "popup": "<h3>ESP02 Recherche</h3>\n<p>ESP Esperance Plains</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-ESP02.pdf\" class=\"\" title=\"View the spatial profile for IBRA ESP02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA ESP02</a>",
                 "SUB_NAME": "Recherche",
                 "OBJECTID": 462,
                 "AREA": 1.299224,
@@ -21452,7 +21452,7 @@
             "properties": {
                 "PERIMETER": 18.079668,
                 "REG_CODE": "GAS",
-                "popup": "<h3>GAS01 Ashburton</h3>\n<p>GAS Gascoyne</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-GAS01.pdf\" class=\"\" title=\"View the spatial profile for IBRA GAS01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA GAS01</a>",
+                "popup": "<h3>GAS01 Ashburton</h3>\n<p>GAS Gascoyne</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-GAS01.pdf\" class=\"\" title=\"View the spatial profile for IBRA GAS01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA GAS01</a>",
                 "SUB_NAME": "Ashburton",
                 "OBJECTID": 463,
                 "AREA": 3.259745,
@@ -22753,7 +22753,7 @@
             "properties": {
                 "PERIMETER": 17.997211,
                 "REG_CODE": "GAS",
-                "popup": "<h3>GAS02 Carnegie</h3>\n<p>GAS Gascoyne</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-GAS02.pdf\" class=\"\" title=\"View the spatial profile for IBRA GAS02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA GAS02</a>",
+                "popup": "<h3>GAS02 Carnegie</h3>\n<p>GAS Gascoyne</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-GAS02.pdf\" class=\"\" title=\"View the spatial profile for IBRA GAS02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA GAS02</a>",
                 "SUB_NAME": "Carnegie",
                 "OBJECTID": 464,
                 "AREA": 4.245421,
@@ -24574,7 +24574,7 @@
             "properties": {
                 "PERIMETER": 27.948207,
                 "REG_CODE": "GAS",
-                "popup": "<h3>GAS03 Augustus</h3>\n<p>GAS Gascoyne</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-GAS03.pdf\" class=\"\" title=\"View the spatial profile for IBRA GAS03 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA GAS03</a>",
+                "popup": "<h3>GAS03 Augustus</h3>\n<p>GAS Gascoyne</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-GAS03.pdf\" class=\"\" title=\"View the spatial profile for IBRA GAS03 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA GAS03</a>",
                 "SUB_NAME": "Augustus",
                 "OBJECTID": 465,
                 "AREA": 8.624656,
@@ -25523,7 +25523,7 @@
             "properties": {
                 "PERIMETER": 12.643385,
                 "REG_CODE": "GES",
-                "popup": "<h3>GES01 Geraldton Hills</h3>\n<p>GES Geraldton Sandplains</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-GES01.pdf\" class=\"\" title=\"View the spatial profile for IBRA GES01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA GES01</a>",
+                "popup": "<h3>GES01 Geraldton Hills</h3>\n<p>GES Geraldton Sandplains</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-GES01.pdf\" class=\"\" title=\"View the spatial profile for IBRA GES01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA GES01</a>",
                 "SUB_NAME": "Geraldton Hills",
                 "OBJECTID": 466,
                 "AREA": 1.80912,
@@ -26244,7 +26244,7 @@
             "properties": {
                 "PERIMETER": 8.851055,
                 "REG_CODE": "GES",
-                "popup": "<h3>GES02 Lesueur Sandplain</h3>\n<p>GES Geraldton Sandplains</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-GES02.pdf\" class=\"\" title=\"View the spatial profile for IBRA GES02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA GES02</a>",
+                "popup": "<h3>GES02 Lesueur Sandplain</h3>\n<p>GES Geraldton Sandplains</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-GES02.pdf\" class=\"\" title=\"View the spatial profile for IBRA GES02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA GES02</a>",
                 "SUB_NAME": "Lesueur Sandplain",
                 "OBJECTID": 467,
                 "AREA": 1.095321,
@@ -27701,7 +27701,7 @@
             "properties": {
                 "PERIMETER": 27.321215,
                 "REG_CODE": "GID",
-                "popup": "<h3>GID01 Lateritic Plain</h3>\n<p>GID Gibson Desert</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-GID01.pdf\" class=\"\" title=\"View the spatial profile for IBRA GID01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA GID01</a>",
+                "popup": "<h3>GID01 Lateritic Plain</h3>\n<p>GID Gibson Desert</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-GID01.pdf\" class=\"\" title=\"View the spatial profile for IBRA GID01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA GID01</a>",
                 "SUB_NAME": "Lateritic Plain",
                 "OBJECTID": 468,
                 "AREA": 11.328445,
@@ -28342,7 +28342,7 @@
             "properties": {
                 "PERIMETER": 12.84114,
                 "REG_CODE": "GID",
-                "popup": "<h3>GID02 Dune Field</h3>\n<p>GID Gibson Desert</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-GID02.pdf\" class=\"\" title=\"View the spatial profile for IBRA GID02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA GID02</a>",
+                "popup": "<h3>GID02 Dune Field</h3>\n<p>GID Gibson Desert</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-GID02.pdf\" class=\"\" title=\"View the spatial profile for IBRA GID02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA GID02</a>",
                 "SUB_NAME": "Dune Field",
                 "OBJECTID": 469,
                 "AREA": 2.581042,
@@ -29503,7 +29503,7 @@
             "properties": {
                 "PERIMETER": 26.796605,
                 "REG_CODE": "GSD",
-                "popup": "<h3>GSD01 McLarty</h3>\n<p>GSD Great Sandy Desert</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-GSD01.pdf\" class=\"\" title=\"View the spatial profile for IBRA GSD01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA GSD01</a>",
+                "popup": "<h3>GSD01 McLarty</h3>\n<p>GSD Great Sandy Desert</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-GSD01.pdf\" class=\"\" title=\"View the spatial profile for IBRA GSD01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA GSD01</a>",
                 "SUB_NAME": "McLarty",
                 "OBJECTID": 470,
                 "AREA": 10.631573,
@@ -31084,7 +31084,7 @@
             "properties": {
                 "PERIMETER": 38.729675,
                 "REG_CODE": "GSD",
-                "popup": "<h3>GSD02 Mackay</h3>\n<p>GSD Great Sandy Desert</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-GSD02.pdf\" class=\"\" title=\"View the spatial profile for IBRA GSD02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA GSD02</a>",
+                "popup": "<h3>GSD02 Mackay</h3>\n<p>GSD Great Sandy Desert</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-GSD02.pdf\" class=\"\" title=\"View the spatial profile for IBRA GSD02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA GSD02</a>",
                 "SUB_NAME": "Mackay",
                 "OBJECTID": 471,
                 "AREA": 14.682941,
@@ -32213,7 +32213,7 @@
             "properties": {
                 "PERIMETER": 20.207444,
                 "REG_CODE": "GVD",
-                "popup": "<h3>GVD01 Shield</h3>\n<p>GVD Great Victoria Desert</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-GVD01.pdf\" class=\"\" title=\"View the spatial profile for IBRA GVD01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA GVD01</a>",
+                "popup": "<h3>GVD01 Shield</h3>\n<p>GVD Great Victoria Desert</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-GVD01.pdf\" class=\"\" title=\"View the spatial profile for IBRA GVD01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA GVD01</a>",
                 "SUB_NAME": "Shield",
                 "OBJECTID": 472,
                 "AREA": 4.392236,
@@ -33810,7 +33810,7 @@
             "properties": {
                 "PERIMETER": 33.738718,
                 "REG_CODE": "GVD",
-                "popup": "<h3>GVD02 Central</h3>\n<p>GVD Great Victoria Desert</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-GVD02.pdf\" class=\"\" title=\"View the spatial profile for IBRA GVD02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA GVD02</a>",
+                "popup": "<h3>GVD02 Central</h3>\n<p>GVD Great Victoria Desert</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-GVD02.pdf\" class=\"\" title=\"View the spatial profile for IBRA GVD02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA GVD02</a>",
                 "SUB_NAME": "Central",
                 "OBJECTID": 473,
                 "AREA": 11.529163,
@@ -34195,7 +34195,7 @@
             "properties": {
                 "PERIMETER": 11.482844,
                 "REG_CODE": "GVD",
-                "popup": "<h3>GVD03 Maralinga</h3>\n<p>GVD Great Victoria Desert</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-GVD03.pdf\" class=\"\" title=\"View the spatial profile for IBRA GVD03 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA GVD03</a>",
+                "popup": "<h3>GVD03 Maralinga</h3>\n<p>GVD Great Victoria Desert</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-GVD03.pdf\" class=\"\" title=\"View the spatial profile for IBRA GVD03 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA GVD03</a>",
                 "SUB_NAME": "Maralinga",
                 "OBJECTID": 474,
                 "AREA": 3.559692,
@@ -34300,7 +34300,8 @@
             "properties": {
                 "PERIMETER": 3.343313,
                 "REG_CODE": "GVD",
-                "popup": "<h3>GVD04 Kintore</h3>\n<p>GVD Great Victoria Desert</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-GVD04.pdf\" class=\"\" title=\"View the spatial profile for IBRA GVD04 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA GVD04</a>",
+                "popup": "<h3>GVD04 Kintore</h3>\n<p>GVD Great Victoria Desert</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-GVD04.pdf\" class=\"\" title=\"View the spatial profile for IBRA GVD04 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA GVD04</a>",
+                "PROFILE": "Sub-Region-Profile-Reporting-Tables-GVD04.pdf",
                 "SUB_NAME": "Kintore",
                 "OBJECTID": 475,
                 "AREA": 0.524887,
@@ -34485,7 +34486,7 @@
             "properties": {
                 "PERIMETER": 6.48732,
                 "REG_CODE": "HAM",
-                "popup": "<h3>HAM01 Hampton</h3>\n<p>HAM Hampton</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-HAM01.pdf\" class=\"\" title=\"View the spatial profile for IBRA HAM01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA HAM01</a>",
+                "popup": "<h3>HAM01 Hampton</h3>\n<p>HAM Hampton</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-HAM01.pdf\" class=\"\" title=\"View the spatial profile for IBRA HAM01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA HAM01</a>",
                 "SUB_NAME": "Hampton",
                 "OBJECTID": 476,
                 "AREA": 0.994992,
@@ -35446,7 +35447,7 @@
             "properties": {
                 "PERIMETER": 12.417368,
                 "REG_CODE": "JAF",
-                "popup": "<h3>JAF01 Northern Jarrah Forest</h3>\n<p>JAF Jarrah Forest</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-JAF01.pdf\" class=\"\" title=\"View the spatial profile for IBRA JAF01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA JAF01</a>",
+                "popup": "<h3>JAF01 Northern Jarrah Forest</h3>\n<p>JAF Jarrah Forest</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-JAF01.pdf\" class=\"\" title=\"View the spatial profile for IBRA JAF01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA JAF01</a>",
                 "SUB_NAME": "Northern Jarrah Forest",
                 "OBJECTID": 478,
                 "AREA": 1.820917,
@@ -36527,7 +36528,7 @@
             "properties": {
                 "PERIMETER": 15.217317,
                 "REG_CODE": "JAF",
-                "popup": "<h3>JAF02 Southern Jarrah Forest</h3>\n<p>JAF Jarrah Forest</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-JAF02.pdf\" class=\"\" title=\"View the spatial profile for IBRA JAF02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA JAF02</a>",
+                "popup": "<h3>JAF02 Southern Jarrah Forest</h3>\n<p>JAF Jarrah Forest</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-JAF02.pdf\" class=\"\" title=\"View the spatial profile for IBRA JAF02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA JAF02</a>",
                 "SUB_NAME": "Southern Jarrah Forest",
                 "OBJECTID": 479,
                 "AREA": 2.550967,
@@ -37204,7 +37205,7 @@
             "properties": {
                 "PERIMETER": 11.071059,
                 "REG_CODE": "LSD",
-                "popup": "<h3>LSD01 Rudall</h3>\n<p>LSD Little Sandy Desert</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-LSD01.pdf\" class=\"\" title=\"View the spatial profile for IBRA LSD01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA LSD01</a>",
+                "popup": "<h3>LSD01 Rudall</h3>\n<p>LSD Little Sandy Desert</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-LSD01.pdf\" class=\"\" title=\"View the spatial profile for IBRA LSD01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA LSD01</a>",
                 "SUB_NAME": "Rudall",
                 "OBJECTID": 480,
                 "AREA": 0.870007,
@@ -39061,7 +39062,7 @@
             "properties": {
                 "PERIMETER": 28.057184,
                 "REG_CODE": "LSD",
-                "popup": "<h3>LSD02 Trainor</h3>\n<p>LSD Little Sandy Desert</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-LSD02.pdf\" class=\"\" title=\"View the spatial profile for IBRA LSD02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA LSD02</a>",
+                "popup": "<h3>LSD02 Trainor</h3>\n<p>LSD Little Sandy Desert</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-LSD02.pdf\" class=\"\" title=\"View the spatial profile for IBRA LSD02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA LSD02</a>",
                 "SUB_NAME": "Trainor",
                 "OBJECTID": 481,
                 "AREA": 8.969202,
@@ -40410,7 +40411,7 @@
             "properties": {
                 "PERIMETER": 22.68521,
                 "REG_CODE": "MAL",
-                "popup": "<h3>MAL01 Eastern Mallee</h3>\n<p>MAL Mallee</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-MAL01.pdf\" class=\"\" title=\"View the spatial profile for IBRA MAL01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA MAL01</a>",
+                "popup": "<h3>MAL01 Eastern Mallee</h3>\n<p>MAL Mallee</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-MAL01.pdf\" class=\"\" title=\"View the spatial profile for IBRA MAL01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA MAL01</a>",
                 "SUB_NAME": "Eastern Mallee",
                 "OBJECTID": 482,
                 "AREA": 3.296077,
@@ -41999,7 +42000,7 @@
             "properties": {
                 "PERIMETER": 20.847954,
                 "REG_CODE": "MAL",
-                "popup": "<h3>MAL02 Western Mallee</h3>\n<p>MAL Mallee</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-MAL02.pdf\" class=\"\" title=\"View the spatial profile for IBRA MAL02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA MAL02</a>",
+                "popup": "<h3>MAL02 Western Mallee</h3>\n<p>MAL Mallee</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-MAL02.pdf\" class=\"\" title=\"View the spatial profile for IBRA MAL02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA MAL02</a>",
                 "SUB_NAME": "Western Mallee",
                 "OBJECTID": 483,
                 "AREA": 3.84437,
@@ -44412,7 +44413,7 @@
             "properties": {
                 "PERIMETER": 34.788269,
                 "REG_CODE": "MUR",
-                "popup": "<h3>MUR01 Eastern Murchison</h3>\n<p>MUR Murchison</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-MUR01.pdf\" class=\"\" title=\"View the spatial profile for IBRA MUR01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA MUR01</a>",
+                "popup": "<h3>MUR01 Eastern Murchison</h3>\n<p>MUR Murchison</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-MUR01.pdf\" class=\"\" title=\"View the spatial profile for IBRA MUR01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA MUR01</a>",
                 "SUB_NAME": "Eastern Murchison",
                 "OBJECTID": 484,
                 "AREA": 19.426164,
@@ -45177,7 +45178,7 @@
             "properties": {
                 "PERIMETER": 14.070407,
                 "REG_CODE": "MUR",
-                "popup": "<h3>MUR02 Western Murchison</h3>\n<p>MUR Murchison</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-MUR02.pdf\" class=\"\" title=\"View the spatial profile for IBRA MUR02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA MUR02</a>",
+                "popup": "<h3>MUR02 Western Murchison</h3>\n<p>MUR Murchison</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-MUR02.pdf\" class=\"\" title=\"View the spatial profile for IBRA MUR02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA MUR02</a>",
                 "SUB_NAME": "Western Murchison",
                 "OBJECTID": 485,
                 "AREA": 6.333083,
@@ -49142,7 +49143,7 @@
             "properties": {
                 "PERIMETER": 51.493906,
                 "REG_CODE": "NOK",
-                "popup": "<h3>NOK01 Mitchell</h3>\n<p>NOK Northern Kimberley</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-NOK01.pdf\" class=\"\" title=\"View the spatial profile for IBRA NOK01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA NOK01</a>",
+                "popup": "<h3>NOK01 Mitchell</h3>\n<p>NOK Northern Kimberley</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-NOK01.pdf\" class=\"\" title=\"View the spatial profile for IBRA NOK01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA NOK01</a>",
                 "SUB_NAME": "Mitchell",
                 "OBJECTID": 486,
                 "AREA": 4.912236,
@@ -49963,7 +49964,7 @@
             "properties": {
                 "PERIMETER": 10.096094,
                 "REG_CODE": "NOK",
-                "popup": "<h3>NOK02 Berkeley</h3>\n<p>NOK Northern Kimberley</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-NOK02.pdf\" class=\"\" title=\"View the spatial profile for IBRA NOK02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA NOK02</a>",
+                "popup": "<h3>NOK02 Berkeley</h3>\n<p>NOK Northern Kimberley</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-NOK02.pdf\" class=\"\" title=\"View the spatial profile for IBRA NOK02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA NOK02</a>",
                 "SUB_NAME": "Berkeley",
                 "OBJECTID": 487,
                 "AREA": 2.049409,
@@ -50820,7 +50821,7 @@
             "properties": {
                 "PERIMETER": 16.009141,
                 "REG_CODE": "NUL",
-                "popup": "<h3>NUL01 Carlisle</h3>\n<p>NUL Nullarbor</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-NUL01.pdf\" class=\"\" title=\"View the spatial profile for IBRA NUL01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA NUL01</a>",
+                "popup": "<h3>NUL01 Carlisle</h3>\n<p>NUL Nullarbor</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-NUL01.pdf\" class=\"\" title=\"View the spatial profile for IBRA NUL01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA NUL01</a>",
                 "SUB_NAME": "Carlisle",
                 "OBJECTID": 488,
                 "AREA": 4.723168,
@@ -51753,7 +51754,7 @@
             "properties": {
                 "PERIMETER": 18.645413,
                 "REG_CODE": "NUL",
-                "popup": "<h3>NUL02 Nullarbor Plain</h3>\n<p>NUL Nullarbor</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-NUL02.pdf\" class=\"\" title=\"View the spatial profile for IBRA NUL02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA NUL02</a>",
+                "popup": "<h3>NUL02 Nullarbor Plain</h3>\n<p>NUL Nullarbor</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-NUL02.pdf\" class=\"\" title=\"View the spatial profile for IBRA NUL02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA NUL02</a>",
                 "SUB_NAME": "Nullarbor Plain",
                 "OBJECTID": 489,
                 "AREA": 8.20635,
@@ -52862,7 +52863,7 @@
             "properties": {
                 "PERIMETER": 15.69834,
                 "REG_CODE": "OVP",
-                "popup": "<h3>OVP01 Purnululu</h3>\n<p>OVP Ord Victoria Plain</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-OVP01.pdf\" class=\"\" title=\"View the spatial profile for IBRA OVP01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA OVP01</a>",
+                "popup": "<h3>OVP01 Purnululu</h3>\n<p>OVP Ord Victoria Plain</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-OVP01.pdf\" class=\"\" title=\"View the spatial profile for IBRA OVP01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA OVP01</a>",
                 "SUB_NAME": "Purnululu",
                 "OBJECTID": 490,
                 "AREA": 1.841882,
@@ -54079,7 +54080,7 @@
             "properties": {
                 "PERIMETER": 17.670091,
                 "REG_CODE": "OVP",
-                "popup": "<h3>OVP02 South Kimberley Interzone</h3>\n<p>OVP Ord Victoria Plain</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-OVP02.pdf\" class=\"\" title=\"View the spatial profile for IBRA OVP02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA OVP02</a>",
+                "popup": "<h3>OVP02 South Kimberley Interzone</h3>\n<p>OVP Ord Victoria Plain</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-OVP02.pdf\" class=\"\" title=\"View the spatial profile for IBRA OVP02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA OVP02</a>",
                 "SUB_NAME": "South Kimberley Interzone",
                 "OBJECTID": 491,
                 "AREA": 2.857551,
@@ -56848,7 +56849,7 @@
             "properties": {
                 "PERIMETER": 36.090462,
                 "REG_CODE": "PIL",
-                "popup": "<h3>PIL01 Chichester</h3>\n<p>PIL Pilbara</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-PIL01.pdf\" class=\"\" title=\"View the spatial profile for IBRA PIL01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA PIL01</a>",
+                "popup": "<h3>PIL01 Chichester</h3>\n<p>PIL Pilbara</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-PIL01.pdf\" class=\"\" title=\"View the spatial profile for IBRA PIL01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA PIL01</a>",
                 "SUB_NAME": "Chichester",
                 "OBJECTID": 492,
                 "AREA": 7.298776,
@@ -58661,7 +58662,7 @@
             "properties": {
                 "PERIMETER": 22.964933,
                 "REG_CODE": "PIL",
-                "popup": "<h3>PIL02 Fortescue</h3>\n<p>PIL Pilbara</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-PIL02.pdf\" class=\"\" title=\"View the spatial profile for IBRA PIL02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA PIL02</a>",
+                "popup": "<h3>PIL02 Fortescue</h3>\n<p>PIL Pilbara</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-PIL02.pdf\" class=\"\" title=\"View the spatial profile for IBRA PIL02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA PIL02</a>",
                 "SUB_NAME": "Fortescue",
                 "OBJECTID": 493,
                 "AREA": 1.713912,
@@ -60542,7 +60543,7 @@
             "properties": {
                 "PERIMETER": 24.182219,
                 "REG_CODE": "PIL",
-                "popup": "<h3>PIL03 Hamersley</h3>\n<p>PIL Pilbara</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-PIL03.pdf\" class=\"\" title=\"View the spatial profile for IBRA PIL03 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA PIL03</a>",
+                "popup": "<h3>PIL03 Hamersley</h3>\n<p>PIL Pilbara</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-PIL03.pdf\" class=\"\" title=\"View the spatial profile for IBRA PIL03 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA PIL03</a>",
                 "SUB_NAME": "Hamersley",
                 "OBJECTID": 494,
                 "AREA": 4.949266,
@@ -61651,7 +61652,7 @@
             "properties": {
                 "PERIMETER": 15.215855,
                 "REG_CODE": "PIL",
-                "popup": "<h3>PIL04 Roebourne</h3>\n<p>PIL Pilbara</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-PIL04.pdf\" class=\"\" title=\"View the spatial profile for IBRA PIL04 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA PIL04</a>",
+                "popup": "<h3>PIL04 Roebourne</h3>\n<p>PIL Pilbara</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-PIL04.pdf\" class=\"\" title=\"View the spatial profile for IBRA PIL04 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA PIL04</a>",
                 "SUB_NAME": "Roebourne",
                 "OBJECTID": 495,
                 "AREA": 0.891871,
@@ -62676,7 +62677,7 @@
             "properties": {
                 "PERIMETER": 12.398836,
                 "REG_CODE": "PIL",
-                "popup": "<h3>PIL04 Roebourne</h3>\n<p>PIL Pilbara</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-PIL04.pdf\" class=\"\" title=\"View the spatial profile for IBRA PIL04 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA PIL04</a>",
+                "popup": "<h3>PIL04 Roebourne</h3>\n<p>PIL Pilbara</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-PIL04.pdf\" class=\"\" title=\"View the spatial profile for IBRA PIL04 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA PIL04</a>",
                 "SUB_NAME": "Roebourne",
                 "OBJECTID": 495,
                 "AREA": 0.704987,
@@ -63241,7 +63242,7 @@
             "properties": {
                 "PERIMETER": 6.010424,
                 "REG_CODE": "SWA",
-                "popup": "<h3>SWA01 Dandaragan Plateau</h3>\n<p>SWA Swan Coastal Plain</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-SWA01.pdf\" class=\"\" title=\"View the spatial profile for IBRA SWA01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA SWA01</a>",
+                "popup": "<h3>SWA01 Dandaragan Plateau</h3>\n<p>SWA Swan Coastal Plain</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-SWA01.pdf\" class=\"\" title=\"View the spatial profile for IBRA SWA01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA SWA01</a>",
                 "SUB_NAME": "Dandaragan Plateau",
                 "OBJECTID": 496,
                 "AREA": 0.361411,
@@ -63894,7 +63895,7 @@
             "properties": {
                 "PERIMETER": 11.584937,
                 "REG_CODE": "SWA",
-                "popup": "<h3>SWA02 Perth</h3>\n<p>SWA Swan Coastal Plain</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-SWA02.pdf\" class=\"\" title=\"View the spatial profile for IBRA SWA02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA SWA02</a>",
+                "popup": "<h3>SWA02 Perth</h3>\n<p>SWA Swan Coastal Plain</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-SWA02.pdf\" class=\"\" title=\"View the spatial profile for IBRA SWA02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA SWA02</a>",
                 "SUB_NAME": "Perth",
                 "OBJECTID": 497,
                 "AREA": 1.086168,
@@ -64499,7 +64500,7 @@
             "properties": {
                 "PERIMETER": 13.233709,
                 "REG_CODE": "TAN",
-                "popup": "<h3>TAN01 Tanami Desert</h3>\n<p>TAN Tanami</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-TAN01.pdf\" class=\"\" title=\"View the spatial profile for IBRA TAN01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA TAN01</a>",
+                "popup": "<h3>TAN01 Tanami Desert</h3>\n<p>TAN Tanami</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-TAN01.pdf\" class=\"\" title=\"View the spatial profile for IBRA TAN01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA TAN01</a>",
                 "SUB_NAME": "Tanami Desert",
                 "OBJECTID": 498,
                 "AREA": 2.600678,
@@ -65172,7 +65173,7 @@
             "properties": {
                 "PERIMETER": 10.963114,
                 "REG_CODE": "VIB",
-                "popup": "<h3>VIB01 Keep</h3>\n<p>VIB Victoria Bonaparte</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-VIB01.pdf\" class=\"\" title=\"View the spatial profile for IBRA VIB01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA VIB01</a>",
+                "popup": "<h3>VIB01 Keep</h3>\n<p>VIB Victoria Bonaparte</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-VIB01.pdf\" class=\"\" title=\"View the spatial profile for IBRA VIB01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA VIB01</a>",
                 "SUB_NAME": "Keep",
                 "OBJECTID": 499,
                 "AREA": 1.58995,
@@ -65937,7 +65938,7 @@
             "properties": {
                 "PERIMETER": 10.419124,
                 "REG_CODE": "WAR",
-                "popup": "<h3>WAR01 Warren</h3>\n<p>WAR Warren</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-WAR01.pdf\" class=\"\" title=\"View the spatial profile for IBRA WAR01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA WAR01</a>",
+                "popup": "<h3>WAR01 Warren</h3>\n<p>WAR Warren</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-WAR01.pdf\" class=\"\" title=\"View the spatial profile for IBRA WAR01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA WAR01</a>",
                 "SUB_NAME": "Warren",
                 "OBJECTID": 500,
                 "AREA": 0.802526,
@@ -67170,7 +67171,7 @@
             "properties": {
                 "PERIMETER": 16.828788,
                 "REG_CODE": "YAL",
-                "popup": "<h3>YAL01 Edel</h3>\n<p>YAL Yalgoo</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-YAL01.pdf\" class=\"\" title=\"View the spatial profile for IBRA YAL01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA YAL01</a>",
+                "popup": "<h3>YAL01 Edel</h3>\n<p>YAL Yalgoo</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-YAL01.pdf\" class=\"\" title=\"View the spatial profile for IBRA YAL01 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA YAL01</a>",
                 "SUB_NAME": "Edel",
                 "OBJECTID": 501,
                 "AREA": 1.378937,
@@ -69083,7 +69084,7 @@
             "properties": {
                 "PERIMETER": 22.774235,
                 "REG_CODE": "YAL",
-                "popup": "<h3>YAL02 Tallering</h3>\n<p>YAL Yalgoo</p>\n<a href=\"https://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-YAL02.pdf\" class=\"\" title=\"View the spatial profile for IBRA YAL02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA YAL02</a>",
+                "popup": "<h3>YAL02 Tallering</h3>\n<p>YAL Yalgoo</p>\n<a href=\"//static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-YAL02.pdf\" class=\"\" title=\"View the spatial profile for IBRA YAL02 (as PDF in new tab)\" target=\"_\">Spatial Profile IBRA YAL02</a>",
                 "SUB_NAME": "Tallering",
                 "OBJECTID": 502,
                 "AREA": 3.233758,
