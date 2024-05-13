@@ -1,5 +1,5 @@
-FROM httpd:2.4.34-alpine
+FROM nginxinc/nginx-unprivileged:stable-alpine
 MAINTAINER asi@dbca.wa.gov.au
+LABEL org.opencontainers.image.source https://github.com/dbca-wa/biodiversityaudit2
 
-COPY . /usr/local/apache2/htdocs/
-HEALTHCHECK --interval=10s --timeout=5s --start-period=5s --retries=5 CMD ["wget", "-q", "-O", "-", "http://localhost/"]
+COPY . /usr/share/nginx/html
