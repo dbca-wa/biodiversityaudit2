@@ -13,3 +13,11 @@ Section on hosting and configuration.
 
 ## Dependencies
 Section on dependencies, e.g. datasets on CKAN.
+
+## Development
+
+Use e.g. python-livereload to host a hot-reloading local version.
+```
+pip install livereload
+livereload -p 8001
+```

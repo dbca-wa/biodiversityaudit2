@@ -25,13 +25,18 @@ define([
         },
 
         /*
-         Parse the popup html for a href that contains the ckan url
+         Construct the URL for the regional profile PDF.
+        E.g. http://static.dbca.wa.gov.au/static/biodiversityaudit/Sub-Region-Profile-Reporting-Tables-LSD02.pdf
+        DBCA CDN: config.ckan.static_url
+        Base filename: Sub-Region-Profile-Reporting-Tables-
+        spatial_profile_basename: DBCA CDN + Base filename (as per config.js)
+        Schema: DBCA CDN + Base filename + "SUB_CODE" + ".pdf"
          */
-        //@todo: There must be a better way to obtain the spatial profile url even if we have to hard code the 55 of them in the config
         getSpatialProfileURL: function () {
             // parse the popup attribute for a href that contains the ckan url
-            var node = $('<div>' + this.get('popup') + '</div>');
-            return node.find('a[href*="' + config.ckan.base_url + '"]').attr('href');
+            // var node = $('<div>' + this.get('popup') + '</div>');
+            // var href = node.find('a[href*="').attr('href');
+            return config.urls.spatial_profile_basename + this.id() + '.pdf';
         },
 
         setFaunaRecords: function (collection, allRecords) {

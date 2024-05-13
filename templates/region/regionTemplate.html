@@ -4,14 +4,21 @@
     </div>
 
     <div class="col-md-4 text-left">
-        <h3><a id="spatial_profile_url" href="<%= spatial_profile_url %>" target="_" title="Click to display a regional profile">Spatial Profile <img src="../images/pdficon_large.png"> </a></h3>
+        <h3>
+            <a id="spatial_profile_url"
+                href="<%= spatial_profile_url %>"
+                target="_"
+                title="Click to display a regional profile">
+                Spatial Profile <img src="../images/pdficon_large.png">
+            </a>
+        </h3>
     </div>
 </div>
 <ul class="nav nav-pills nav-justified" id="detailsTab" role="tablist">
     <li role="presentation" class="active"><a id="fauna_header" href="#faunaTab" data-toggle="tab">Fauna</a></li>
     <li role="presentation"><a id="flora_header" href="#floraTab" data-toggle="tab">Flora</a></li>
     <li role="presentation"><a id="community_header" href="#communitiesTab" data-toggle="tab">Communities</a></li>
-    <li role="presentation" class="disabled"><a id="wetland_header" href="#wetlandsTab" data-toggle="tab">Wetlands</a></li>
+    <!-- <li role="presentation" class="disabled"><a id="wetland_header" href="#wetlandsTab" data-toggle="tab">Wetlands</a></li> -->
 </ul>
 <div class="tab-content">
     <div class="tab-pane active" id="faunaTab">
@@ -56,7 +63,7 @@
             </div>
         </div>
     </div>
-    <div class="tab-pane" id="wetlandsTab">
+<!--     <div class="tab-pane" id="wetlandsTab">
         <div class="row">
             <div class="col-md12 top-buffer-20">
                 <div id="summary_content">
@@ -69,5 +76,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>

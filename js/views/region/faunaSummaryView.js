@@ -85,7 +85,7 @@ define([
                 }
             },
             {
-                title: 'Management Requirement',
+                title: 'Management Options',
                 width: '11vw',
                 data: 'management',
                 render: function (data) {
@@ -269,9 +269,12 @@ define([
             return container;
         },
 
+        // , 'NOTES1' = additional notes in regions > threats > details
         renderThreatDetails: function (id, records) {
             var tableFields = ['PASTPRESSURES_CAT', 'PASTPRESSURES_SPECIFY', 'FUTURETHREATS_CAT',
-                'FUTURETHREATS_SPECIFY', 'RECOVERYPLANCOMMENCE', 'NOTES1'];
+                'FUTURETHREATS_SPECIFY', 'RECOVERYPLANCOMMENCE'
+                
+                ];
             var tableElement = this.getDetailsTableElement();
             var tableView = new TableView({
                 el: tableElement.selector,
@@ -320,7 +323,7 @@ define([
                     trans: 'N/A',
                     trend: getValue('KNOWNESU_TREND'),
                     reliability: getValue('KNOWNESU_TRENDRELIAB'),
-                    notes: getValue('KNOWNESU_NOTES'),
+                    // notes: getValue('KNOWNESU_NOTES'),
                     IUCN: 'N/A'
                 };
 
@@ -333,7 +336,7 @@ define([
                     trans: getValue('KNOWNPOPS_TRANS'),
                     trend: getValue('KNOWNPOPS_TREND'),
                     reliability: getValue('KNOWNPOPS_TRENDRELIAB'),
-                    notes: getValue('KNOWNPOPS_NOTES'),
+                    // notes: getValue('KNOWNPOPS_NOTES'),
                     IUCN: getValue('KNOWNPOPS_CAT')
                 };
 
@@ -346,7 +349,7 @@ define([
                     trans: 'N/A',
                     trend: getValue('MATIND_TREND'),
                     reliability: getValue('MATIND_TRENDRELIAB'),
-                    notes: getValue('MATIND_NOTES'),
+                    // notes: getValue('MATIND_NOTES'),
                     IUCN: getValue('MATIND_CAT')
                 };
 
@@ -359,7 +362,7 @@ define([
                     trans: 'N/A',
                     trend: getValue('EOOAREA_TREND'),
                     reliability: 'N/A',
-                    notes: getValue('EOOAREA_NOTES'),
+                    // notes: getValue('EOOAREA_NOTES'),
                     IUCN: getValue('EOOAREA_CAT')
                 };
 
@@ -372,7 +375,7 @@ define([
                     trans: 'N/A',
                     trend: getValue('AOOAREA_TREND'),
                     reliability: 'N/A',
-                    notes: getValue('AOOAREA_NOTES'),
+                    // notes: getValue('AOOAREA_NOTES'),
                     IUCN: getValue('AOOAREA_CAT')
                 };
 
@@ -404,11 +407,11 @@ define([
                     title: 'Trend Reliability',
                     width: '20%',
                     data: 'reliability'
-                },
-                {
-                    title: 'Notes',
-                    data: 'notes'
-                }
+                }//,
+                // {
+                //     title: 'Notes',
+                //     data: 'notes'
+                // }
 
             ];
             var compiled = _.template(detailsTemplate);
@@ -506,7 +509,7 @@ define([
                     }
                 },
                 {
-                    title: 'Comment',
+                    title: 'Potential Strategies',
                     data: 'comment',
                     render: function (data) {
                         return renderAsList(data)

@@ -3,6 +3,7 @@ define([
     'jquery'
 ], function (_, $) {
     var ckan = {
+        static_url: '//static.dbca.wa.gov.au/static/biodiversityaudit',
         base_url: '//data.dpaw.wa.gov.au',
         master_dataset: '63a9cb0f-3d8a-4feb-9c2a-2431f7017d10',
         resources: {
@@ -16,7 +17,9 @@ define([
             wetlands_xlsm: ''
         }
     };
+
     var urls = {
+        spatial_profile_basename: build_url([ckan.static_url, 'Sub-Region-Profile-Reporting-Tables-']),
         fauna_datastore: build_ckan_resource_base_url(ckan.master_dataset, ckan.resources.fauna_csv),
         fauna_csv: build_url([
             build_ckan_resource_base_url(ckan.master_dataset, ckan.resources.fauna_csv),
@@ -73,13 +76,13 @@ define([
             'BAII_methodology.pdf'])
     };
 
-    var isPublic: false;  // parksandwildlife/biodiversityaudit2/issues/10
+    var isPublic = false;  // dbca-wa/biodiversityaudit2/issues/10
 
     var config = {
         ckan: ckan,
         urls: urls,
-        isPublic: isPublic,  //  parksandwildlife/biodiversityaudit2/issues/10
-        datasource: 'csv' // [csv|datastore|test] ckan csv files, ckan datastore, test: local files in data folder
+        isPublic: isPublic,  //  dbca-wa/biodiversityaudit2/issues/10
+        datasource: 'test' // [csv|datastore|test] ckan csv files, ckan datastore, test: local files in data folder
     };
 
     // if local config overrides the default
@@ -87,7 +90,7 @@ define([
         function (local) {
             _.extend(config, local);
         }, function (err) {
-            console.log("No local config. Use default.")
+            console.log("No local config. Using default.")
         });
 
     function build_ckan_resource_base_url(dataset, resource_id) {

@@ -10,7 +10,7 @@ define([
     'views/region/regionView',
     'views/aboutView'
 
-], function (Backbone, HeaderView, FooterView, HomeView, RegionsView, AssetsView, TnmView, DataView, RegionView, AboutView) {
+], function (Backbone, HeaderView, FooterView, HomeView, RegionsView, AssetsView, TnmView, DataView, RegionView, AboutView, config) {
 
     var Router = Backbone.Router.extend({
         routes: {
@@ -19,12 +19,14 @@ define([
             "regions(/:type/:id)": "regions",
             "assets(/:type/:id)": "assets",
             "tnm": "tnm",
-            "data": "data",
+            //"data": "data",
             "about": "about"
             // Default
             // important: don't put default rules. It will interfere with the links in the tables (details)
 //            "*actions": "defaultRoute"
         }
+
+
     });
 
     function initialize() {
@@ -48,9 +50,9 @@ define([
             new TnmView().render();
         });
 
-        router.on('route:data', function () {
-            new DataView().render();
-        });
+        // router.on('route:data', function () {
+        //     new DataView().render();
+        // });
 
         router.on('route:about', function () {
             new AboutView().render();
