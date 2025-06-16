@@ -1,60 +1,97 @@
 require.config({
-    // Define some shortcut aliases
-    paths: {
-        jquery: 'lib/jquery.min',
-        jqueryui: 'lib/jquery-ui.min',
-        jqueryScrollTo: 'lib/jquery.scrollTo.min',
-        underscore: 'lib/lodash.min',
-        backbone: 'lib/backbone-min',
-        leaflet: 'lib/leaflet',
-        leaflet_ajax: 'lib/leaflet.ajax',
-        datatables: 'lib/jquery.dataTables',
-        recline: 'lib/recline.dataset',
-        CSVBackend: 'lib/csv',
-        CKANBackend: 'lib/ckan',
-        bootstrap: 'lib/bootstrap.min',
-        templates: '../templates',
-        config: 'config',
-        dataSources: 'models/dataSources'
-    },
+	// Define some shortcut aliases
+	paths: {
+		jquery: "lib/jquery.min",
+		jqueryui: "lib/jquery-ui.min",
+		jqueryScrollTo: "lib/jquery.scrollTo.min",
+		// underscore: "lib/lodash.min",
+		underscore: "lib/underscore-min",
+		backbone: "lib/backbone-min",
+		leaflet: "lib/leaflet",
+		leaflet_ajax: "lib/leaflet.ajax",
+		datatables: "lib/jquery.dataTables",
+		recline: "lib/recline.dataset",
+		CSVBackend: "lib/csv",
+		CKANBackend: "lib/ckan",
+		bootstrap: "lib/bootstrap.min",
+		templates: "../templates",
+		config: "config",
+		dataSources: "models/dataSources",
+	},
 
-    // Dependencies and return values for scripts that are not AMD friendly
-    shim: {
-        jqueryui: {
-            deps: ['jquery']
-        },
-        jqueryScrollTo: {
-            deps: ['jquery']
-        },
-        bootstrap: {
-            deps: ['jquery']
-        },
-        CSVBackend:{
-            deps: ['jquery', 'underscore']
-        },
-        CKANBackend:{
-            deps: ['jquery', 'underscore']
-        },
-        recline: {
-            deps: ['jquery', 'underscore', 'backbone', 'CSVBackend', 'CKANBackend'],
-            init: function () {
-                return this.recline;
-            }
-        },
-        leaflet_ajax: {
-            deps: ['leaflet']
-        }
-    }
+	shim: {
+		underscore: {
+			exports: "_",
+		},
+		jqueryui: {
+			deps: ["jquery"],
+		},
+		jqueryScrollTo: {
+			deps: ["jquery"],
+		},
+		bootstrap: {
+			deps: ["jquery"],
+		},
+		backbone: {
+			deps: ["underscore", "jquery"],
+			exports: "Backbone",
+			init: function (_, $) {
+				// Add Lodash 4 compatibility for Backbone
+				if (typeof _ !== "undefined" && !_.any) {
+					_.mixin({
+						any: _.some,
+						all: _.every,
+						contains: _.includes,
+						invoke: _.invokeMap,
+						object: _.zipObject,
+						findWhere: function (collection, properties) {
+							return _.find(collection, properties);
+						},
+						where: function (collection, properties) {
+							return _.filter(collection, properties);
+						},
+					});
+				}
+				return this.Backbone;
+			},
+		},
+		CSVBackend: {
+			deps: ["jquery", "underscore"],
+			exports: "CSVBackend",
+		},
+		CKANBackend: {
+			deps: ["jquery", "underscore"],
+			exports: "CKAN",
+		},
+		recline: {
+			deps: [
+				"jquery",
+				"underscore",
+				"backbone",
+				"CSVBackend",
+				"CKANBackend",
+			],
+			exports: "recline",
+			init: function ($, _, Backbone, CSVBackend, CKAN) {
+				// Make sure global references are available
+				window._ = _;
+				window.jQuery = window.$ = $;
+				window.Backbone = Backbone;
+				return this.recline;
+			},
+		},
+		leaflet_ajax: {
+			deps: ["leaflet"],
+		},
+	},
 });
 
-require(['router', 'dataSources'],
-    function (Router, dataSources ) {
+require(["router", "dataSources"], function (Router, dataSources) {
+	Router.initialize();
 
-        Router.initialize();
+	// start the data fetching
+	dataSources.fetchAll();
 
-        // start the data fetching
-        dataSources.fetchAll();
-
-        // @todo: remove when prod
-        window.sources = dataSources;
-    });
+	// @todo: remove when prod
+	window.sources = dataSources;
+});

@@ -1,19 +1,19 @@
 define([
-    'jquery',
-    'underscore',
-    'backbone',
-    'text!templates/header.html'
+	"jquery",
+	"underscore",
+	"backbone",
+	"text!templates/header.html",
 ], function ($, _, Backbone, template) {
+	return Backbone.View.extend({
+		el: "#header",
 
-    return Backbone.View.extend({
-        el: '#header',
+		initialize: function () {
+			this.render();
+		},
 
-        initialize: function () {
-            this.render();
-        },
-
-        render: function () {
-            this.$el.html(_.template(template, {}));
-        }
-    });
+		render: function () {
+			// FIXED: Changed _.template(template, {}) to _.template(template)({})
+			this.$el.html(_.template(template)({}));
+		},
+	});
 });
