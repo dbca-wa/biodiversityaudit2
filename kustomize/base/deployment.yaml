@@ -25,7 +25,7 @@ spec:
           resources:
             requests:
               memory: '16Mi'
-              cpu: '10m'
+              cpu: '5m'
             limits:
               memory: '1024Mi'
               cpu: '500m'
@@ -47,6 +47,7 @@ spec:
             failureThreshold: 3
           securityContext:
             runAsNonRoot: true
+            runAsUser: 101
             privileged: false
             allowPrivilegeEscalation: false
             capabilities:
@@ -62,4 +63,3 @@ spec:
             medium: 'Memory'
       restartPolicy: Always
       terminationGracePeriodSeconds: 180
-      automountServiceAccountToken: false
