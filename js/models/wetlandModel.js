@@ -1,28 +1,22 @@
-define([
-        'underscore',
-        'backbone']
-    , function (_, Backbone) {
+define(["underscore", "backbone"], function (_, Backbone) {
+	return Backbone.Model.extend({
+		id: function () {
+			return this.get("WETLANDNAME");
+		},
 
-        return Backbone.Model.extend({
+		dpawRegion: function () {
+			return this.get("DPAWREGION");
+		},
 
-            id: function () {
-                return this.get('WETLANDNAME');
-            },
+		records: function () {
+			return this.get("records");
+		},
 
-            dpawRegion: function () {
-                return this.get('DPAWREGION');
-            },
-
-            records: function () {
-                return this.get('records');
-            },
-
-            recordsByRegion: function () {
-                return _(this.records())
-                    .groupBy(function (r) {
-                        return r.get('SCALE');
-                    })
-                    .value();
-            }
-        });
-    });
+		recordsByRegion: function () {
+			// Fixed version - no chaining needed
+			return _.groupBy(this.records(), function (r) {
+				return r.get("SCALE");
+			});
+		},
+	});
+});

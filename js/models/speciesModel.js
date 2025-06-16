@@ -1,43 +1,37 @@
-define ([
-        'underscore',
-        'backbone']
-    , function (_, Backbone) {
+define(["underscore", "backbone"], function (_, Backbone) {
+	return Backbone.Model.extend({
+		fields: {
+			id: "NAMESCIEN",
+			name: "NAMECOMMON",
+			DPaWRegion: "DPAWREGION",
+			dist: "DIST",
+		},
+		// shortcut methods
+		id: function () {
+			return this.get(this.fields.id);
+		},
 
-    return Backbone.Model.extend({
+		name: function () {
+			return this.get(this.fields.name);
+		},
 
-        fields: {
-            id: 'NAMESCIEN',
-            name: 'NAMECOMMON',
-            DPaWRegion: 'DPAWREGION',
-            dist: 'DIST'
-        },
-        // shortcut methods
-        id: function () {
-            return this.get(this.fields.id);
-        },
+		DPaWRegion: function () {
+			return this.get(this.fields.DPaWRegion);
+		},
 
-        name: function () {
-            return this.get(this.fields.name);
-        },
+		dist: function () {
+			return this.get(this.fields.dist);
+		},
 
-        DPaWRegion: function () {
-            return this.get(this.fields.DPaWRegion);
-        },
+		records: function () {
+			return this.get("records");
+		},
 
-        dist: function () {
-            return this.get(this.fields.dist);
-        },
-
-        records: function () {
-            return this.get('records');
-        },
-
-        recordsByRegion: function () {
-            return _(this.records())
-                .groupBy(function (r) {
-                    return r.get('SCALE');
-                })
-                .value();
-        }
-    });
+		recordsByRegion: function () {
+			// Fixed version - no chaining needed
+			return _.groupBy(this.records(), function (r) {
+				return r.get("SCALE");
+			});
+		},
+	});
 });
