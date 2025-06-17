@@ -17,4 +17,3 @@ Use Python to serve the application locally:
 ```bash
 python -m http.server 8080
 ```
-
