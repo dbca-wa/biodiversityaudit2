@@ -32,11 +32,33 @@ define(["jquery", "underscore", "backbone", "config", "dataSources"], function (
         spatial_profile_basename: DBCA CDN + Base filename (as per config.js)
         Schema: DBCA CDN + Base filename + "SUB_CODE" + ".pdf"
          */
+		// getSpatialProfileURL: function () {
+		// parse the popup attribute for a href that contains the ckan url
+		// var node = $('<div>' + this.get('popup') + '</div>');
+		// var href = node.find('a[href*="').attr('href');
+		// return config.urls.spatial_profile_basename + this.id() + ".pdf";
+		// },
+
 		getSpatialProfileURL: function () {
-			// parse the popup attribute for a href that contains the ckan url
-			// var node = $('<div>' + this.get('popup') + '</div>');
-			// var href = node.find('a[href*="').attr('href');
-			return config.urls.spatial_profile_basename + this.id() + ".pdf";
+			const subCode = this.id();
+			console.log("Looking up PDF for:", subCode);
+			console.log("config.region_pdfs:", config.region_pdfs);
+			console.log("config.ckan.static_url:", config.ckan.static_url);
+
+			const pdfInfo = config.region_pdfs[subCode];
+			console.log("Found pdfInfo:", pdfInfo);
+
+			if (pdfInfo && pdfInfo.url) {
+				const fullUrl = `https:${config.ckan.static_url}/${pdfInfo.url}`;
+				console.log("Returning new URL:", fullUrl);
+				return fullUrl;
+			} else if (pdfInfo && pdfInfo.fallback_file) {
+				// Return local data folder URL (test mode or fallback)
+				return `../data/pdfs/${pdfInfo.fallback_file}.pdf`;
+			} else {
+				// Last resort fallback to local data folder
+				return `../data/pdfs/sub-region-profile-reporting-tables-${subCode.toLowerCase()}.pdf`;
+			}
 		},
 
 		setFaunaRecords: function (collection, allRecords) {
