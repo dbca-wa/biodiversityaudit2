@@ -10,10 +10,11 @@ require.config({
 		leaflet: "lib/leaflet",
 		leaflet_ajax: "lib/leaflet.ajax",
 		datatables: "lib/jquery.dataTables",
+		datatablesBootstrap: "lib/dataTables.bootstrap5",
 		recline: "lib/recline.dataset",
 		CSVBackend: "lib/csv",
 		CKANBackend: "lib/ckan",
-		bootstrap: "lib/bootstrap.min",
+		bootstrap: "../css/bootstrap/js/bootstrap.bundle.min",
 		templates: "../templates",
 		config: "config",
 		dataSources: "models/dataSources",
@@ -82,6 +83,9 @@ require.config({
 		},
 		leaflet_ajax: {
 			deps: ["leaflet"],
+		},
+		datatablesBootstrap: {
+			deps: ["datatables", "bootstrap"],
 		},
 	},
 });

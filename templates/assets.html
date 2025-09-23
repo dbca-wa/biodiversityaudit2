@@ -8,13 +8,25 @@
 </div>
 
 <div class="row">
-    <ul class="nav nav-pills nav-justified" id="assetsTabs" role="tablist">
-        <li role="presentation"><a id="species_header" href="#species_tab" data-toggle="tab"><h4>Species</h4></a></li>
-        <li role="presentation"><a id="community_header" href="#community_tab" data-toggle="tab"><h4>Communities</h4></a></li>
-        <!-- <li role="presentation" class="disabled"><a id="wetland_header" href="#wetland_tab" data-toggle="tab" class="disabled"><h4>Wetlands</h4></a></li> -->
+    <ul class="nav nav-tabs nav-fill" id="assetsTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="species_header" data-bs-toggle="tab" data-bs-target="#species_tab" type="button" role="tab" aria-controls="species_tab" aria-selected="true">
+                <h4>Species</h4>
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="community_header" data-bs-toggle="tab" data-bs-target="#community_tab" type="button" role="tab" aria-controls="community_tab" aria-selected="false">
+                <h4>Communities</h4>
+            </button>
+        </li>
+        <!-- <li class="nav-item" role="presentation">
+            <button class="nav-link disabled" id="wetland_header" data-bs-toggle="tab" data-bs-target="#wetland_tab" type="button" role="tab" aria-controls="wetland_tab" aria-selected="false">
+                <h4>Wetlands</h4>
+            </button>
+        </li> -->
     </ul>
     <div class="tab-content">
-        <div class="tab-pane assets-input" id="species_tab">
+        <div class="tab-pane fade show active assets-input" id="species_tab" role="tabpanel" aria-labelledby="species_header">
             <div class="row">
                 <div class="col-md-8">
                     <span class="helper-text">Search for a species by starting to type in the box below.</span>
@@ -29,7 +41,7 @@
                 </div>
             </div>
         </div>
-        <div class="tab-pane assets-input" id="community_tab">
+        <div class="tab-pane fade assets-input" id="community_tab" role="tabpanel" aria-labelledby="community_header">
             <div class="row">
                 <div class="col-md-8">
                     <span class="helper-text">Search for a community by starting to type in the box below.</span>

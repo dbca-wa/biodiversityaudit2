@@ -3,6 +3,7 @@ define([
 	"jqueryScrollTo",
 	"underscore",
 	"backbone",
+	"bootstrap",
 	"app/tableFacade",
 	"app/filters",
 	"dataSources",
@@ -17,6 +18,7 @@ define([
 	scrollTo,
 	_,
 	Backbone,
+	bootstrap,
 	tables,
 	filters,
 	dataSources,
@@ -33,66 +35,56 @@ define([
 		title: "Research and Conservation Planning",
 		description: "",
 
-		columnDefs: [
+		columns: [
 			{
-				title: "Category",
-				width: "20vw",
 				data: "trend",
 				render: function (data) {
 					return data.rendered || data;
 				},
 			},
 			{
-				title: "Research",
 				data: "flora.research",
 				render: function (data) {
 					return data.rendered || data.count;
 				},
 			},
 			{
-				title: "Conservation Planning",
 				data: "flora.consplan",
 				render: function (data) {
 					return data.rendered || data.count;
 				},
 			},
 			{
-				title: "Research",
 				data: "fauna.research",
 				render: function (data) {
 					return data.rendered || data.count;
 				},
 			},
 			{
-				title: "Conservation Planning",
 				data: "fauna.consplan",
 				render: function (data) {
 					return data.rendered || data.count;
 				},
 			},
 			{
-				title: "Research",
 				data: "communities.research",
 				render: function (data) {
 					return data.rendered || data.count;
 				},
 			},
 			{
-				title: "Conservation Planning",
 				data: "communities.consplan",
 				render: function (data) {
 					return data.rendered || data.count;
 				},
 			},
 			{
-				title: "Research",
 				data: "wetlands.research",
 				render: function (data) {
 					return data.rendered || data.count;
 				},
 			},
 			{
-				title: "Conservation Planning",
 				data: "wetlands.consplan",
 				render: function (data) {
 					return data.rendered || data.count;

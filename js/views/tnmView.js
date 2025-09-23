@@ -2,13 +2,25 @@ define([
 	"jquery",
 	"underscore",
 	"backbone",
+	"bootstrap",
 	"text!templates/tnm.html",
 	"app/tableFacade",
 	"views/tnm/T1View",
 	"views/tnm/T3View",
 	"views/tnm/T4View",
 	"views/tnm/T5View",
-], function ($, _, Backbone, template, tables, T1View, T3View, T4View, T5View) {
+], function (
+	$,
+	_,
+	Backbone,
+	bootstrap,
+	template,
+	tables,
+	T1View,
+	T3View,
+	T4View,
+	T5View
+) {
 	return Backbone.View.extend({
 		el: "#content",
 
