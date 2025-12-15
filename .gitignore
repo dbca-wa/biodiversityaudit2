@@ -1,3 +1,5 @@
+# Docs / files related to local dev
+.docs
 #Jetbrains
 .idea/
 # anything with local in name
