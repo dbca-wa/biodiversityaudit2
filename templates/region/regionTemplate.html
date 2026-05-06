@@ -14,49 +14,57 @@
         </h3>
     </div>
 </div>
-<ul class="nav nav-pills nav-justified" id="detailsTab" role="tablist">
-    <li role="presentation" class="active"><a id="fauna_header" href="#faunaTab" data-toggle="tab">Fauna</a></li>
-    <li role="presentation"><a id="flora_header" href="#floraTab" data-toggle="tab">Flora</a></li>
-    <li role="presentation"><a id="community_header" href="#communitiesTab" data-toggle="tab">Communities</a></li>
-    <!-- <li role="presentation" class="disabled"><a id="wetland_header" href="#wetlandsTab" data-toggle="tab">Wetlands</a></li> -->
+<ul class="nav nav-tabs nav-fill" id="detailsTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="fauna_header" data-bs-toggle="tab" data-bs-target="#faunaTab" type="button" role="tab" aria-controls="faunaTab" aria-selected="true">Fauna</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="flora_header" data-bs-toggle="tab" data-bs-target="#floraTab" type="button" role="tab" aria-controls="floraTab" aria-selected="false">Flora</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="community_header" data-bs-toggle="tab" data-bs-target="#communitiesTab" type="button" role="tab" aria-controls="communitiesTab" aria-selected="false">Communities</button>
+    </li>
+    <!-- <li class="nav-item" role="presentation">
+        <button class="nav-link disabled" id="wetland_header" data-bs-toggle="tab" data-bs-target="#wetlandsTab" type="button" role="tab" aria-controls="wetlandsTab" aria-selected="false">Wetlands</button>
+    </li> -->
 </ul>
 <div class="tab-content">
-    <div class="tab-pane active" id="faunaTab">
+    <div class="tab-pane fade show active" id="faunaTab" role="tabpanel" aria-labelledby="fauna_header">
         <div class="row">
-            <div class="col-md12 top-buffer-20">
+            <div class="col-md-12 top-buffer-20">
                 <div id="summary_content">
                 </div>
             </div>
             <div class="row">
-                <div class="col-md12">
+                <div class="col-md-12">
                     <div id="details_content">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="tab-pane" id="floraTab">
+    <div class="tab-pane fade" id="floraTab" role="tabpanel" aria-labelledby="flora_header">
         <div class="row">
-            <div class="col-md12 top-buffer-20">
+            <div class="col-md-12 top-buffer-20">
                 <div id="summary_content">
                 </div>
             </div>
             <div class="row">
-                <div class="col-md12">
+                <div class="col-md-12">
                     <div id="details_content">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="tab-pane" id="communitiesTab">
+    <div class="tab-pane fade" id="communitiesTab" role="tabpanel" aria-labelledby="community_header">
         <div class="row">
-            <div class="col-md12 top-buffer-20">
+            <div class="col-md-12 top-buffer-20">
                 <div id="summary_content">
                 </div>
             </div>
             <div class="row">
-                <div class="col-md12">
+                <div class="col-md-12">
                     <div id="details_content">
                     </div>
                 </div>

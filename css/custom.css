@@ -1,34 +1,33 @@
-
 /* Navbar z-floats over map elements */
 .navbar > .container {
-    z-index: 10;
+	z-index: 10;
 }
 
 /* Carousel background image is transparent over dark background to lower contrast */
 .transparent {
-    /*background: rgba(0, 0, 0, 0.7);*/
-    /*filter: alpha(opacity=20);*/
-    opacity: .2;
+	/*background: rgba(0, 0, 0, 0.7);*/
+	/*filter: alpha(opacity=20);*/
+	opacity: 0.2;
 }
 
 /* Round images are 140px by 140px */
 .img140 {
-    width: 140px;
-    height: 140px;
+	width: 140px;
+	height: 140px;
 }
 
 /* Map container height must be set or map will be invisible */
 #map {
-    height: 550px;
+	height: 550px;
 }
 
 /* Trends and Metrics */
 .question {
-    font-weight: bold;
+	font-weight: bold;
 }
 
 .jql {
-    color: #999;
+	color: #999;
 }
 
 /* CUSTOMIZE THE CAROUSEL
@@ -36,103 +35,131 @@
 
 /* Carousel base class */
 .carousel {
-    height: 250px;
-    margin-bottom: 60px;
+	height: 250px;
+	margin-bottom: 60px;
 }
 
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
-    z-index: 10;
-    text-shadow: 1px 1px #000;
+	z-index: 10;
+	text-shadow: 1px 1px #000;
 }
 
 /* Declare heights because of positioning of images element */
 .carousel .item {
-    height: 250px;
-    background-color: #777;
+	height: 250px;
+	background-color: #777;
 }
 
 .carousel-inner > .item > img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    height: 250px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	min-width: 100%;
+	height: 250px;
 }
 
 /*Carousel height override */
 .carousel,
 .carousel .item,
 .carousel-inner > .item > img {
-    height: 250px;
+	height: 250px;
 }
 
 /* Featurettes
 ------------------------- */
 .featurette-heading {
-    font-weight: 300;
-    line-height: 1;
-    letter-spacing: -1px;
+	font-weight: 300;
+	line-height: 1;
+	letter-spacing: -1px;
 }
 
 .top-buffer-20 {
-    margin-top: 20px;
+	margin-top: 20px;
 }
 
 .top-buffer-50 {
-    margin-top: 50px;
+	margin-top: 50px;
 }
 
-.top-buffer-20 {
-    margin-top: 50px;
+.main-content-spacing {
+	margin-top: 20px;
 }
 
 .vspacer-50 {
-    margin-bottom: 25px;
-    margin-top: 25px;
+	margin-bottom: 25px;
+	margin-top: 25px;
 }
 
 .vspacer-20 {
-    margin-bottom: 10px;
-    margin-top: 10px;
+	margin-bottom: 10px;
+	margin-top: 10px;
 }
 
 .taxa {
-    font-style: italic;
+	font-style: italic;
 }
 
 .assets-input {
-    margin-top: 30px;
+	margin-top: 30px;
 }
 
 .assets-input .helper-text {
-    font-size: 0.875em;
+	font-size: 0.875em;
 }
 
 .assets-input input {
-    width: 60%;
+	width: 60%;
 }
 
 #table_q71_fauna td {
-    font-size: 0.875em;
+	font-size: 0.875em;
 }
 
 .leaflet-button-control-text {
-    font-size: 0.875em;
+	font-size: 0.875em;
 }
 
 .details-footer {
-    font-size: 0.875em;
+	font-size: 0.875em;
 }
 
-
-
 /*.panel-heading a:after {*/
-    /*font-family:'Glyphicons Halflings';*/
-    /*content:"\e114";*/
-    /*float: right;*/
-    /*color: grey;*/
+/*font-family:'Glyphicons Halflings';*/
+/*content:"\e114";*/
+/*float: right;*/
+/*color: grey;*/
 /*}*/
 /*.panel-heading a.collapsed:after {*/
-    /*content:"\e080";*/
+/*content:"\e080";*/
 /*}*/
+
+/* Table link styling */
+table a {
+	color: #0d6efd;
+	text-decoration: none;
+}
+
+table a:hover {
+	color: #0a58ca;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+/* Stronger selectors to override DataTables CSS */
+.dataTables_wrapper table a,
+table.dataTable a,
+#details_content table a,
+.table a {
+	color: #0d6efd !important;
+	text-decoration: none !important;
+}
+
+.dataTables_wrapper table a:hover,
+table.dataTable a:hover,
+#details_content table a:hover,
+.table a:hover {
+	color: #0a58ca !important;
+	text-decoration: underline !important;
+	cursor: pointer !important;
+}

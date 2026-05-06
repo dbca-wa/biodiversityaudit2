@@ -1,13 +1,41 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 ">
-            Past:&nbsp<%= pastCount %>
-        </div>
-        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 ">
-            Future:&nbsp<%= futureCount %>
-        </div>
-        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            <a id="threats_<%= id %>">details</a>
-        </div>
-    </div>
+<div
+	style="
+		width: 100% !important;
+		padding: 0 !important;
+		margin: 0 !important;
+		display: flex !important;
+		flex-direction: column !important;
+	"
+>
+	<div
+		style="
+			display: flex !important;
+            gap: 10px;
+			{% comment %} justify-content: space-between !important; {% endcomment %}
+			width: 100% !important;
+			margin-bottom: 5px !important;
+		"
+	>
+		<span>Past:&nbsp<%= pastCount %></span>
+		<span>Future:&nbsp<%= futureCount %></span>
+	</div>
+	<div
+		style="
+			width: 100% !important;
+			text-align: left !important;
+			display: block !important;
+			margin-top: 3px !important;
+		"
+	>
+		<a
+			id="threats_<%= id %>"
+			style="
+				display: inline-block !important;
+				color: #0d6efd !important;
+				text-decoration: none !important;
+				cursor: pointer !important;
+			"
+			>details</a
+		>
+	</div>
 </div>

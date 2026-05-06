@@ -1,14 +1,11 @@
-<div id="content_panel_<%= id %>" class="panel panel-default">
-    <div class="panel-heading" role="tab" id="heading_<%= id %>">
-        <h4 class="panel-title question">
-            <a class="title" data-toggle="collapse" data-parent="#<%= parent %>" href="#<%= id %>"
-               aria-expanded="false" aria-controls="collapse_<%= id %>">
-                <%- title %>
-            </a>
-        </h4>
-    </div>
-    <div id="<%= id %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading_<%= id %>">
-        <div class="panel-body">
+<div id="content_panel_<%= id %>" class="accordion-item">
+    <h2 class="accordion-header" id="heading_<%= id %>">
+        <button class="accordion-button collapsed question" type="button" data-bs-toggle="collapse" data-bs-target="#<%= id %>" aria-expanded="false" aria-controls="<%= id %>">
+            <%- title %>
+        </button>
+    </h2>
+    <div id="<%= id %>" class="accordion-collapse collapse" aria-labelledby="heading_<%= id %>" data-bs-parent="#<%= parent %>">
+        <div class="accordion-body">
             <div class="row">
                 <div class="col-md-12">
                     <div class="description"><%- description %></div>

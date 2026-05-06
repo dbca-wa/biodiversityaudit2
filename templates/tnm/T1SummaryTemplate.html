@@ -1,22 +1,20 @@
-<table id="summary_table_<%= id %>" class="table display cell-border compact">
-    <thead>
-    <tr>
-        <th style="border-left: 1px solid; border-top: 1px solid"></th>
-        <th colspan="2" style="border-left: 1px solid; border-top: 1px solid">Threatened flora</th>
-        <th colspan="2" style="border-left: 1px solid; border-top: 1px solid">Threatened fauna</th>
-        <th colspan="2"
-            style="border-left: 1px solid; border-top: 1px solid; border-right: 1px solid">
-            Threatened/priority ecological communities
-        </th>
-    </tr>
-    <tr>
-        <th style="border-left: 1px solid"></th>
-        <th style="border-left: 1px solid"></th>
-        <th style="border-left: 1px solid"></th>
-        <th style="border-left: 1px solid"></th>
-        <th style="border-left: 1px solid"></th>
-        <th style="border-left: 1px solid"></th>
-        <th style="border-left: 1px solid; border-right: 1px solid"></th>
-    </tr>
-    </thead>
-</table>
+<div class="table-responsive">
+    <table id="summary_table_<%= id %>" class="table table-bordered table-sm">
+        <thead class="table-light">
+        <tr>
+            <th rowspan="2">Trend</th>
+            <th colspan="2">Threatened flora</th>
+            <th colspan="2">Threatened fauna</th>
+            <th colspan="2">Threatened/priority ecological communities</th>
+        </tr>
+        <tr>
+            <th>Number of populations</th>
+            <th>Number of mature individuals</th>
+            <th>Number of populations</th>
+            <th>Number of mature individuals</th>
+            <th>Number of occurrences</th>
+            <th>Area of occupancy</th>
+        </tr>
+        </thead>
+    </table>
+</div>

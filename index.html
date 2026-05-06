@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Explore the conservation status, threats,
-    and management of Western Australia's biodiversity assets">
-    <meta name="author" content="DBCA WA">
-    <link rel="icon" href="images/favicon.ico">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta
+			name="description"
+			content="Explore the conservation status, threats,
+    and management of Western Australia's biodiversity assets"
+		/>
+		<meta name="author" content="DBCA WA" />
+		<link rel="icon" href="images/favicon.ico" />
 
-    <title>WA Biodiversity Assets</title>
+		<title>WA Biodiversity Assets</title>
+        
+		<!-- Bootstrap 5 CSS -->
+		<link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css" />
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="//static.dpaw.wa.gov.au/static/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//static.dpaw.wa.gov.au/static/libs/twitter-bootstrap/3.3.2/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/jquery-ui/jquery-ui.min.css" />
 
-    <link rel="stylesheet" href="css/jquery-ui/jquery-ui.min.css">
+		<!-- Leaflet CSS -->
+		<link
+			rel="stylesheet"
+			href="//static.dpaw.wa.gov.au/static/libs/leaflet/0.7.3/leaflet.css"
+		/>
 
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="//static.dpaw.wa.gov.au/static/libs/leaflet/0.7.3/leaflet.css" />
+		<link
+			rel="stylesheet"
+			href="css/dataTables.bootstrap5.css"
+		/>
 
-    <link rel="stylesheet" href="//static.dpaw.wa.gov.au/static/libs/datatables/1.10.4/css/jquery.dataTables.css" />
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="css/custom.css" />
+	</head>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css"/>
-</head>
+	<body>
+		<div id="header" class="header"></div>
 
-<body>
+		<div class="container main-content-spacing">
+			<div class="row">
+				<div id="content" class="col-12"></div>
+			</div>
+		</div>
 
-<div id="header" class="header"></div>
+		<div id="footer" class="footer"></div>
 
-<div class="container">
-    <div class="row">
-        <div id="content" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
-    </div>
-
-</div>
-
-<div id="footer" class="footer"></div>
-
-<script data-main="js/main.js" src="js/lib/require.js"></script>
-
-</body>
+		<script data-main="js/main.js" src="js/lib/require.js"></script>
+	</body>
 </html>

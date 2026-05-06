@@ -3,6 +3,7 @@ define([
 	"jqueryScrollTo",
 	"underscore",
 	"backbone",
+	"bootstrap",
 	"app/tableFacade",
 	"app/filters",
 	"dataSources",
@@ -17,6 +18,7 @@ define([
 	scrollTo,
 	_,
 	Backbone,
+	bootstrap,
 	tables,
 	filters,
 	dataSources,
@@ -33,43 +35,33 @@ define([
 		title: "Evaluation, direct management and indirect management.",
 		description: "",
 
-		columnDefs: [
+		columns: [
 			{
-				title: "Category",
-				width: "40vw",
 				data: "trend",
 				render: function (data) {
 					return data.rendered || data;
 				},
 			},
 			{
-				title: "Threatened flora",
 				data: "flora.management",
-				width: "15vw",
 				render: function (data) {
 					return data.rendered || data.count;
 				},
 			},
 			{
-				title: "Threatened fauna",
 				data: "fauna.management",
-				width: "15vw",
 				render: function (data) {
 					return data.rendered || data.count;
 				},
 			},
 			{
-				title: "Threatened/priority ecological communities",
 				data: "communities.management",
-				width: "15vw",
 				render: function (data) {
 					return data.rendered || data.count;
 				},
 			},
 			{
-				title: "Wetlands",
 				data: "wetlands.management",
-				width: "15vw",
 				render: function (data) {
 					return data.rendered || data.count;
 				},

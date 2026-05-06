@@ -34,52 +34,44 @@ define([
 		description:
 			"This question addresses the landscape level pressures which currently affect threatened species and ecological communities and the addition of future threats provides direction on planning needs (numbers in blue are the count). In most cases, the list of past pressures and future threats is quite similar, with the important exception of development projects which are planned/possible but have not occurred yet.",
 
-		columnDefs: [
+		columns: [
 			{
-				title: "Pressure/threat category",
-				width: "20vw",
 				data: "trend",
 				render: function (data) {
 					return data.rendered || data;
 				},
 			},
 			{
-				title: "Past pressure (2002-2013)",
 				data: "flora.past",
 				render: function (data) {
 					return data.rendered || data.count;
 				},
 			},
 			{
-				title: "Future threat (2013 to 2033)",
 				data: "flora.future",
 				render: function (data) {
 					return data.rendered || data.count;
 				},
 			},
 			{
-				title: "Past pressure (2002-2013)s",
 				data: "fauna.past",
 				render: function (data) {
 					return data.rendered || data.count;
 				},
 			},
 			{
-				title: "Future threat (2013 to 2033)",
 				data: "fauna.future",
 				render: function (data) {
 					return data.rendered || data.count;
 				},
 			},
 			{
-				title: "Past pressure (2002-2013)",
 				data: "communities.past",
 				render: function (data) {
 					return data.rendered || data.count;
 				},
 			},
 			{
-				title: "Future threat (2013 to 2033)",
 				data: "communities.future",
 				render: function (data) {
 					return data.rendered || data.count;
