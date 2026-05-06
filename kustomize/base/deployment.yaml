@@ -25,7 +25,7 @@ spec:
           resources:
             requests:
               memory: '16Mi'
-              cpu: '5m'
+              cpu: '10m'
             limits:
               memory: '1024Mi'
               cpu: '500m'
@@ -63,3 +63,35 @@ spec:
             medium: 'Memory'
       restartPolicy: Always
       terminationGracePeriodSeconds: 180
+      automountServiceAccountToken: false
+      tolerations:
+        - key: arch
+          operator: Equal
+          value: arm64
+          effect: NoSchedule
+      affinity:
+        # Set a node affinity to favour ARM64-based nodes (preference only).
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 1
+              preference:
+                matchExpressions:
+                  - key: arch
+                    operator: In
+                    values:
+                      - arm64
+          # Pointless/no-op selector to deal with Rancher GUI issue.
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: kubernetes.io/hostname
+                    operator: Exists
+        # Set a pod anti-affinity to spread workload pods between nodes (preference only).
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 1
+              podAffinityTerm:
+                labelSelector:
+                  matchLabels:
+                    app: biodiversityaudit-deployment
+                topologyKey: kubernetes.io/hostname

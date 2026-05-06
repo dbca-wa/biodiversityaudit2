@@ -3,6 +3,8 @@
 name: Build multi-architecture Docker Image with separate GitHub Runners and run vulnerability scan
 
 on:
+  schedule:
+    - cron: '15 21 * * 1-5'
   push:
     branches:
       - master
@@ -74,6 +76,8 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
         # This step checks out the code from the repository.
         # It uses the actions/checkout action to clone the repository into the runner's workspace.
 
