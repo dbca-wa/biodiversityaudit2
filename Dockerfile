@@ -4,6 +4,7 @@
 # This guarantees that repo metadata (Dockerfile, nginx.conf, README, scripts, etc.)
 # never lands in the webroot — regardless of .dockerignore contents.
 FROM alpine:3.20 AS assets
+ARG APP_VERSION=dev
 WORKDIR /assets
 COPY index.html .
 COPY css/ ./css/
@@ -11,6 +12,8 @@ COPY data/ ./data/
 COPY images/ ./images/
 COPY js/ ./js/
 COPY templates/ ./templates/
+# Inject version at build time so it's available to the frontend
+RUN echo "var APP_VERSION = '${APP_VERSION}';" > ./js/version.js
 
 # Stage 2: Production nginx image with only the web assets.
 FROM nginxinc/nginx-unprivileged:stable-alpine

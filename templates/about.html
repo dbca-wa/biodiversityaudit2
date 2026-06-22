@@ -60,5 +60,19 @@ Salafsky N., Salzer D., Stattersfield A.J., Hilton-Taylor C., Neugarten R., Butc
 </p>
 
     </div>
-
+    <div class="col-sm-12 mt-4">
+        <p class="text-muted small" id="app-version"></p>
+        <script>
+            (function() {
+                var s = document.createElement('script');
+                s.src = 'js/version.js';
+                s.onload = function() {
+                    if (typeof APP_VERSION !== 'undefined') {
+                        document.getElementById('app-version').textContent = 'v' + APP_VERSION;
+                    }
+                };
+                document.head.appendChild(s);
+            })();
+        </script>
+    </div>
 </div>
