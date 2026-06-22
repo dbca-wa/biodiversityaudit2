@@ -1,5 +1,12 @@
 .git
 .gitignore
+.DS_Store
 Dockerfile
 LICENSE
 README.md
+.docs/
+.vscode/
+.github/
+kustomize/
+scripts/
+docs/
