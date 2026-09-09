@@ -221,7 +221,7 @@ define(["jquery", "underscore", "leaflet", "config"], function (
 
 		/* Background layer */
 		L.tileLayer(
-			"//kb.dbca.wa.gov.au/geoserver/gwc/service/wmts?" +
+			"https://kb.dbca.wa.gov.au/geoserver/gwc/service/wmts?" +
 				"layer=kaartdijin-boodja-public:mapbox-streets-public&tilematrixset=mercator&Service=WMTS&Request=GetTile&Version=1.0.0" +
 				"&Format=image/png&TileMatrix=mercator:{z}&TileCol={x}&TileRow={y}",
 			{
