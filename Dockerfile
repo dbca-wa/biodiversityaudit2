@@ -29,6 +29,12 @@ COPY images/ ./images/
 COPY templates/ ./templates/
 # Inject version at build time so it's available to the frontend
 RUN echo "var APP_VERSION = '${APP_VERSION}';" > ./js/version.js
+# config.js always require()s config.local.js as an optional override. Ship an
+# empty AMD module so the request resolves to real JavaScript with a 200 instead
+# of falling through to the SPA's index.html - which the browser refuses to
+# execute as a script (text/html + nosniff) and logs a MIME type error for on
+# every page load. Overrides can replace this file per environment.
+RUN echo "define({});" > ./js/config.local.js
 
 # Stage 3: Production nginx image with only the web assets.
 FROM nginxinc/nginx-unprivileged:stable-alpine
