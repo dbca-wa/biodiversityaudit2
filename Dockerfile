@@ -38,7 +38,7 @@ LABEL org.opencontainers.image.description="WA Biodiversity Portal"
 LABEL org.opencontainers.image.licenses=Apache-2.0,MIT
 LABEL org.opencontainers.image.title=biodiversityaudit2
 LABEL org.opencontainers.image.url="https://github.com/dbca-wa/biodiversityaudit2"
-LABEL org.opencontainers.image.version=2.0.2
+LABEL org.opencontainers.image.version=2.0.3
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=assets /assets/ /usr/share/nginx/html/
