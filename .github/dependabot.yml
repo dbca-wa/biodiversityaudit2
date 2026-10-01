@@ -7,6 +7,8 @@ updates:
     target-branch: 'main'
     commit-message:
       prefix: '[actions] '
+    cooldown:
+      default-days: 7
 
   # Browser libraries. Dependabot only updates package.json and bun.lock - it can't
   # run the copy script, so the files in js/lib/ and css/ won't change on its own.
@@ -22,3 +24,5 @@ updates:
     target-branch: 'main'
     commit-message:
       prefix: '[deps] '
+    cooldown:
+      default-days: 7
