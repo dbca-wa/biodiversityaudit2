@@ -15,6 +15,13 @@ spec:
       labels:
         app: biodiversityaudit-deployment
     spec:
+      # Pod-level seccomp profile required by the PodSecurity "restricted" policy.
+      # Applies to all containers in the pod. The container securityContext below
+      # already satisfies the policy's other requirements (non-root, non-privileged,
+      # no privilege escalation, all capabilities dropped).
+      securityContext:
+        seccompProfile:
+          type: RuntimeDefault
       containers:
         - name: biodiversityaudit
           image: ghcr.io/dbca-wa/biodiversityaudit2

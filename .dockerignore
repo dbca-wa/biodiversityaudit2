@@ -1,3 +1,7 @@
+# kustomize
+aks-bcs-prod-01.yaml
+az-aks-oim03.yaml
+
 .git
 .gitignore
 .DS_Store

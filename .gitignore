@@ -8,3 +8,6 @@ node_modules/
 .git/
 .vscode/
 .DS_Store
+# kustomize
+az-aks-oim03.yaml
+aks-bcs-prod-01.yaml
