@@ -102,7 +102,13 @@ jobs:
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
         env:
-          TRIVY_DB_REPOSITORY: public.ecr.aws/aquasecurity/trivy-db
+          # Pull the vuln DB from the GHCR mirror instead of public.ecr.aws,
+          # which aggressively rate-limits anonymous pulls (TOOMANYREQUESTS).
+          TRIVY_DB_REPOSITORY: ghcr.io/aquasecurity/trivy-db:2
+          # Authenticate the DB pull with the job's GITHUB_TOKEN so we are not
+          # throttled as an anonymous client on shared runner IPs.
+          TRIVY_USERNAME: ${{ github.actor }}
+          TRIVY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
         with:
           scan-type: 'image'
           scanners: 'vuln'
