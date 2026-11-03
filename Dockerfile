@@ -38,6 +38,11 @@ RUN echo "define({});" > ./js/config.local.js
 
 # Stage 3: Production nginx image with only the web assets.
 FROM nginxinc/nginx-unprivileged:stable-alpine
+# Patch brotli-libs for CVE-2026-111497 (fixed in 1.2.1-r0). Remove this block
+# once the base image ships brotli-libs >= 1.2.1-r0.
+USER root
+RUN apk upgrade --no-cache brotli-libs
+USER 101
 LABEL org.opencontainers.image.authors=asi@dbca.wa.gov.au
 LABEL org.opencontainers.image.source=https://github.com/dbca-wa/biodiversityaudit2
 LABEL org.opencontainers.image.description="WA Biodiversity Portal"
