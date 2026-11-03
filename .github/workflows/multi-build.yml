@@ -91,7 +91,6 @@ jobs:
   scan:
     name: Docker image vulnerability scan
     runs-on: ubuntu-latest
-    continue-on-error: true # If vulnerability scan fails, the workflow can still complete successfully.
     needs:
       - build
     permissions:
@@ -114,7 +113,9 @@ jobs:
           scan-type: 'image'
           scanners: 'vuln'
           image-ref: ${{ needs.build.outputs.image_ref }}
-          vuln-type: 'library'
+          # Include OS packages (apk), not just language libraries, so base
+          # image vulnerabilities are reported.
+          vuln-type: 'os,library'
           severity: 'HIGH,CRITICAL'
           format: 'sarif'
           output: 'trivy-results.sarif'
@@ -123,3 +124,23 @@ jobs:
         uses: github/codeql-action/upload-sarif@6f2ac81f5cd81fe351a197ba0b00d91d03cd2aee # v4.39.0
         with:
           sarif_file: 'trivy-results.sarif'
+
+      # Fail the workflow on HIGH/CRITICAL vulnerabilities that have a fix
+      # available. Unfixed upstream issues are still reported above but do
+      # not block.
+      - name: Fail on fixable HIGH/CRITICAL vulnerabilities
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        env:
+          TRIVY_DB_REPOSITORY: ghcr.io/aquasecurity/trivy-db:2
+          TRIVY_USERNAME: ${{ github.actor }}
+          TRIVY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          scan-type: 'image'
+          scanners: 'vuln'
+          image-ref: ${{ needs.build.outputs.image_ref }}
+          vuln-type: 'os,library'
+          severity: 'HIGH,CRITICAL'
+          ignore-unfixed: true
+          exit-code: '1'
+          format: 'table'
+          skip-setup-trivy: true
