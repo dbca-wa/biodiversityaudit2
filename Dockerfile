@@ -38,6 +38,12 @@ RUN echo "define({});" > ./js/config.local.js
 
 # Stage 3: Production nginx image with only the web assets.
 FROM nginxinc/nginx-unprivileged:stable-alpine
+# Apply Alpine security updates the upstream base image has not picked up yet
+# (e.g. brotli-libs 1.2.1-r0 for CVE-2026-111497, curl, expat). Runs as root,
+# then drops back to the image's unprivileged nginx user (101).
+USER root
+RUN apk upgrade --no-cache
+USER 101
 LABEL org.opencontainers.image.authors=asi@dbca.wa.gov.au
 LABEL org.opencontainers.image.source=https://github.com/dbca-wa/biodiversityaudit2
 LABEL org.opencontainers.image.description="WA Biodiversity Portal"
