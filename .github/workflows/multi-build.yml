@@ -77,16 +77,29 @@ jobs:
           if [ -n "$tag" ]; then
             # strip a leading 'v' (e.g. v1.2.3-rc.1 -> 1.2.3-rc.1)
             semtag="${tag#v}"
-            echo "value=${semtag}" >> "$GITHUB_OUTPUT"
-            echo "has_version_tag=true" >> "$GITHUB_OUTPUT"
+            {
+              echo "value=${semtag}"
+              echo "has_version_tag=true"
+              echo "label_version=${semtag}"
+            } >> "$GITHUB_OUTPUT"
           else
-            echo "value=latest" >> "$GITHUB_OUTPUT"
-            echo "has_version_tag=false" >> "$GITHUB_OUTPUT"
+            # Untagged builds (pushes to main, the nightly schedule) get the
+            # nearest release plus how far past it, e.g. 2.0.5-3-g1a2b3c4,
+            # rather than a bare "latest".
+            described="$(git describe --tags --always)"
+            {
+              echo "value=latest"
+              echo "has_version_tag=false"
+              echo "label_version=${described#v}"
+            } >> "$GITHUB_OUTPUT"
           fi
 
       - name: Build and push with Docker Buildx
         id: bake
         uses: docker/bake-action@59cb1203cd42bcefd40a1b6d73b589e48c86040e # v7.5.0
+        env:
+          # Read by docker-bake.hcl to set the OCI version label.
+          VERSION: ${{ steps.image_tag.outputs.label_version }}
         with:
           files: docker-bake.hcl
           push: ${{ github.event_name != 'pull_request' }}

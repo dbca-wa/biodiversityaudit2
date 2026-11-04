@@ -7,6 +7,13 @@ variable "TAG" {
   default = "latest"
 }
 
+# The resolved image version (e.g. "2.0.5"), used only for the OCI version
+# label. Falls back to TAG so a local, untagged build still gets a label
+# rather than the Dockerfile's default.
+variable "VERSION" {
+  default = TAG
+}
+
 variable "REGISTRY" {
   default = "ghcr.io/dbca-wa"
 }
@@ -28,4 +35,9 @@ target "app" {
   cache-to   = ["type=gha,mode=max"]
   # Provenance + SBOM are attached on push (CI). Harmless for local non-push builds.
   attest     = ["type=provenance,mode=max", "type=sbom"]
+  # Overrides the Dockerfile's hardcoded LABEL with the actual released
+  # version, so the two can't drift apart the way they did for 2.0.5.
+  labels = {
+    "org.opencontainers.image.version" = VERSION
+  }
 }
