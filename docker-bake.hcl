@@ -18,6 +18,12 @@ variable "REGISTRY" {
   default = "ghcr.io/dbca-wa"
 }
 
+# Any value that changes per build (CI passes the run ID). Forces the
+# Dockerfile's `apk upgrade` layer to re-run instead of coming from cache.
+variable "APK_CACHE_BUST" {
+  default = ""
+}
+
 variable "PLATFORMS" {
   default = "linux/amd64,linux/arm64"
 }
@@ -33,6 +39,9 @@ target "app" {
   platforms  = split(",", PLATFORMS)
   cache-from = ["type=gha"]
   cache-to   = ["type=gha,mode=max"]
+  args = {
+    APK_CACHE_BUST = APK_CACHE_BUST
+  }
   # Provenance + SBOM are attached on push (CI). Harmless for local non-push builds.
   attest     = ["type=provenance,mode=max", "type=sbom"]
   # Overrides the Dockerfile's hardcoded LABEL with the actual released

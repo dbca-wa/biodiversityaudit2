@@ -41,8 +41,12 @@ FROM nginxinc/nginx-unprivileged:stable-alpine
 # Apply Alpine security updates the upstream base image has not picked up yet
 # (e.g. brotli-libs 1.2.1-r0 for CVE-2026-111497, curl, expat). Runs as root,
 # then drops back to the image's unprivileged nginx user (101).
+# APK_CACHE_BUST is set per CI run so the GHA layer cache can't replay an old
+# upgrade: the base tag's digest rarely changes, so without it this layer stays
+# cached and new Alpine fixes never get installed.
+ARG APK_CACHE_BUST=
 USER root
-RUN apk upgrade --no-cache
+RUN echo "apk cache bust: ${APK_CACHE_BUST}" && apk upgrade --no-cache
 USER 101
 LABEL org.opencontainers.image.authors=asi@dbca.wa.gov.au
 LABEL org.opencontainers.image.source=https://github.com/dbca-wa/biodiversityaudit2

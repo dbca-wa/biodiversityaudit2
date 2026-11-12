@@ -100,6 +100,8 @@ jobs:
         env:
           # Read by docker-bake.hcl to set the OCI version label.
           VERSION: ${{ steps.image_tag.outputs.label_version }}
+          # Read by docker-bake.hcl; re-runs `apk upgrade` every build.
+          APK_CACHE_BUST: ${{ github.run_id }}-${{ github.run_attempt }}
         with:
           files: docker-bake.hcl
           push: ${{ github.event_name != 'pull_request' }}
