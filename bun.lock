@@ -6,7 +6,7 @@
       "name": "biodiversityaudit2",
       "dependencies": {
         "backbone": "^1.6.1",
-        "bootstrap": "^5.3.8",
+        "bootstrap": "^5.3.9",
         "datatables.net": "^3.1.5",
         "datatables.net-bs5": "^3.1.5",
         "jquery": "^4.0.0",
@@ -25,7 +25,7 @@
 
     "backbone": ["backbone@1.6.1", "", { "dependencies": { "underscore": ">=1.8.3" } }, "sha512-YQzWxOrIgL6BoFnZjThVN99smKYhyEXXFyJJ2lsF1wJLyo4t+QjmkLrH8/fN22FZ4ykF70Xq7PgTugJVR4zS9Q=="],
 
-    "bootstrap": ["bootstrap@5.3.8", "", { "peerDependencies": { "@popperjs/core": "^2.11.8" } }, "sha512-HP1SZDqaLDPwsNiqRqi5NcP0SSXciX2s9E+RyqJIIqGo+vJeN5AJVM98CXmW/Wux0nQ5L7jeWUdplCEf0Ee+tg=="],
+    "bootstrap": ["bootstrap@5.3.9", "", { "peerDependencies": { "@popperjs/core": "^2.11.8" } }, "sha512-20cU0rcfw8WdxtVbmfU+xT2EjvVTw9Ror/h1Qvd7DXCujRg8OO9mdBCsmTHdJFf3BuadmBNJtgIuUXsBqSkk/w=="],
 
     "datatables.net": ["datatables.net@3.1.5", "", {}, "sha512-phu9fVz1cOhD7kZDO5Ztj15qwghCkmdwX5AezLi+PxfMtnFAq0itpewvXzdwdr6bOwPqO2zuXsXWUU5x3wQptw=="],
 
