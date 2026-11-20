@@ -37,16 +37,33 @@ RUN echo "var APP_VERSION = '${APP_VERSION}';" > ./js/version.js
 RUN echo "define({});" > ./js/config.local.js
 
 # Stage 3: Production nginx image with only the web assets.
-FROM nginxinc/nginx-unprivileged:stable-alpine
-# Apply Alpine security updates the upstream base image has not picked up yet
-# (e.g. brotli-libs 1.2.1-r0 for CVE-2026-111497, curl, expat). Runs as root,
-# then drops back to the image's unprivileged nginx user (101).
+# The official nginx image is used rather than nginxinc/nginx-unprivileged, which
+# lags behind nginx security releases. The steps below reproduce the unprivileged
+# image's setup: no user directive, pid file and temp paths under /tmp (the only
+# writable path with readOnlyRootFilesystem), port 8080, and group-writable cache
+# and config directories for uid 101. Switch back once the unprivileged image
+# publishes the same nginx version.
+FROM nginx:1.30.7-alpine
+# Also applies Alpine security updates the base image has not picked up yet
+# (e.g. brotli-libs 1.2.1-r0 for CVE-2026-111497, curl, expat).
 # APK_CACHE_BUST is set per CI run so the GHA layer cache can't replay an old
 # upgrade: the base tag's digest rarely changes, so without it this layer stays
 # cached and new Alpine fixes never get installed.
 ARG APK_CACHE_BUST=
 USER root
-RUN echo "apk cache bust: ${APK_CACHE_BUST}" && apk upgrade --no-cache
+RUN echo "apk cache bust: ${APK_CACHE_BUST}" && apk upgrade --no-cache \
+    && sed -i -e '/^user /d' -e 's,/run/nginx.pid,/tmp/nginx.pid,' \
+    -e '/^http {/a proxy_temp_path /tmp/proxy_temp;' \
+    -e '/^http {/a client_body_temp_path /tmp/client_temp;' \
+    -e '/^http {/a fastcgi_temp_path /tmp/fastcgi_temp;' \
+    -e '/^http {/a uwsgi_temp_path /tmp/uwsgi_temp;' \
+    -e '/^http {/a scgi_temp_path /tmp/scgi_temp;' \
+    /etc/nginx/nginx.conf \
+    && sed -i 's/listen\(.*\)80;/listen\18080;/' /etc/nginx/conf.d/default.conf \
+    && chown -R 101:0 /var/cache/nginx /etc/nginx/conf.d \
+    && chmod -R g+w /var/cache/nginx /etc/nginx/conf.d
+ENV HOME=/var/cache/nginx
+EXPOSE 8080
 USER 101
 LABEL org.opencontainers.image.authors=asi@dbca.wa.gov.au
 LABEL org.opencontainers.image.source=https://github.com/dbca-wa/biodiversityaudit2
